@@ -21,7 +21,6 @@ namespace GodsExperiment
             ResourceState = new ResourceState
             {
                 WorkUnitsPerBooite = WorkUnitsPerBooite,
-                WorkUnitsAddedToBooite = WorkUnitsPerBooite,
             };
 
             InputState = new InputState();

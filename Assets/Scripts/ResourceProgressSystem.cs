@@ -8,7 +8,7 @@ namespace GodsExperiment
             if (state.WorkUnitsAddedToBooite >= state.WorkUnitsPerBooite)
             {
                 state.BooiteCount += 1;
-                state.WorkUnitsAddedToBooite += state.WorkUnitsPerBooite;
+                state.WorkUnitsAddedToBooite = 0;
             }
         }
     }
