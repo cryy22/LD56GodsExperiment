@@ -1,16 +1,15 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace DefaultNamespace
+namespace GodsExperiment
 {
     public class ProgressBar : MonoBehaviour
     {
         [SerializeField] private Image FillImage;
 
-        private void Start()
+        public void SetValue(float value)
         {
-            FillImage.fillAmount = 0.5f;
+            FillImage.fillAmount = value;
         }
     }
 }

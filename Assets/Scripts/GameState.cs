@@ -1,20 +1,20 @@
-using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GameState", menuName = "Custom/Game State")]
-public class GameState : ScriptableObject
+namespace GodsExperiment
 {
-    private static GameState _instance;
-    public static GameState I => _instance ??= Resources.Load<GameState>("State/GameState");
-
-    [field: NonSerialized] public float Time { get; set; } = 0;
-    [field: NonSerialized] public float TimeSpeed { get; set; } = 1;
-    [field: NonSerialized] public bool IsTimePaused { get; set; } = true;
-
-    public void ResetAll()
+    [CreateAssetMenu(fileName = "GameState", menuName = "Custom/Game State")]
+    public class GameState : ScriptableObject
     {
-        Time = 0;
-        TimeSpeed = 1;
-        IsTimePaused = true;
+        private static GameState _instance;
+        public static GameState I => _instance ??= Resources.Load<GameState>("State/GameState");
+
+        public TimeState TimeState { get; private set; } = new TimeState();
+        public ResourceState ResourceState { get; private set; } = new ResourceState();
+
+        public void ResetAll()
+        {
+            TimeState = new TimeState();
+            ResourceState = new ResourceState();
+        }
     }
 }
