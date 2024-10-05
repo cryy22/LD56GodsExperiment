@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GodsExperiment
@@ -13,18 +14,19 @@ namespace GodsExperiment
             state.PauseDown = Input.GetKeyDown(KeyCode.Space);
             state.PausePressed = state.PauseDown && !wasPauseDown;
 
-            foreach (UIState.ResourceToWorkerControlMap workerControlMap in uiState.WorkerControls)
+            foreach ((ResourceType resourceType, List<WorkerControl> workerControls) in uiState.ResourcesWorkerControls)
+            foreach (WorkerControl workerControl in workerControls)
             {
-                if (workerControlMap.WorkerControl.AddRequested)
+                if (workerControl.AddRequested)
                 {
-                    state.WorkerAddPressed = workerControlMap.ResourceType;
-                    workerControlMap.WorkerControl.AddRequested = false;
+                    state.WorkerAddPressed = resourceType;
+                    workerControl.AddRequested = false;
                 }
 
-                if (workerControlMap.WorkerControl.RemoveRequested)
+                if (workerControl.RemoveRequested)
                 {
-                    state.WorkerRemovePressed = workerControlMap.ResourceType;
-                    workerControlMap.WorkerControl.RemoveRequested = false;
+                    state.WorkerRemovePressed = resourceType;
+                    workerControl.RemoveRequested = false;
                 }
             }
         }

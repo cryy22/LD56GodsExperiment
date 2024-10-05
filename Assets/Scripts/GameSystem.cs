@@ -16,6 +16,7 @@ namespace GodsExperiment
         private void Start()
         {
             State.ResetAll();
+            UIState.ResetAll();
 
             _gameTimeSystem = new GameTimeSystem();
             _resourceProgressSystem = new ResourceProgressSystem();
