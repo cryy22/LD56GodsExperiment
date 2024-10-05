@@ -16,7 +16,14 @@ MonoBehaviour:
     <WorkUnits>k__BackingField: 1
     <Booite>k__BackingField: 0
     <Booium>k__BackingField: 0
+    <Boos>k__BackingField: 0
   BooiumResourceRequirements:
     <WorkUnits>k__BackingField: 2
     <Booite>k__BackingField: 4
     <Booium>k__BackingField: 0
+    <Boos>k__BackingField: 0
+  BoosResourceRequirements:
+    <WorkUnits>k__BackingField: 4
+    <Booite>k__BackingField: 0
+    <Booium>k__BackingField: 2
+    <Boos>k__BackingField: 0

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace GodsExperiment
 {
@@ -11,6 +10,7 @@ namespace GodsExperiment
 
         [SerializeField] private ResourceRequirements BooiteResourceRequirements;
         [SerializeField] private ResourceRequirements BooiumResourceRequirements;
+        [SerializeField] private ResourceRequirements BoosResourceRequirements;
 
         public TimeState TimeState { get; private set; }
         public ResourcesState ResourcesState { get; private set; }
@@ -19,7 +19,11 @@ namespace GodsExperiment
         public void ResetAll()
         {
             TimeState = new TimeState();
-            ResourcesState = new ResourcesState(BooiteResourceRequirements, BooiumResourceRequirements);
+            ResourcesState = new ResourcesState(
+                booiteRequirements: BooiteResourceRequirements,
+                booiumRequirements: BooiumResourceRequirements,
+                boosResourceRequirements: BoosResourceRequirements
+            );
             InputState = new InputState();
         }
     }

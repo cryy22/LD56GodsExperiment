@@ -9,5 +9,6 @@ namespace GodsExperiment
         [field: SerializeField] public float WorkUnits { get; set; }
         [field: SerializeField] public float Booite { get; set; }
         [field: SerializeField] public float Booium { get; set; }
+        [field: SerializeField] public float Boos { get; set; }
     }
 }
