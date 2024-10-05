@@ -10,11 +10,13 @@ namespace GodsExperiment
 
         public TimeState TimeState { get; private set; } = new TimeState();
         public ResourceState ResourceState { get; private set; } = new ResourceState();
+        public InputState InputState { get; private set; } = new InputState();
 
         public void ResetAll()
         {
             TimeState = new TimeState();
             ResourceState = new ResourceState();
+            InputState = new InputState();
         }
     }
 }

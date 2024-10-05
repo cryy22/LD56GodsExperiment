@@ -4,9 +4,9 @@ namespace GodsExperiment
 {
     public class GameTimeSystem
     {
-        public void Update(TimeState state)
+        public void Update(TimeState state, InputState inputState)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (inputState.PausePressed)
                 state.IsTimePaused = !state.IsTimePaused;
 
             state.DeltaTime = !state.IsTimePaused 

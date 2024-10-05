@@ -6,6 +6,7 @@ namespace GodsExperiment
     {
         private GameTimeSystem _gameTimeSystem;
         private ResourceProgressSystem _resourceProgressSystem;
+        private InputSystem _inputSystem;
         
         private static GameState State => GameState.I;
 
@@ -13,11 +14,13 @@ namespace GodsExperiment
         {
             _gameTimeSystem = new GameTimeSystem();
             _resourceProgressSystem = new ResourceProgressSystem();
+            _inputSystem = new InputSystem();
         }
 
         private void Update()
         {
-            _gameTimeSystem.Update(State.TimeState);
+            _inputSystem.Update(State.InputState);
+            _gameTimeSystem.Update(State.TimeState, State.InputState);
             _resourceProgressSystem.Update(State.TimeState, State.ResourceState);
         }
     }
