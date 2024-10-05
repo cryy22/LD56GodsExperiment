@@ -516,8 +516,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WorkerAddButton: {fileID: 247877872599720717}
   WorkerRemoveButton: {fileID: 859538945025425130}
-  WorkerParent: {fileID: 3337581975666531892}
-  WorkerPrefab: {fileID: 2615329618082675317, guid: 190d085a1ed92416c872498bce3234a6, type: 3}
 --- !u!1 &7076293721680827623
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ namespace GodsExperiment
 {
     public enum ResourceType
     {
-        Unknown = 0,
+        None = 0,
         Booite = 1,
         Booium = 2,
         Boos = 3,

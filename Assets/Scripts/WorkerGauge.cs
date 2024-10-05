@@ -5,12 +5,10 @@ namespace GodsExperiment
 {
     public class WorkerGauge : MonoBehaviour
     {
-        private const int _maxSize = 8;
-
         [SerializeField] private Transform WorkerParent;
         [SerializeField] private GameObject WorkerPrefab;
 
-        private readonly List<GameObject> _workers = new(_maxSize);
+        private readonly List<GameObject> _workers = new(Constants.MaxWorkersPerResource);
 
         private void Start()
         {
@@ -20,7 +18,7 @@ namespace GodsExperiment
 
         public void SetCount(int count)
         {
-            count = Mathf.Clamp(value: count, min: 0, max: _maxSize);
+            count = Mathf.Clamp(value: count, min: 0, max: Constants.MaxWorkersPerResource);
 
             while (_workers.Count < count)
             {
@@ -30,7 +28,7 @@ namespace GodsExperiment
 
             while (_workers.Count > count)
             {
-                GameObject worker = _workers[-1];
+                GameObject worker = _workers[^1];
                 Destroy(worker);
                 _workers.Remove(worker);
             }

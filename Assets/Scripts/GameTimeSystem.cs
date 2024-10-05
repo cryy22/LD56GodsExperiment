@@ -9,12 +9,10 @@ namespace GodsExperiment
             if (inputState.PausePressed)
                 state.IsTimePaused = !state.IsTimePaused;
 
-            state.DeltaTime = !state.IsTimePaused 
+            state.DeltaTime = !state.IsTimePaused
                 ? Time.deltaTime * state.TimeSpeed
                 : 0;
             state.Time += state.DeltaTime;
-        
-            Debug.Log(state.Time);
         }
     }
 }

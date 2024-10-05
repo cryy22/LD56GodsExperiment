@@ -942,6 +942,9 @@ MonoBehaviour:
   - ResourceType: 1
     WorkerGauge: {fileID: 5930019184844961161}
   <UnemploymentGauge>k__BackingField: {fileID: 913760336}
+  <WorkerControls>k__BackingField:
+  - ResourceType: 1
+    WorkerControl: {fileID: 1825392057}
 --- !u!224 &1159269211 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7069914043016442836, guid: 689d36cc952da4baeb3411c03fa62a2a, type: 3}
@@ -1525,6 +1528,17 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1825392057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1502760791361194656, guid: 689d36cc952da4baeb3411c03fa62a2a, type: 3}
+  m_PrefabInstance: {fileID: 5930019184844961159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7203de8478be4f7db82ccf8145d2e392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1831760676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1683,7 +1697,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 1
   m_Spacing: 8
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
