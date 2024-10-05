@@ -11,7 +11,13 @@ namespace GodsExperiment
                 return;
 
             food.Count -= workers.TotalDailyFoodCost;
-            if (food.Count > -Mathf.Epsilon)
+            if (food.Count > workers.NewWorkerFoodCost)
+            {
+                int newWorkers = Mathf.FloorToInt(food.Count / workers.NewWorkerFoodCost);
+                workers[ResourceType.None] += newWorkers;
+                food.Count -= workers.NewWorkerFoodCost * newWorkers;
+            }
+            else if (food.Count > -Mathf.Epsilon)
             {
                 workers.IsUnderfed = false;
                 workers.UnderfedProductivityPenalty = 0;

@@ -35,8 +35,7 @@ namespace GodsExperiment
             uiState.WorkerFoodRequirementCount.text =
                 $"{(int) state.Workers.TotalDailyFoodCost}/day";
             uiState.NewWorkerRequirementCount.text =
-                (state.Workers.NewWorkerFoodCost + state.Workers.TotalDailyFoodCost)
-                .ToString(CultureInfo.InvariantCulture);
+                state.Workers.NewWorkerFoodCost.ToString(CultureInfo.InvariantCulture);
 
 
             uiState.DayProgressBar.SetProgress(state.Time.DayProgress);

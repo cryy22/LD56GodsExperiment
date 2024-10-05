@@ -16,7 +16,7 @@ MonoBehaviour:
   <InitialWorkers>k__BackingField: 4
   <MaxWorkers>k__BackingField: 32
   <DailyWorkerFoodCost>k__BackingField: 1
-  <NewWorkerFoodCost>k__BackingField: 10
+  <NewWorkerFoodCost>k__BackingField: 2
   <ResourceDefinitions>k__BackingField:
   - <ResourceType>k__BackingField: 1
     <Name>k__BackingField: Booite
