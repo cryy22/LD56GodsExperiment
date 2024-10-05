@@ -6,19 +6,20 @@ namespace GodsExperiment
     public class GameState : ScriptableObject
     {
         private static GameState _instance;
-        public static GameState I => _instance ??= Resources.Load<GameState>("State/GameState");
+        public static GameState I => _instance ??= UnityEngine.Resources.Load<GameState>("State/GameState");
 
+        [SerializeField] private int InitialWorkers;
         [SerializeField] private ResourceRequirements[] ResourceRequirements;
 
-        public TimeState TimeState { get; private set; }
-        public ResourcesState ResourcesState { get; private set; }
-        public InputState InputState { get; private set; }
+        public TimeState Time { get; private set; }
+        public ResourcesState Resources { get; private set; }
+        public InputState Input { get; private set; }
 
         public void ResetAll()
         {
-            TimeState = new TimeState();
-            ResourcesState = new ResourcesState(ResourceRequirements);
-            InputState = new InputState();
+            Time = new TimeState();
+            Resources = new ResourcesState(initialWorkers: InitialWorkers, requirements: ResourceRequirements);
+            Input = new InputState();
         }
     }
 }

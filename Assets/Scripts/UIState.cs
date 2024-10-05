@@ -1,11 +1,26 @@
+using System;
 using UnityEngine;
 
 namespace GodsExperiment
 {
     public class UIState : MonoBehaviour
     {
-        [field: SerializeField] public ResourceGauge BooiteGauge { get; private set; }
-        [field: SerializeField] public ResourceGauge BooiumGauge { get; private set; }
-        [field: SerializeField] public ResourceGauge BoosGauge { get; private set; }
+        [field: SerializeField] public ResourceToResourceGaugeMap[] ResourceGauges { get; private set; }
+        [field: SerializeField] public ResourceToWorkerGaugeMap[] WorkerGauges { get; private set; }
+        [field: SerializeField] public WorkerGauge UnemploymentGauge { get; private set; }
+
+        [Serializable]
+        public class ResourceToResourceGaugeMap
+        {
+            public ResourceType ResourceType;
+            public ResourceGauge ResourceGauge;
+        }
+
+        [Serializable]
+        public class ResourceToWorkerGaugeMap
+        {
+            public ResourceType ResourceType;
+            public WorkerGauge WorkerGauge;
+        }
     }
 }

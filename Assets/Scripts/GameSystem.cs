@@ -4,19 +4,18 @@ namespace GodsExperiment
 {
     public class GameSystem : MonoBehaviour
     {
+        private static GameState State => GameState.I;
         [SerializeField] private UIState UIState;
-        
+
         private GameTimeSystem _gameTimeSystem;
         private ResourceProgressSystem _resourceProgressSystem;
         private InputSystem _inputSystem;
         private UISystem _uiSystem;
-        
-        private static GameState State => GameState.I;
 
         private void Start()
         {
             State.ResetAll();
-            
+
             _gameTimeSystem = new GameTimeSystem();
             _resourceProgressSystem = new ResourceProgressSystem();
             _inputSystem = new InputSystem();
@@ -25,10 +24,10 @@ namespace GodsExperiment
 
         private void Update()
         {
-            _inputSystem.Update(State.InputState);
-            _gameTimeSystem.Update(State.TimeState, State.InputState);
-            _resourceProgressSystem.Update(State.ResourcesState, State.TimeState);
-            _uiSystem.Update(State, UIState);
+            _inputSystem.Update(State.Input);
+            _gameTimeSystem.Update(state: State.Time, inputState: State.Input);
+            _resourceProgressSystem.Update(state: State.Resources, timeState: State.Time);
+            _uiSystem.Update(gameState: State, uiState: UIState);
         }
     }
 }
