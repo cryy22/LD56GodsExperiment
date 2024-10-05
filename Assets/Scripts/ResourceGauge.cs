@@ -9,9 +9,8 @@ namespace GodsExperiment
         [SerializeField] private TMP_Text NameText;
         [SerializeField] private ProgressBar ProgressBar;
 
-        [SerializeField] public string TagName;
-
-        private void Start() { NameText.text = TagName; }
+        public void SetName(string resourceName) { NameText.text = resourceName; }
+        public void SetColor(Color color) { ProgressBar.SetColor(color); }
 
         public void SetValues(float count, float progress)
         {

@@ -14,12 +14,12 @@ namespace GodsExperiment
 
         public float Progress => WorkUnitsAdded / WorkUnitsPerUnit;
 
-        public ResourceState(ResourceRequirements resourceRequirements)
+        public ResourceState(ResourceRequirementSet resourceRequirementSet)
         {
             Count = 0;
-            WorkUnitsPerUnit = resourceRequirements.WorkUnits;
+            WorkUnitsPerUnit = resourceRequirementSet.WorkUnits;
 
-            foreach (ResourceQuantity resourceQuantity in resourceRequirements.RequiredResources)
+            foreach (ResourceQuantity resourceQuantity in resourceRequirementSet.RequiredResources)
                 ResourceCosts[resourceQuantity.Resource] = resourceQuantity.Quantity;
         }
     }

@@ -20,7 +20,7 @@ namespace GodsExperiment
             _gameTimeSystem = new GameTimeSystem();
             _resourceProgressSystem = new ResourceProgressSystem();
             _inputSystem = new InputSystem();
-            _uiSystem = new UISystem();
+            _uiSystem = new UISystem(config: State.Config, uiState: UIState);
             _workerSystem = new WorkerSystem();
         }
 

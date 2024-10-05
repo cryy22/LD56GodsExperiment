@@ -8,8 +8,7 @@ namespace GodsExperiment
         private static GameState _instance;
         public static GameState I => _instance ??= UnityEngine.Resources.Load<GameState>("State/GameState");
 
-        [SerializeField] private int InitialWorkers;
-        [SerializeField] private ResourceRequirements[] ResourceRequirements;
+        [field: SerializeField] public GameConfig Config { get; private set; }
 
         public TimeState Time { get; private set; }
         public ResourcesState Resources { get; private set; }
@@ -18,7 +17,10 @@ namespace GodsExperiment
         public void ResetAll()
         {
             Time = new TimeState();
-            Resources = new ResourcesState(initialWorkers: InitialWorkers, requirements: ResourceRequirements);
+            Resources = new ResourcesState(
+                initialWorkers: Config.InitialWorkers,
+                requirementSets: Config.ResourceRequirementSets
+            );
             Input = new InputState();
         }
     }

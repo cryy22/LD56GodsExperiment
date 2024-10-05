@@ -9,10 +9,10 @@ namespace GodsExperiment
         public IEnumerable<ResourceType> ResourceTypes => _resourceStates.Keys;
         private readonly Dictionary<ResourceType, ResourceState> _resourceStates = new();
 
-        public ResourcesState(int initialWorkers, ResourceRequirements[] requirements)
+        public ResourcesState(int initialWorkers, ResourceRequirementSet[] requirementSets)
         {
             UnassignedWorkers = initialWorkers;
-            foreach (ResourceRequirements resourceRequirements in requirements)
+            foreach (ResourceRequirementSet resourceRequirements in requirementSets)
                 _resourceStates[resourceRequirements.ResourceType] = new ResourceState(resourceRequirements);
         }
 

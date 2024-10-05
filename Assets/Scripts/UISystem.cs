@@ -2,6 +2,15 @@ namespace GodsExperiment
 {
     public class UISystem
     {
+        public UISystem(GameConfig config, UIState uiState)
+        {
+            foreach (UIState.ResourceToResourceGaugeMap resourceMap in uiState.ResourceGauges)
+            {
+                resourceMap.ResourceGauge.SetName(config.GetNameForResource(resourceMap.ResourceType));
+                resourceMap.ResourceGauge.SetColor(config.GetColorForResource(resourceMap.ResourceType));
+            }
+        }
+
         public void Update(GameState gameState, UIState uiState)
         {
             foreach (UIState.ResourceToResourceGaugeMap resourceMap in uiState.ResourceGauges)

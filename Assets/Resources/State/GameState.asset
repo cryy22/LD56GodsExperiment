@@ -12,18 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d778c87b15e74e859fe99c81f20c7aa3, type: 3}
   m_Name: GameState
   m_EditorClassIdentifier: 
-  InitialWorkers: 4
-  ResourceRequirements:
-  - <ResourceType>k__BackingField: 1
-    <WorkUnits>k__BackingField: 1
-    <RequiredResources>k__BackingField: []
-  - <ResourceType>k__BackingField: 2
-    <WorkUnits>k__BackingField: 2
-    <RequiredResources>k__BackingField:
-    - <Resource>k__BackingField: 1
-      <Quantity>k__BackingField: 2
-  - <ResourceType>k__BackingField: 3
-    <WorkUnits>k__BackingField: 4
-    <RequiredResources>k__BackingField:
-    - <Resource>k__BackingField: 2
-      <Quantity>k__BackingField: 2
+  <Config>k__BackingField: {fileID: 11400000, guid: 717bd9ee56eb3443ca6f234666b2040d, type: 2}
