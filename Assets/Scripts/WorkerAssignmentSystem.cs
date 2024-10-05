@@ -16,7 +16,7 @@ namespace GodsExperiment
 
             if (input.WorkerRemovePressed != ResourceType.None)
             {
-                ResourceType resourceType = input.WorkerAddPressed;
+                ResourceType resourceType = input.WorkerRemovePressed;
                 if (workers[resourceType] > 0)
                 {
                     workers[resourceType] -= 1;

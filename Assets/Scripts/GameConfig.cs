@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace GodsExperiment
@@ -13,6 +14,7 @@ namespace GodsExperiment
 
         [field: SerializeField] public ResourceDefinition[] ResourceDefinitions { get; private set; }
         [field: SerializeField] public ResourceRequirementSet[] ResourceRequirementSets { get; private set; }
+        [field: SerializeField] public ResourceWorkerSlotsSet[] InitialResourceWorkerSlotsSets { get; private set; }
 
         [field: Range(min: 0, max: 1)]
         [field: SerializeField] public float UnworkedResourceDecayRate { get; private set; }
@@ -42,6 +44,13 @@ namespace GodsExperiment
                     return definition.Color;
 
             return Color.white;
+        }
+
+        [Serializable]
+        public class ResourceWorkerSlotsSet
+        {
+            [field: SerializeField] public ResourceType ResourceType { get; private set; }
+            [field: SerializeField] public int WorkerSlots { get; private set; }
         }
     }
 }

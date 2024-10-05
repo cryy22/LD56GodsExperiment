@@ -53,4 +53,13 @@ MonoBehaviour:
     <RequiredResources>k__BackingField:
     - <Resource>k__BackingField: 2
       <Quantity>k__BackingField: 1
+  <InitialResourceWorkerSlotsSets>k__BackingField:
+  - <ResourceType>k__BackingField: 1
+    <WorkerSlots>k__BackingField: 2
+  - <ResourceType>k__BackingField: 2
+    <WorkerSlots>k__BackingField: 1
+  - <ResourceType>k__BackingField: 3
+    <WorkerSlots>k__BackingField: 1
+  - <ResourceType>k__BackingField: 8
+    <WorkerSlots>k__BackingField: 1
   <UnworkedResourceDecayRate>k__BackingField: 0.332
