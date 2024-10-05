@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9631456923cc4e9dbaabfa38f0ce8a7c, type: 3}
   m_Name: DefaultGameConfig
   m_EditorClassIdentifier: 
+  <TimePerDay>k__BackingField: 30
   <InitialWorkers>k__BackingField: 4
   <ResourceDefinitions>k__BackingField:
   - <ResourceType>k__BackingField: 1

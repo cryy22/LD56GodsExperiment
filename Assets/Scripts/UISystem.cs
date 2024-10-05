@@ -31,6 +31,7 @@ namespace GodsExperiment
             }
 
             uiState.UnemploymentGauge.SetCount(gameState.Resources.UnassignedWorkers);
+            uiState.DayProgressBar.SetProgress(gameState.Time.DayProgress);
         }
     }
 }

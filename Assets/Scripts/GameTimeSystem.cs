@@ -13,6 +13,12 @@ namespace GodsExperiment
                 ? Time.deltaTime * state.TimeSpeed
                 : 0;
             state.Time += state.DeltaTime;
+
+            if (state.Time >= state.TimePerDay)
+            {
+                state.Day += 1;
+                state.Time -= state.TimePerDay;
+            }
         }
     }
 }

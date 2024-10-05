@@ -13,6 +13,8 @@ namespace GodsExperiment
 
         [field: SerializeField] public WorkerGauge UnemploymentGauge { get; private set; }
 
+        [field: SerializeField] public ProgressBar DayProgressBar { get; private set; }
+
         public IReadOnlyDictionary<ResourceType, List<ResourceControl>> ResourcesResourceControls =>
             _resourcesResourceControls;
         public IReadOnlyDictionary<ResourceType, List<ResourceGauge>> ResourcesResourceGauges =>

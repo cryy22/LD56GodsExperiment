@@ -16,7 +16,10 @@ namespace GodsExperiment
 
         public void ResetAll()
         {
-            Time = new TimeState();
+            Time = new TimeState
+            {
+                TimePerDay = Config.TimePerDay,
+            };
             Resources = new ResourcesState(
                 initialWorkers: Config.InitialWorkers,
                 requirementSets: Config.ResourceRequirementSets
