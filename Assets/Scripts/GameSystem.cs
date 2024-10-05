@@ -29,10 +29,10 @@ namespace GodsExperiment
 
         private void Update()
         {
-            _inputSystem.Update(state: State.Input, uiState: UIState);
-            _gameTimeSystem.Update(state: State.Time, inputState: State.Input);
-            _workerAssignmentSystem.Update(workers: State.Workers, input: State.Input);
-            _resourceProgressSystem.Update(state: State.Resources, workersState: State.Workers, timeState: State.Time);
+            _inputSystem.Update(input: State.Input, uiState: UIState);
+            _gameTimeSystem.Update(time: State.Time, input: State.Input);
+            _workerAssignmentSystem.Update(workers: State.Workers, resources: State.Resources, input: State.Input);
+            _resourceProgressSystem.Update(resources: State.Resources, workers: State.Workers, time: State.Time);
             _foodSystem.Update(time: State.Time, food: State.Resources[ResourceType.Food], workers: State.Workers);
             _uiSystem.Update(state: State, uiState: UIState);
         }

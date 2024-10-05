@@ -7,6 +7,7 @@ namespace GodsExperiment
         public readonly Dictionary<ResourceType, float> ResourceCosts = new();
 
         public float Count { get; set; }
+        public int WorkerSlots { get; set; } = 1;
         public float WorkUnitsAdded { get; set; }
         public float WorkUnitsPerUnit { get; set; }
         public bool IsPaid { get; set; }

@@ -4,14 +4,14 @@ namespace GodsExperiment
 {
     public class ResourceProgressSystem
     {
-        public void Update(ResourcesState state, WorkersState workersState, TimeState timeState)
+        public void Update(ResourcesState resources, WorkersState workers, TimeState time)
         {
-            foreach (ResourceType resourceType in state.ResourceTypes)
+            foreach (ResourceType resourceType in resources.ResourceTypes)
                 UpdateResource(
                     resourceType: resourceType,
-                    resources: state,
-                    workers: workersState,
-                    deltaTime: timeState.DeltaTime
+                    resources: resources,
+                    workers: workers,
+                    deltaTime: time.DeltaTime
                 );
         }
 

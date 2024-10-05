@@ -5,27 +5,27 @@ namespace GodsExperiment
 {
     public class InputSystem
     {
-        public void Update(InputState state, UIState uiState)
+        public void Update(InputState input, UIState uiState)
         {
-            bool wasPauseDown = state.PauseDown;
+            bool wasPauseDown = input.PauseDown;
 
-            ResetInputs(state);
+            ResetInputs(input);
 
-            state.PauseDown = Input.GetKeyDown(KeyCode.Space);
-            state.PausePressed = state.PauseDown && !wasPauseDown;
+            input.PauseDown = Input.GetKeyDown(KeyCode.Space);
+            input.PausePressed = input.PauseDown && !wasPauseDown;
 
             foreach ((ResourceType resourceType, List<WorkerControl> workerControls) in uiState.ResourcesWorkerControls)
             foreach (WorkerControl workerControl in workerControls)
             {
                 if (workerControl.AddRequested)
                 {
-                    state.WorkerAddPressed = resourceType;
+                    input.WorkerAddPressed = resourceType;
                     workerControl.AddRequested = false;
                 }
 
                 if (workerControl.RemoveRequested)
                 {
-                    state.WorkerRemovePressed = resourceType;
+                    input.WorkerRemovePressed = resourceType;
                     workerControl.RemoveRequested = false;
                 }
             }

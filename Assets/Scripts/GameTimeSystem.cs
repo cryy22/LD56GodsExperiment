@@ -4,23 +4,23 @@ namespace GodsExperiment
 {
     public class GameTimeSystem
     {
-        public void Update(TimeState state, InputState inputState)
+        public void Update(TimeState time, InputState input)
         {
-            state.DayChanged = false;
+            time.DayChanged = false;
 
-            if (inputState.PausePressed)
-                state.IsTimePaused = !state.IsTimePaused;
+            if (input.PausePressed)
+                time.IsTimePaused = !time.IsTimePaused;
 
-            state.DeltaTime = !state.IsTimePaused
-                ? Time.deltaTime * state.TimeSpeed
+            time.DeltaTime = !time.IsTimePaused
+                ? Time.deltaTime * time.TimeSpeed
                 : 0;
-            state.Time += state.DeltaTime;
+            time.Time += time.DeltaTime;
 
-            if (state.Time >= state.TimePerDay)
+            if (time.Time >= time.TimePerDay)
             {
-                state.Day += 1;
-                state.Time -= state.TimePerDay;
-                state.DayChanged = true;
+                time.Day += 1;
+                time.Time -= time.TimePerDay;
+                time.DayChanged = true;
             }
         }
     }

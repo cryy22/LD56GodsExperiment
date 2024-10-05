@@ -2,21 +2,27 @@ namespace GodsExperiment
 {
     public class WorkerAssignmentSystem
     {
-        public void Update(WorkersState workers, InputState input)
+        public void Update(WorkersState workers, ResourcesState resources, InputState input)
         {
             if (input.WorkerAddPressed != ResourceType.None)
-                if ((workers[ResourceType.None] > 0) && (workers[input.WorkerAddPressed] < Constants.MaxWorkersPerTask))
+            {
+                ResourceType resourceType = input.WorkerAddPressed;
+                if ((workers[ResourceType.None] > 0) && (workers[resourceType] < resources[resourceType].WorkerSlots))
                 {
-                    workers[input.WorkerAddPressed] += 1;
+                    workers[resourceType] += 1;
                     workers[ResourceType.None] -= 1;
                 }
+            }
 
             if (input.WorkerRemovePressed != ResourceType.None)
-                if (workers[input.WorkerRemovePressed] > 0)
+            {
+                ResourceType resourceType = input.WorkerAddPressed;
+                if (workers[resourceType] > 0)
                 {
-                    workers[input.WorkerRemovePressed] -= 1;
+                    workers[resourceType] -= 1;
                     workers[ResourceType.None] += 1;
                 }
+            }
         }
     }
 }
