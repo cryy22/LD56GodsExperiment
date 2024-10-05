@@ -8,7 +8,7 @@ namespace GodsExperiment
         [SerializeField] private Transform WorkerParent;
         [SerializeField] private GameObject WorkerPrefab;
 
-        private readonly List<GameObject> _workers = new(Constants.MaxWorkersPerResource);
+        private readonly List<GameObject> _workers = new(Constants.MaxWorkersPerTask);
 
         private void Start()
         {
@@ -18,7 +18,7 @@ namespace GodsExperiment
 
         public void SetCount(int count)
         {
-            count = Mathf.Clamp(value: count, min: 0, max: Constants.MaxWorkersPerResource);
+            count = Mathf.Clamp(value: count, min: 0, max: Constants.MaxWorkersPerTask);
 
             while (_workers.Count < count)
             {

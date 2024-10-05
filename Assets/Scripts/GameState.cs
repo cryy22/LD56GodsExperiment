@@ -13,6 +13,7 @@ namespace GodsExperiment
         public TimeState Time { get; private set; }
         public ResourcesState Resources { get; private set; }
         public InputState Input { get; private set; }
+        public WorkersState Workers { get; private set; }
 
         public void ResetAll()
         {
@@ -20,11 +21,13 @@ namespace GodsExperiment
             {
                 TimePerDay = Config.TimePerDay,
             };
-            Resources = new ResourcesState(
-                initialWorkers: Config.InitialWorkers,
-                requirementSets: Config.ResourceRequirementSets
-            );
+            Resources = new ResourcesState(requirementSets: Config.ResourceRequirementSets);
             Input = new InputState();
+            Workers = new WorkersState(Config.InitialWorkers)
+            {
+                DailyWorkerFoodCost = Config.DailyWorkerFoodCost,
+                NewWorkerFoodCost = Config.NewWorkerFoodCost,
+            };
         }
     }
 }

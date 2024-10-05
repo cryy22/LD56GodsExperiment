@@ -25,15 +25,12 @@ namespace GodsExperiment
 
             foreach ((ResourceType resourceType, List<WorkerGauge> workerGauges) in uiState.ResourcesWorkerGauges)
             foreach (WorkerGauge workerGauge in workerGauges)
-            {
-                ResourceState resourceState = gameState.Resources[resourceType];
-                workerGauge.SetCount(resourceState.AssignedWorkers);
-            }
+                workerGauge.SetCount(gameState.Workers[resourceType]);
 
-            uiState.UnemploymentGauge.SetCount(gameState.Resources.UnassignedWorkers);
+            uiState.UnemploymentGauge.SetCount(gameState.Workers[ResourceType.None]);
             uiState.DayProgressBar.SetProgress(gameState.Time.DayProgress);
             if (gameState.Time.DayChanged)
-                uiState.CurrentDayLabel.text = $"day {(gameState.Time.Day + 1).ToString()}";
+                uiState.CurrentDayCount.text = $"day {(gameState.Time.Day + 1).ToString()}";
         }
     }
 }

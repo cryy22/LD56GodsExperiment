@@ -14,8 +14,11 @@ namespace GodsExperiment
 
         [field: SerializeField] public WorkerGauge UnemploymentGauge { get; private set; }
 
+        [field: SerializeField] public TMP_Text WorkerFoodRequirementCount { get; private set; }
+        [field: SerializeField] public TMP_Text NewWorkerRequirementCount { get; private set; }
+
         [field: SerializeField] public ProgressBar DayProgressBar { get; private set; }
-        [field: SerializeField] public TMP_Text CurrentDayLabel { get; private set; }
+        [field: SerializeField] public TMP_Text CurrentDayCount { get; private set; }
 
         public IReadOnlyDictionary<ResourceType, List<ResourceControl>> ResourcesResourceControls =>
             _resourcesResourceControls;

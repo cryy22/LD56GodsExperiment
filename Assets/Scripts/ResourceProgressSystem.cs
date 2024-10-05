@@ -2,13 +2,23 @@ namespace GodsExperiment
 {
     public class ResourceProgressSystem
     {
-        public void Update(ResourcesState state, TimeState timeState)
+        public void Update(ResourcesState state, WorkersState workersState, TimeState timeState)
         {
             foreach (ResourceType resource in state.ResourceTypes)
-                UpdateResource(state: state[resource], resourcesState: state, deltaTime: timeState.DeltaTime);
+                UpdateResource(
+                    state: state[resource],
+                    resourcesState: state,
+                    workersCount: workersState[resource],
+                    deltaTime: timeState.DeltaTime
+                );
         }
 
-        private static void UpdateResource(ResourceState state, ResourcesState resourcesState, float deltaTime)
+        private static void UpdateResource(
+            ResourceState state,
+            ResourcesState resourcesState,
+            int workersCount,
+            float deltaTime
+        )
         {
             if (!state.IsPaid)
             {
@@ -20,7 +30,7 @@ namespace GodsExperiment
                         break;
                     }
 
-                if (isResourceAffordable && (state.AssignedWorkers > 0))
+                if (isResourceAffordable && (workersCount > 0))
                 {
                     foreach ((ResourceType requiredResource, float cost) in state.ResourceCosts)
                         resourcesState[requiredResource].Count -= cost;
@@ -33,7 +43,7 @@ namespace GodsExperiment
                 }
             }
 
-            state.WorkUnitsAdded += deltaTime * state.AssignedWorkers;
+            state.WorkUnitsAdded += deltaTime * workersCount;
             if (state.WorkUnitsAdded >= state.WorkUnitsPerUnit)
             {
                 state.Count += 1;

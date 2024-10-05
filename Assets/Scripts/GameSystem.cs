@@ -29,8 +29,8 @@ namespace GodsExperiment
         {
             _inputSystem.Update(state: State.Input, uiState: UIState);
             _gameTimeSystem.Update(state: State.Time, inputState: State.Input);
-            _workerSystem.Update(resources: State.Resources, input: State.Input);
-            _resourceProgressSystem.Update(state: State.Resources, timeState: State.Time);
+            _workerSystem.Update(workers: State.Workers, input: State.Input);
+            _resourceProgressSystem.Update(state: State.Resources, workersState: State.Workers, timeState: State.Time);
             _uiSystem.Update(gameState: State, uiState: UIState);
         }
     }
