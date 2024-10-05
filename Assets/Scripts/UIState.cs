@@ -16,6 +16,8 @@ namespace GodsExperiment
 
         [field: SerializeField] public TMP_Text WorkerFoodRequirementCount { get; private set; }
         [field: SerializeField] public TMP_Text NewWorkerRequirementCount { get; private set; }
+        [field: SerializeField] public GameObject UnderfedProductivityPenaltyCountLabel { get; private set; }
+        [field: SerializeField] public TMP_Text UnderfedProductivityPenaltyCount { get; private set; }
 
         [field: SerializeField] public ProgressBar DayProgressBar { get; private set; }
         [field: SerializeField] public TMP_Text CurrentDayCount { get; private set; }

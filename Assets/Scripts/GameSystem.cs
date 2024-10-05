@@ -11,7 +11,7 @@ namespace GodsExperiment
         private ResourceProgressSystem _resourceProgressSystem;
         private InputSystem _inputSystem;
         private UISystem _uiSystem;
-        private WorkerSystem _workerSystem;
+        private WorkerAssignmentSystem _workerAssignmentSystem;
         private FoodSystem _foodSystem;
 
         private void Start()
@@ -23,7 +23,7 @@ namespace GodsExperiment
             _resourceProgressSystem = new ResourceProgressSystem();
             _inputSystem = new InputSystem();
             _uiSystem = new UISystem(config: State.Config, uiState: UIState);
-            _workerSystem = new WorkerSystem();
+            _workerAssignmentSystem = new WorkerAssignmentSystem();
             _foodSystem = new FoodSystem();
         }
 
@@ -31,10 +31,10 @@ namespace GodsExperiment
         {
             _inputSystem.Update(state: State.Input, uiState: UIState);
             _gameTimeSystem.Update(state: State.Time, inputState: State.Input);
-            _workerSystem.Update(workers: State.Workers, input: State.Input);
+            _workerAssignmentSystem.Update(workers: State.Workers, input: State.Input);
             _resourceProgressSystem.Update(state: State.Resources, workersState: State.Workers, timeState: State.Time);
             _foodSystem.Update(time: State.Time, food: State.Resources[ResourceType.Food], workers: State.Workers);
-            _uiSystem.Update(gameState: State, uiState: UIState);
+            _uiSystem.Update(state: State, uiState: UIState);
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace GodsExperiment
 {
-    public class WorkerSystem
+    public class WorkerAssignmentSystem
     {
         public void Update(WorkersState workers, InputState input)
         {

@@ -8,8 +8,8 @@ namespace GodsExperiment
         public float DailyWorkerFoodCost { get; set; }
         public float NewWorkerFoodCost { get; set; }
         public float TotalDailyFoodCost => DailyWorkerFoodCost * GetTotalWorkers();
-
-        // public float Underfed { get; set; } = 0; // punishment for failing to feed
+        public bool IsUnderfed { get; set; }
+        public float UnderfedProductivityPenalty { get; set; } = 0;
 
         private readonly Dictionary<ResourceType, int> _workerAllocations = new();
 

@@ -6,38 +6,39 @@ namespace GodsExperiment
     {
         public void Update(ResourcesState state, WorkersState workersState, TimeState timeState)
         {
-            foreach (ResourceType resource in state.ResourceTypes)
+            foreach (ResourceType resourceType in state.ResourceTypes)
                 UpdateResource(
-                    state: state[resource],
-                    resourcesState: state,
-                    workersCount: workersState[resource],
+                    resourceType: resourceType,
+                    resources: state,
+                    workers: workersState,
                     deltaTime: timeState.DeltaTime
                 );
         }
 
         private static void UpdateResource(
-            ResourceState state,
-            ResourcesState resourcesState,
-            int workersCount,
+            ResourceType resourceType,
+            ResourcesState resources,
+            WorkersState workers,
             float deltaTime
         )
         {
-            if (!state.IsPaid)
+            ResourceState resource = resources[resourceType];
+            if (!resource.IsPaid)
             {
                 var isResourceAffordable = true;
-                foreach ((ResourceType requiredResource, float cost) in state.ResourceCosts)
-                    if (cost > resourcesState[requiredResource].Count)
+                foreach ((ResourceType requiredResource, float cost) in resource.ResourceCosts)
+                    if (cost > resources[requiredResource].Count)
                     {
                         isResourceAffordable = false;
                         break;
                     }
 
-                if (isResourceAffordable && (workersCount > 0))
+                if (isResourceAffordable && (workers[resourceType] > 0))
                 {
-                    foreach ((ResourceType requiredResource, float cost) in state.ResourceCosts)
-                        resourcesState[requiredResource].Count -= cost;
+                    foreach ((ResourceType requiredResource, float cost) in resource.ResourceCosts)
+                        resources[requiredResource].Count -= cost;
 
-                    state.IsPaid = true;
+                    resource.IsPaid = true;
                 }
                 else
                 {
@@ -45,18 +46,21 @@ namespace GodsExperiment
                 }
             }
 
-            if (workersCount > 0)
-                state.WorkUnitsAdded += deltaTime * workersCount;
+            if (workers[resourceType] > 0)
+                resource.WorkUnitsAdded +=
+                    workers[resourceType]
+                    * (1 - workers.UnderfedProductivityPenalty)
+                    * deltaTime;
             else
-                state.WorkUnitsAdded -= deltaTime * resourcesState.UnworkedResourcesDecayRate;
+                resource.WorkUnitsAdded -= deltaTime * resources.UnworkedResourcesDecayRate;
 
-            state.WorkUnitsAdded = Mathf.Max(a: state.WorkUnitsAdded, b: 0);
+            resource.WorkUnitsAdded = Mathf.Max(a: resource.WorkUnitsAdded, b: 0);
 
-            if (state.WorkUnitsAdded >= state.WorkUnitsPerUnit)
+            if (resource.WorkUnitsAdded >= resource.WorkUnitsPerUnit)
             {
-                state.Count += 1;
-                state.WorkUnitsAdded = 0;
-                state.IsPaid = false;
+                resource.Count += 1;
+                resource.WorkUnitsAdded = 0;
+                resource.IsPaid = false;
             }
         }
     }
