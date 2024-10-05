@@ -12,6 +12,8 @@ namespace GodsExperiment
 
         private void Start()
         {
+            State.ResetAll();
+            
             _gameTimeSystem = new GameTimeSystem();
             _resourceProgressSystem = new ResourceProgressSystem();
             _inputSystem = new InputSystem();
@@ -21,7 +23,7 @@ namespace GodsExperiment
         {
             _inputSystem.Update(State.InputState);
             _gameTimeSystem.Update(State.TimeState, State.InputState);
-            _resourceProgressSystem.Update(State.TimeState, State.ResourceState);
+            _resourceProgressSystem.Update(State.ResourceState, State.TimeState);
         }
     }
 }
