@@ -4,9 +4,9 @@ namespace GodsExperiment
     {
         public void Update(GameState gameState, UIState uiState)
         {
-            UpdateResourceGauge(state: gameState.ResourcesState.Booite, gauge: uiState.BooiteGauge);
-            UpdateResourceGauge(state: gameState.ResourcesState.Booium, gauge: uiState.BooiumGauge);
-            UpdateResourceGauge(state: gameState.ResourcesState.Boos, gauge: uiState.BoosGauge);
+            UpdateResourceGauge(state: gameState.ResourcesState[ResourceType.Booite], gauge: uiState.BooiteGauge);
+            UpdateResourceGauge(state: gameState.ResourcesState[ResourceType.Booium], gauge: uiState.BooiumGauge);
+            UpdateResourceGauge(state: gameState.ResourcesState[ResourceType.Boos], gauge: uiState.BoosGauge);
         }
 
         private void UpdateResourceGauge(ResourceState state, ResourceGauge gauge)

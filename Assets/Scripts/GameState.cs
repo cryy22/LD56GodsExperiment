@@ -8,9 +8,7 @@ namespace GodsExperiment
         private static GameState _instance;
         public static GameState I => _instance ??= Resources.Load<GameState>("State/GameState");
 
-        [SerializeField] private ResourceRequirements BooiteResourceRequirements;
-        [SerializeField] private ResourceRequirements BooiumResourceRequirements;
-        [SerializeField] private ResourceRequirements BoosResourceRequirements;
+        [SerializeField] private ResourceRequirements[] ResourceRequirements;
 
         public TimeState TimeState { get; private set; }
         public ResourcesState ResourcesState { get; private set; }
@@ -19,11 +17,7 @@ namespace GodsExperiment
         public void ResetAll()
         {
             TimeState = new TimeState();
-            ResourcesState = new ResourcesState(
-                booiteRequirements: BooiteResourceRequirements,
-                booiumRequirements: BooiumResourceRequirements,
-                boosResourceRequirements: BoosResourceRequirements
-            );
+            ResourcesState = new ResourcesState(ResourceRequirements);
             InputState = new InputState();
         }
     }

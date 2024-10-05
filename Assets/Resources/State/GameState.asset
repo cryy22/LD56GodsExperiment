@@ -12,18 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d778c87b15e74e859fe99c81f20c7aa3, type: 3}
   m_Name: GameState
   m_EditorClassIdentifier: 
-  BooiteResourceRequirements:
+  ResourceRequirements:
+  - <ResourceType>k__BackingField: 1
     <WorkUnits>k__BackingField: 1
-    <Booite>k__BackingField: 0
-    <Booium>k__BackingField: 0
-    <Boos>k__BackingField: 0
-  BooiumResourceRequirements:
+    <RequiredResources>k__BackingField: []
+  - <ResourceType>k__BackingField: 2
     <WorkUnits>k__BackingField: 2
-    <Booite>k__BackingField: 4
-    <Booium>k__BackingField: 0
-    <Boos>k__BackingField: 0
-  BoosResourceRequirements:
+    <RequiredResources>k__BackingField:
+    - <Resource>k__BackingField: 1
+      <Quantity>k__BackingField: 2
+  - <ResourceType>k__BackingField: 3
     <WorkUnits>k__BackingField: 4
-    <Booite>k__BackingField: 0
-    <Booium>k__BackingField: 2
-    <Boos>k__BackingField: 0
+    <RequiredResources>k__BackingField:
+    - <Resource>k__BackingField: 2
+      <Quantity>k__BackingField: 2

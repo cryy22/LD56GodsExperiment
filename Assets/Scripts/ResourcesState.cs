@@ -1,20 +1,18 @@
+using System.Collections.Generic;
+
 namespace GodsExperiment
 {
     public class ResourcesState
     {
-        public ResourceState Booite { get; private set; }
-        public ResourceState Booium { get; private set; }
-        public ResourceState Boos { get; private set; }
+        public IEnumerable<ResourceType> ResourceTypes => _resourceStates.Keys;
+        private readonly Dictionary<ResourceType, ResourceState> _resourceStates = new();
 
-        public ResourcesState(
-            ResourceRequirements booiteRequirements,
-            ResourceRequirements booiumRequirements,
-            ResourceRequirements boosResourceRequirements
-        )
+        public ResourcesState(ResourceRequirements[] requirements)
         {
-            Booite = new ResourceState(booiteRequirements);
-            Booium = new ResourceState(booiumRequirements);
-            Boos = new ResourceState(boosResourceRequirements);
+            foreach (ResourceRequirements resourceRequirements in requirements)
+                _resourceStates[resourceRequirements.ResourceType] = new ResourceState(resourceRequirements);
         }
+
+        public ResourceState this[ResourceType resourceType] => _resourceStates[resourceType];
     }
 }
