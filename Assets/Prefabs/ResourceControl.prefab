@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 3243953356641204132}
   - component: {fileID: 2861174909608160663}
   m_Layer: 0
-  m_Name: WorkerSet
+  m_Name: WorkerGauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -516,6 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WorkerAddButton: {fileID: 247877872599720717}
   WorkerRemoveButton: {fileID: 859538945025425130}
+  <Gauge>k__BackingField: {fileID: 7367499040429468234}
 --- !u!1 &7076293721680827623
 GameObject:
   m_ObjectHideFlags: 0

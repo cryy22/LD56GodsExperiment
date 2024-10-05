@@ -10,11 +10,18 @@ namespace GodsExperiment
                 resourceMap.ResourceGauge.SetValues(count: resourceState.Count, progress: resourceState.Progress);
             }
 
-            foreach (UIState.ResourceToWorkerGaugeMap workerMap in uiState.WorkerGauges)
+            foreach (UIState.ResourceToWorkerGaugeMap workerGaugeMap in uiState.WorkerGauges)
             {
-                ResourceState resourceState = gameState.Resources[workerMap.ResourceType];
-                workerMap.WorkerGauge.SetCount(resourceState.AssignedWorkers);
+                ResourceState resourceState = gameState.Resources[workerGaugeMap.ResourceType];
+                workerGaugeMap.WorkerGauge.SetCount(resourceState.AssignedWorkers);
             }
+
+            foreach (UIState.ResourceToWorkerControlMap workerControlMap in uiState.WorkerControls)
+            {
+                ResourceState resourceState = gameState.Resources[workerControlMap.ResourceType];
+                workerControlMap.WorkerControl.Gauge.SetCount(resourceState.AssignedWorkers);
+            }
+
 
             uiState.UnemploymentGauge.SetCount(gameState.Resources.UnassignedWorkers);
         }

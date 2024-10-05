@@ -8,6 +8,8 @@ namespace GodsExperiment
         [SerializeField] private Button WorkerAddButton;
         [SerializeField] private Button WorkerRemoveButton;
 
+        [field: SerializeField] public WorkerGauge Gauge { get; private set; }
+
         public bool AddRequested { get; set; }
         public bool RemoveRequested { get; set; }
 

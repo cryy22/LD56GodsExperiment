@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d778c87b15e74e859fe99c81f20c7aa3, type: 3}
   m_Name: GameState
   m_EditorClassIdentifier: 
-  InitialWorkers: 3
+  InitialWorkers: 4
   ResourceRequirements:
   - <ResourceType>k__BackingField: 1
     <WorkUnits>k__BackingField: 1
