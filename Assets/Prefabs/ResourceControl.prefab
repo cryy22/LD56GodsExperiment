@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WorkerParent: {fileID: 3337581975666531892}
-  WorkerPrefab: {fileID: 2615329618082675317, guid: 190d085a1ed92416c872498bce3234a6, type: 3}
+  WorkerPrefab: {fileID: 8505006245704408096, guid: 190d085a1ed92416c872498bce3234a6, type: 3}
 --- !u!114 &3243953356641204132
 MonoBehaviour:
   m_ObjectHideFlags: 0

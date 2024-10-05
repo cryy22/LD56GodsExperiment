@@ -28,9 +28,13 @@ namespace GodsExperiment
 
             foreach ((ResourceType resourceType, List<WorkerGauge> workerGauges) in uiState.ResourcesWorkerGauges)
             foreach (WorkerGauge workerGauge in workerGauges)
-                workerGauge.SetCount(state.Workers[resourceType]);
+            {
+                workerGauge.SetSlots(state.Resources[resourceType].WorkerSlots);
+                workerGauge.SetWorkers(state.Workers[resourceType]);
+            }
 
-            uiState.UnemploymentGauge.SetCount(state.Workers[ResourceType.None]);
+            uiState.UnemploymentGauge.SetSlots(state.Workers.GetTotalWorkers());
+            uiState.UnemploymentGauge.SetWorkers(state.Workers[ResourceType.None]);
 
             uiState.WorkerFoodRequirementCount.text =
                 $"{(int) state.Workers.TotalDailyFoodCost}/day";
