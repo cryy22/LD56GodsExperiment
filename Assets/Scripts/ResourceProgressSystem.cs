@@ -20,7 +20,7 @@ namespace GodsExperiment
                         break;
                     }
 
-                if (isResourceAffordable)
+                if (isResourceAffordable && (state.AssignedWorkers > 0))
                 {
                     foreach ((ResourceType requiredResource, float cost) in state.ResourceCosts)
                         resourcesState[requiredResource].Count -= cost;
@@ -33,7 +33,7 @@ namespace GodsExperiment
                 }
             }
 
-            state.WorkUnitsAdded += deltaTime;
+            state.WorkUnitsAdded += deltaTime * state.AssignedWorkers;
             if (state.WorkUnitsAdded >= state.WorkUnitsPerUnit)
             {
                 state.Count += 1;
