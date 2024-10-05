@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace GodsExperiment
@@ -14,6 +15,7 @@ namespace GodsExperiment
         [field: SerializeField] public WorkerGauge UnemploymentGauge { get; private set; }
 
         [field: SerializeField] public ProgressBar DayProgressBar { get; private set; }
+        [field: SerializeField] public TMP_Text CurrentDayLabel { get; private set; }
 
         public IReadOnlyDictionary<ResourceType, List<ResourceControl>> ResourcesResourceControls =>
             _resourcesResourceControls;

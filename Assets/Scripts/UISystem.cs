@@ -32,6 +32,8 @@ namespace GodsExperiment
 
             uiState.UnemploymentGauge.SetCount(gameState.Resources.UnassignedWorkers);
             uiState.DayProgressBar.SetProgress(gameState.Time.DayProgress);
+            if (gameState.Time.DayChanged)
+                uiState.CurrentDayLabel.text = $"day {(gameState.Time.Day + 1).ToString()}";
         }
     }
 }

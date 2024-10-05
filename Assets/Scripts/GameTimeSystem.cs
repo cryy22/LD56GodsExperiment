@@ -6,6 +6,8 @@ namespace GodsExperiment
     {
         public void Update(TimeState state, InputState inputState)
         {
+            state.DayChanged = false;
+
             if (inputState.PausePressed)
                 state.IsTimePaused = !state.IsTimePaused;
 
@@ -18,6 +20,7 @@ namespace GodsExperiment
             {
                 state.Day += 1;
                 state.Time -= state.TimePerDay;
+                state.DayChanged = true;
             }
         }
     }
