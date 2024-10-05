@@ -14,6 +14,9 @@ namespace GodsExperiment
         [field: SerializeField] public ResourceDefinition[] ResourceDefinitions { get; private set; }
         [field: SerializeField] public ResourceRequirementSet[] ResourceRequirementSets { get; private set; }
 
+        [field: Range(min: 0, max: 1)]
+        [field: SerializeField] public float UnworkedResourceDecayRate { get; private set; }
+
         public Sprite GetSpriteForResource(ResourceType resourceType)
         {
             foreach (ResourceDefinition definition in ResourceDefinitions)

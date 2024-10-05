@@ -4,6 +4,8 @@ namespace GodsExperiment
 {
     public class ResourcesState
     {
+        public float UnworkedResourcesDecayRate { get; set; }
+
         public IEnumerable<ResourceType> ResourceTypes => _resourceStates.Keys;
         private readonly Dictionary<ResourceType, ResourceState> _resourceStates = new();
 

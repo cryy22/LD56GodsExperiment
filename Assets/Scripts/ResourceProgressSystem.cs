@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace GodsExperiment
 {
     public class ResourceProgressSystem
@@ -43,7 +45,13 @@ namespace GodsExperiment
                 }
             }
 
-            state.WorkUnitsAdded += deltaTime * workersCount;
+            if (workersCount > 0)
+                state.WorkUnitsAdded += deltaTime * workersCount;
+            else
+                state.WorkUnitsAdded -= deltaTime * resourcesState.UnworkedResourcesDecayRate;
+
+            state.WorkUnitsAdded = Mathf.Max(a: state.WorkUnitsAdded, b: 0);
+
             if (state.WorkUnitsAdded >= state.WorkUnitsPerUnit)
             {
                 state.Count += 1;

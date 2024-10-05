@@ -53,3 +53,4 @@ MonoBehaviour:
     <RequiredResources>k__BackingField:
     - <Resource>k__BackingField: 2
       <Quantity>k__BackingField: 1
+  <UnworkedResourceDecayRate>k__BackingField: 0.332

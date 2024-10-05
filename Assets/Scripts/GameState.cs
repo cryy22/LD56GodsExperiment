@@ -21,7 +21,10 @@ namespace GodsExperiment
             {
                 TimePerDay = Config.TimePerDay,
             };
-            Resources = new ResourcesState(requirementSets: Config.ResourceRequirementSets);
+            Resources = new ResourcesState(requirementSets: Config.ResourceRequirementSets)
+            {
+                UnworkedResourcesDecayRate = Config.UnworkedResourceDecayRate,
+            };
             Input = new InputState();
             Workers = new WorkersState(Config.InitialWorkers)
             {
