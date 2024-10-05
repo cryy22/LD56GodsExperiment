@@ -27,7 +27,7 @@ namespace GodsExperiment
         {
             _inputSystem.Update(State.InputState);
             _gameTimeSystem.Update(State.TimeState, State.InputState);
-            _resourceProgressSystem.Update(State.ResourceState, State.TimeState);
+            _resourceProgressSystem.Update(State.ResourcesState, State.TimeState);
             _uiSystem.Update(State, UIState);
         }
     }

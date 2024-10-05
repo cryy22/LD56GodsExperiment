@@ -7,7 +7,7 @@ namespace GodsExperiment
     {
         [SerializeField] private Image FillImage;
 
-        public void SetValue(float value)
+        public void SetProgress(float value)
         {
             FillImage.fillAmount = value;
         }

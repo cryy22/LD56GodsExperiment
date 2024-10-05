@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GodsExperiment
 {
@@ -8,21 +9,17 @@ namespace GodsExperiment
         private static GameState _instance;
         public static GameState I => _instance ??= Resources.Load<GameState>("State/GameState");
 
-        [SerializeField] private float WorkUnitsPerBooite;
+        [SerializeField] private ResourceRequirements BooiteResourceRequirements;
+        [SerializeField] private ResourceRequirements BooiumResourceRequirements;
 
         public TimeState TimeState { get; private set; }
-        public ResourceState ResourceState { get; private set; }
+        public ResourcesState ResourcesState { get; private set; }
         public InputState InputState { get; private set; }
 
         public void ResetAll()
         {
             TimeState = new TimeState();
-            
-            ResourceState = new ResourceState
-            {
-                WorkUnitsPerBooite = WorkUnitsPerBooite,
-            };
-
+            ResourcesState = new ResourcesState(BooiteResourceRequirements, BooiumResourceRequirements);
             InputState = new InputState();
         }
     }
