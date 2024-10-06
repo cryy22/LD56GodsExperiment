@@ -4,7 +4,7 @@ namespace GodsExperiment
 {
     public class InputSystem
     {
-        public void Update(InputState input, UIState uiState)
+        public void Update(InputState input)
         {
             bool wasPauseDown = input.PauseDown;
 

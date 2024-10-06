@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace GodsExperiment
 {
+    [DefaultExecutionOrder(100)]
     public class GameSystem : MonoBehaviour
     {
         private static GameState State => GameState.I;
@@ -31,7 +32,7 @@ namespace GodsExperiment
 
         private void Update()
         {
-            _inputSystem.Update(input: State.Input, uiState: UIState);
+            _inputSystem.Update(input: State.Input);
             _gameTimeSystem.Update(time: State.Time, input: State.Input);
             _workerAssignmentSystem.Update(workers: State.Workers, resources: State.Resources, input: State.Input);
             _resourceProgressSystem.Update(resources: State.Resources, workers: State.Workers, time: State.Time);

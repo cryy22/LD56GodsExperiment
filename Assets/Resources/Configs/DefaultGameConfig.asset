@@ -40,7 +40,7 @@ MonoBehaviour:
     <Color>k__BackingField: {r: 0, g: 0.79607844, b: 0, a: 1}
   - <ResourceType>k__BackingField: 9
     <Name>k__BackingField: Construction
-    <Icon>k__BackingField: {fileID: 0}
+    <Icon>k__BackingField: {fileID: 21300000, guid: 14109016d652b4dc68742d9259bb0407, type: 3}
     <Color>k__BackingField: {r: 0.8980392, g: 0.29803923, b: 0, a: 1}
   <ResourceRequirementSets>k__BackingField:
   - <ResourceType>k__BackingField: 1
@@ -62,7 +62,7 @@ MonoBehaviour:
     - <Resource>k__BackingField: 2
       <Quantity>k__BackingField: 1
   - <ResourceType>k__BackingField: 9
-    <WorkUnits>k__BackingField: 1
+    <WorkUnits>k__BackingField: 4
     <RequiredResources>k__BackingField: []
   <InitialResourceWorkerSlotsSets>k__BackingField:
   - <ResourceType>k__BackingField: 1
@@ -81,4 +81,5 @@ MonoBehaviour:
     <RequiredResources>k__BackingField:
     - <Resource>k__BackingField: 3
       <Quantity>k__BackingField: 1
+  <ResourcesAvailableForConstruction>k__BackingField: 0100000002000000030000000800000009000000
   <UnworkedResourceDecayRate>k__BackingField: 0.332

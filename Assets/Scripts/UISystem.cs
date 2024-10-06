@@ -27,6 +27,11 @@ namespace GodsExperiment
                 control.ResourceType = resourceType;
 
             uiState.UnderfedProductivityPenaltyCountLabel.SetActive(false);
+
+            uiState.ConstructionQueueControl.SetAvailableResources(
+                resourceTypes: config.ResourcesAvailableForConstruction,
+                config: config
+            );
         }
 
         public void Update(GameState state, UIState uiState)

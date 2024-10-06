@@ -20,6 +20,7 @@ namespace GodsExperiment
         [field: SerializeField] public TMP_Text UnderfedProductivityPenaltyCount { get; private set; }
 
         [field: SerializeField] public ConstructionQueueGauge ConstructionQueueGauge { get; private set; }
+        [field: SerializeField] public ConstructionQueueControl ConstructionQueueControl { get; private set; }
 
         [field: SerializeField] public ProgressBar DayProgressBar { get; private set; }
         [field: SerializeField] public TMP_Text CurrentDayCount { get; private set; }
