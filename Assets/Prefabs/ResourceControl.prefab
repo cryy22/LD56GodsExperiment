@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 42
+  m_MinHeight: 36
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -482,8 +482,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 16}
+  m_AnchoredPosition: {x: 26, y: 0}
+  m_SizeDelta: {x: -52, y: 16}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &3976699145501686028
 MonoBehaviour:
@@ -813,6 +813,30 @@ PrefabInstance:
     - target: {fileID: 1807783458628799477, guid: 0e65e611c04ac4f19872b59276539051, type: 3}
       propertyPath: m_Name
       value: ResourceGauge
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689906575092167057, guid: 0e65e611c04ac4f19872b59276539051, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689906575092167057, guid: 0e65e611c04ac4f19872b59276539051, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689906575092167057, guid: 0e65e611c04ac4f19872b59276539051, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689906575092167057, guid: 0e65e611c04ac4f19872b59276539051, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689906575092167057, guid: 0e65e611c04ac4f19872b59276539051, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689906575092167057, guid: 0e65e611c04ac4f19872b59276539051, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3077536819994602022, guid: 0e65e611c04ac4f19872b59276539051, type: 3}
       propertyPath: m_AnchorMax.y
