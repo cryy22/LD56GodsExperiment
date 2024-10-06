@@ -11,5 +11,6 @@ namespace GodsExperiment
         Kees = 6,
         Bukis = 7,
         Food = 8,
+        Construction = 9,
     }
 }

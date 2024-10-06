@@ -34,6 +34,10 @@ MonoBehaviour:
     <Name>k__BackingField: Food
     <Icon>k__BackingField: {fileID: 21300000, guid: a20a37a751d5d4f2897321bb4f37b288, type: 3}
     <Color>k__BackingField: {r: 0, g: 0.79607844, b: 0, a: 1}
+  - <ResourceType>k__BackingField: 9
+    <Name>k__BackingField: Construction
+    <Icon>k__BackingField: {fileID: 0}
+    <Color>k__BackingField: {r: 0.8980392, g: 0.29803923, b: 0, a: 1}
   <ResourceRequirementSets>k__BackingField:
   - <ResourceType>k__BackingField: 1
     <WorkUnits>k__BackingField: 1
@@ -53,6 +57,9 @@ MonoBehaviour:
     <RequiredResources>k__BackingField:
     - <Resource>k__BackingField: 2
       <Quantity>k__BackingField: 1
+  - <ResourceType>k__BackingField: 9
+    <WorkUnits>k__BackingField: 1
+    <RequiredResources>k__BackingField: []
   <InitialResourceWorkerSlotsSets>k__BackingField:
   - <ResourceType>k__BackingField: 1
     <WorkerSlots>k__BackingField: 2
@@ -61,5 +68,7 @@ MonoBehaviour:
   - <ResourceType>k__BackingField: 3
     <WorkerSlots>k__BackingField: 1
   - <ResourceType>k__BackingField: 8
+    <WorkerSlots>k__BackingField: 1
+  - <ResourceType>k__BackingField: 9
     <WorkerSlots>k__BackingField: 1
   <UnworkedResourceDecayRate>k__BackingField: 0.332

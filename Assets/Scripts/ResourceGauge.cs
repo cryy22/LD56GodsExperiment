@@ -7,7 +7,6 @@ namespace GodsExperiment
     public class ResourceGauge : MonoBehaviour
     {
         [SerializeField] private TMP_Text CountText;
-        [SerializeField] private TMP_Text NameText;
         [SerializeField] private Image IconImage;
         [SerializeField] private ProgressBar ProgressBar;
 

@@ -14,6 +14,7 @@ namespace GodsExperiment
         public ResourcesState Resources { get; private set; }
         public InputState Input { get; private set; }
         public WorkersState Workers { get; private set; }
+        public ConstructionState Construction { get; private set; }
 
         public void ResetAll()
         {
@@ -34,6 +35,7 @@ namespace GodsExperiment
                 DailyWorkerFoodCost = Config.DailyWorkerFoodCost,
                 NewWorkerFoodCost = Config.NewWorkerFoodCost,
             };
+            Construction = new ConstructionState();
         }
     }
 }

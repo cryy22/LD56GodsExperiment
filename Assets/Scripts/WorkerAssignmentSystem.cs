@@ -5,24 +5,18 @@ namespace GodsExperiment
         public void Update(WorkersState workers, ResourcesState resources, InputState input)
         {
             if (input.WorkerAddPressed != ResourceType.None)
-            {
-                ResourceType resourceType = input.WorkerAddPressed;
-                if ((workers[ResourceType.None] > 0) && (workers[resourceType] < resources[resourceType].WorkerSlots))
-                {
-                    workers[resourceType] += 1;
-                    workers[ResourceType.None] -= 1;
-                }
-            }
+                WorkerAssigner.AssignWorker(
+                    workers: workers,
+                    resources: resources,
+                    resourceType: input.WorkerAddPressed
+                );
 
             if (input.WorkerRemovePressed != ResourceType.None)
-            {
-                ResourceType resourceType = input.WorkerRemovePressed;
-                if (workers[resourceType] > 0)
-                {
-                    workers[resourceType] -= 1;
-                    workers[ResourceType.None] += 1;
-                }
-            }
+                WorkerAssigner.UnassignWorker(
+                    workers: workers,
+                    resources: resources,
+                    resourceType: input.WorkerRemovePressed
+                );
         }
     }
 }
