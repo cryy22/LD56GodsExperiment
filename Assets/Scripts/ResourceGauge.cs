@@ -10,8 +10,14 @@ namespace GodsExperiment
         [SerializeField] private Image IconImage;
         [SerializeField] private ProgressBar ProgressBar;
 
-        public void SetIcon(Sprite icon) { IconImage.sprite = icon; }
+        public void SetIcon(Sprite icon)
+        {
+            IconImage.sprite = icon;
+            IconImage.color = icon ? Color.white : Color.clear;
+        }
+
         public void SetColor(Color color) { ProgressBar.SetColor(color); }
+        public void ShowCountText(bool show) { CountText.gameObject.SetActive(show); }
 
         public void SetValues(float count, float progress)
         {

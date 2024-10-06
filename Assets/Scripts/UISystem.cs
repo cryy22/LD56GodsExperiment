@@ -10,6 +10,14 @@ namespace GodsExperiment
             foreach ((ResourceType resourceType, List<ResourceGauge> gauges) in uiState.ResourcesResourceGauges)
             foreach (ResourceGauge gauge in gauges)
             {
+                gauge.ShowCountText(
+                    resourceType switch
+                    {
+                        ResourceType.Construction => false,
+                        _                         => true,
+                    }
+                );
+
                 gauge.SetIcon(config.GetSpriteForResource(resourceType));
                 gauge.SetColor(config.GetColorForResource(resourceType));
             }
@@ -24,6 +32,9 @@ namespace GodsExperiment
             {
                 ResourceState resourceState = state.Resources[resourceType];
                 resourceGauge.SetValues(count: resourceState.Count, progress: resourceState.Progress);
+
+                if (resourceType == ResourceType.Construction)
+                    resourceGauge.SetIcon(state.Config.GetSpriteForResource(state.Construction.InProgress));
             }
 
             foreach ((ResourceType resourceType, List<WorkerGauge> workerGauges) in uiState.ResourcesWorkerGauges)

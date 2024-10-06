@@ -18,6 +18,10 @@ MonoBehaviour:
   <DailyWorkerFoodCost>k__BackingField: 1
   <NewWorkerFoodCost>k__BackingField: 2
   <ResourceDefinitions>k__BackingField:
+  - <ResourceType>k__BackingField: 0
+    <Name>k__BackingField: Nothing
+    <Icon>k__BackingField: {fileID: 0}
+    <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 0}
   - <ResourceType>k__BackingField: 1
     <Name>k__BackingField: Booite
     <Icon>k__BackingField: {fileID: 21300000, guid: 25afd4abaa27148eba14f1437dbcdcee, type: 3}
