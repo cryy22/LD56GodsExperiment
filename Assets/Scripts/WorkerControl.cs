@@ -10,13 +10,21 @@ namespace GodsExperiment
 
         [field: SerializeField] public WorkerGauge Gauge { get; private set; }
 
-        public bool AddRequested { get; set; }
-        public bool RemoveRequested { get; set; }
+        public ResourceType ResourceType { get; set; }
 
-        private void Start()
+        private void OnEnable()
         {
-            WorkerAddButton.onClick.AddListener(() => AddRequested = true);
-            WorkerRemoveButton.onClick.AddListener(() => RemoveRequested = true);
+            WorkerAddButton.onClick.AddListener(OnAdded);
+            WorkerRemoveButton.onClick.AddListener(OnRemoved);
         }
+
+        private void OnDisable()
+        {
+            WorkerAddButton.onClick.RemoveAllListeners();
+            WorkerRemoveButton.onClick.RemoveAllListeners();
+        }
+
+        private void OnAdded() { GameState.I.Input.WorkerAddPressed = ResourceType; }
+        private void OnRemoved() { GameState.I.Input.WorkerRemovePressed = ResourceType; }
     }
 }

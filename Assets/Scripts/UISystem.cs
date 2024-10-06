@@ -22,6 +22,10 @@ namespace GodsExperiment
                 gauge.SetColor(config.GetColorForResource(resourceType));
             }
 
+            foreach ((ResourceType resourceType, List<WorkerControl> controls) in uiState.ResourcesWorkerControls)
+            foreach (WorkerControl control in controls)
+                control.ResourceType = resourceType;
+
             uiState.UnderfedProductivityPenaltyCountLabel.SetActive(false);
         }
 
