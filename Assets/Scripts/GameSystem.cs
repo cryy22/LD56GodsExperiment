@@ -45,7 +45,7 @@ namespace GodsExperiment
             _gameTimeSystem = new GameTimeSystem();
             _resourceProgressSystem = new ResourceProgressSystem();
             _inputSystem = new InputSystem();
-            _uiSystem = new UISystem(config: State.Config, uiState: UIState);
+            _uiSystem = new UISystem(state: State, uiState: UIState);
             _workerAssignmentSystem = new WorkerAssignmentSystem();
             _foodSystem = new FoodSystem();
             _constructionSystem = new ConstructionSystem();

@@ -5,7 +5,7 @@ namespace GodsExperiment
 {
     public class UISystem
     {
-        public UISystem(GameConfig config, UIState uiState)
+        public UISystem(GameState state, UIState uiState)
         {
             foreach ((ResourceType resourceType, List<ResourceGauge> gauges) in uiState.ResourcesResourceGauges)
             foreach (ResourceGauge gauge in gauges)
@@ -18,8 +18,8 @@ namespace GodsExperiment
                     }
                 );
 
-                gauge.SetIcon(config.GetSpriteForResource(resourceType));
-                gauge.SetColor(config.GetColorForResource(resourceType));
+                gauge.SetIcon(state.Config.GetSpriteForResource(resourceType));
+                gauge.SetColor(state.Config.GetColorForResource(resourceType));
             }
 
             foreach ((ResourceType resourceType, List<WorkerControl> controls) in uiState.ResourcesWorkerControls)
@@ -29,9 +29,11 @@ namespace GodsExperiment
             uiState.UnderfedProductivityPenaltyCountLabel.SetActive(false);
 
             uiState.ConstructionQueueControl.SetAvailableResources(
-                resourceTypes: config.ResourcesAvailableForConstruction,
-                config: config
+                resourceTypes: state.Config.ResourcesAvailableForConstruction,
+                config: state.Config
             );
+
+            uiState.ConversionTable.SetResourceCosts(resources: state.Resources, config: state.Config);
         }
 
         public void Update(GameState state, UIState uiState)
