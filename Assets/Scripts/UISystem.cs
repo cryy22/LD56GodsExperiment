@@ -68,21 +68,18 @@ namespace GodsExperiment
 
             uiState.DayProgressBar.SetProgress(state.Time.DayProgress);
 
-            if (state.Time.DayChanged)
+            if (state.Workers.IsUnderfed)
             {
-                if (state.Workers.IsUnderfed)
-                {
-                    uiState.UnderfedProductivityPenaltyCountLabel.SetActive(true);
-                    uiState.UnderfedProductivityPenaltyCount.text =
-                        $"{(int) (state.Workers.UnderfedProductivityPenalty * 100)}%";
-                }
-                else
-                {
-                    uiState.UnderfedProductivityPenaltyCountLabel.SetActive(false);
-                }
-
-                uiState.CurrentDayCount.text = $"day {(state.Time.Day + 1).ToString()}";
+                uiState.UnderfedProductivityPenaltyCountLabel.SetActive(true);
+                uiState.UnderfedProductivityPenaltyCount.text =
+                    $"{(int) (state.Workers.UnderfedProductivityPenalty * 100)}%";
             }
+            else
+            {
+                uiState.UnderfedProductivityPenaltyCountLabel.SetActive(false);
+            }
+
+            uiState.CurrentDayCount.text = $"day {(state.Time.Day + 1).ToString()}";
         }
     }
 }
