@@ -21,19 +21,19 @@ MonoBehaviour:
   - <ResourceType>k__BackingField: 1
     <Name>k__BackingField: Booite
     <Icon>k__BackingField: {fileID: 21300000, guid: 25afd4abaa27148eba14f1437dbcdcee, type: 3}
-    <Color>k__BackingField: {r: 0.3478863, g: 0.3478863, b: 0.52156866, a: 1}
+    <Color>k__BackingField: {r: 0.59607846, g: 0.6627451, b: 1, a: 1}
   - <ResourceType>k__BackingField: 2
     <Name>k__BackingField: Booium
     <Icon>k__BackingField: {fileID: 21300000, guid: bb974224fe0cd4fbf8f1c08fbc55a3ca, type: 3}
-    <Color>k__BackingField: {r: 1, g: 0.7372549, b: 0.60784316, a: 1}
+    <Color>k__BackingField: {r: 0.29803923, g: 0.41568628, b: 1, a: 1}
   - <ResourceType>k__BackingField: 3
     <Name>k__BackingField: Boos
     <Icon>k__BackingField: {fileID: 21300000, guid: 24d86e90891d5437c956cd75fad93f18, type: 3}
-    <Color>k__BackingField: {r: 0, g: 0, b: 0.521739, a: 1}
+    <Color>k__BackingField: {r: 0.09019608, g: 0.23921569, b: 1, a: 1}
   - <ResourceType>k__BackingField: 8
     <Name>k__BackingField: Food
     <Icon>k__BackingField: {fileID: 21300000, guid: a20a37a751d5d4f2897321bb4f37b288, type: 3}
-    <Color>k__BackingField: {r: 0, g: 0.6698113, b: 0.013541536, a: 1}
+    <Color>k__BackingField: {r: 0, g: 0.79607844, b: 0, a: 1}
   <ResourceRequirementSets>k__BackingField:
   - <ResourceType>k__BackingField: 1
     <WorkUnits>k__BackingField: 1
