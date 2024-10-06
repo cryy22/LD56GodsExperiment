@@ -10,7 +10,7 @@ namespace GodsExperiment
             foreach ((ResourceType resourceType, List<ResourceGauge> gauges) in uiState.ResourcesResourceGauges)
             foreach (ResourceGauge gauge in gauges)
             {
-                gauge.SetName(config.GetNameForResource(resourceType));
+                gauge.SetIcon(config.GetSpriteForResource(resourceType));
                 gauge.SetColor(config.GetColorForResource(resourceType));
             }
 

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace GodsExperiment
 {
@@ -7,9 +8,10 @@ namespace GodsExperiment
     {
         [SerializeField] private TMP_Text CountText;
         [SerializeField] private TMP_Text NameText;
+        [SerializeField] private Image IconImage;
         [SerializeField] private ProgressBar ProgressBar;
 
-        public void SetName(string resourceName) { NameText.text = resourceName.ToLowerInvariant(); }
+        public void SetIcon(Sprite icon) { IconImage.sprite = icon; }
         public void SetColor(Color color) { ProgressBar.SetColor(color); }
 
         public void SetValues(float count, float progress)
