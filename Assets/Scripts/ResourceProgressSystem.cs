@@ -49,7 +49,7 @@ namespace GodsExperiment
             if (workers[resourceType] > 0)
                 resource.WorkUnitsAdded +=
                     workers[resourceType]
-                    * (1 - workers.UnderfedProductivityPenalty)
+                    * workers.Productivity
                     * deltaTime;
             else
                 resource.WorkUnitsAdded -= deltaTime * resources.UnworkedResourcesDecayRate;

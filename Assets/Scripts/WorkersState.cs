@@ -10,6 +10,7 @@ namespace GodsExperiment
         public float TotalDailyFoodCost => DailyWorkerFoodCost * GetTotalWorkers();
         public bool IsUnderfed { get; set; }
         public float UnderfedProductivityPenalty { get; set; } = 0;
+        public float Productivity => 1 - UnderfedProductivityPenalty;
 
         private readonly Dictionary<ResourceType, int> _workerAllocations = new();
 
