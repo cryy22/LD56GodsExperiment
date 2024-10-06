@@ -25,32 +25,18 @@ namespace GodsExperiment
             ResourceState resource = resources[resourceType];
             if (!resource.IsPaid)
             {
-                var isResourceAffordable = true;
-                foreach ((ResourceType requiredResource, float cost) in resource.ResourceCosts)
-                    if (cost > resources[requiredResource].Count)
-                    {
-                        isResourceAffordable = false;
-                        break;
-                    }
-
-                if (isResourceAffordable && (workers[resourceType] > 0))
-                {
-                    foreach ((ResourceType requiredResource, float cost) in resource.ResourceCosts)
-                        resources[requiredResource].Count -= cost;
-
-                    resource.IsPaid = true;
-                }
-                else
-                {
-                    return;
-                }
+                if (workers[resourceType] <= 0) return;
+                resource.IsPaid = ResourcePaymentProcessor.AttemptPayment(
+                    resourceCosts: resource.ResourceCosts,
+                    resources: resources
+                );
             }
+
+            if (!resource.IsPaid) return;
 
             if (workers[resourceType] > 0)
                 resource.WorkUnitsAdded +=
-                    workers[resourceType]
-                    * workers.Productivity
-                    * deltaTime;
+                    workers[resourceType] * workers.Productivity * deltaTime;
             else
                 resource.WorkUnitsAdded -= deltaTime * resources.UnworkedResourcesDecayRate;
 

@@ -27,7 +27,7 @@ namespace GodsExperiment
 
         public void SetIcon(Sprite icon) { ResourceIconImage.sprite = icon; }
 
-        private void OnClicked() { }
+        private void OnClicked() { GameState.I.Input.ConstructionRequested = ResourceType; }
         private void OnHovered(object sender, EventArgs e) { }
         private void OnUnhovered(object sender, EventArgs e) { }
     }

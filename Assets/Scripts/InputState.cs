@@ -7,5 +7,7 @@ namespace GodsExperiment
 
         public ResourceType WorkerAddPressed;
         public ResourceType WorkerRemovePressed;
+
+        public ResourceType ConstructionRequested;
     }
 }

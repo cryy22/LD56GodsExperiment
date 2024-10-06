@@ -39,7 +39,8 @@ namespace GodsExperiment
             _constructionSystem.Update(
                 construction: State.Construction,
                 resources: State.Resources,
-                workers: State.Workers
+                workers: State.Workers,
+                input: State.Input
             );
             _foodSystem.Update(time: State.Time, food: State.Resources[ResourceType.Food], workers: State.Workers);
             _uiSystem.Update(state: State, uiState: UIState);

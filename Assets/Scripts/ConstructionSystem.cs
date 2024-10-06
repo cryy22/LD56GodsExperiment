@@ -2,8 +2,25 @@ namespace GodsExperiment
 {
     public class ConstructionSystem
     {
-        public void Update(ConstructionState construction, ResourcesState resources, WorkersState workers)
+        public void Update(
+            ConstructionState construction,
+            ResourcesState resources,
+            WorkersState workers,
+            InputState input
+        )
         {
+            if (input.ConstructionRequested != ResourceType.None)
+            {
+                bool isPaid = ResourcePaymentProcessor.AttemptPayment(
+                    resourceCosts: construction.ResourceCosts,
+                    resources: resources
+                );
+                if (isPaid)
+                    construction.Queue.Add(input.ConstructionRequested);
+
+                input.ConstructionRequested = ResourceType.None;
+            }
+
             if (construction.InProgress == ResourceType.None)
             {
                 if (construction.Queue.Count > 0)
