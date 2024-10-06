@@ -26,6 +26,7 @@ namespace GodsExperiment
         }
 
         public void SetIcon(Sprite icon) { ResourceIconImage.sprite = icon; }
+        public void SetInteractable(bool interactable) { HoverButton.interactable = interactable; }
 
         private void OnClicked() { GameState.I.Input.ConstructionRequested = ResourceType; }
         private void OnHovered(object sender, EventArgs e) { }

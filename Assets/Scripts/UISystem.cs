@@ -67,6 +67,10 @@ namespace GodsExperiment
                 queuedResourceTypes: state.Construction.Queue,
                 config: state.Config
             );
+            uiState.ConstructionQueueControl.SetControlsInteractabilities(
+                resources: state.Resources,
+                config: state.Config
+            );
 
             uiState.DayProgressBar.SetProgress(state.Time.DayProgress);
 

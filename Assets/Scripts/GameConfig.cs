@@ -9,6 +9,8 @@ namespace GodsExperiment
         [field: SerializeField] public float TimePerDay { get; private set; }
         [field: SerializeField] public int InitialWorkers { get; private set; }
         [field: SerializeField] public int MaxWorkers { get; private set; }
+        [field: SerializeField] public int MaxWorkersPerResource { get; private set; }
+
         [field: SerializeField] public float DailyWorkerFoodCost { get; private set; }
         [field: SerializeField] public float NewWorkerFoodCost { get; private set; }
 

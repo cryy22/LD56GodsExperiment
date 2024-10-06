@@ -15,6 +15,7 @@ MonoBehaviour:
   <TimePerDay>k__BackingField: 15
   <InitialWorkers>k__BackingField: 4
   <MaxWorkers>k__BackingField: 32
+  <MaxWorkersPerResource>k__BackingField: 8
   <DailyWorkerFoodCost>k__BackingField: 1
   <NewWorkerFoodCost>k__BackingField: 2
   <ResourceDefinitions>k__BackingField:

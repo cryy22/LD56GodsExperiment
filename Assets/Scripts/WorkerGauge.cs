@@ -8,7 +8,7 @@ namespace GodsExperiment
         [SerializeField] private Transform WorkerParent;
         [SerializeField] private WorkerSlot WorkerPrefab;
 
-        private readonly List<WorkerSlot> _slots = new(Constants.MaxWorkersPerTask);
+        private readonly List<WorkerSlot> _slots = new();
 
         private void Start()
         {
@@ -18,8 +18,6 @@ namespace GodsExperiment
 
         public void SetSlots(int count)
         {
-            count = Mathf.Clamp(value: count, min: 0, max: Constants.MaxWorkersPerTask);
-
             while (_slots.Count < count)
             {
                 WorkerSlot slot = Instantiate(original: WorkerPrefab, parent: transform);

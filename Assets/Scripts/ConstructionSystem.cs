@@ -6,17 +6,21 @@ namespace GodsExperiment
             ConstructionState construction,
             ResourcesState resources,
             WorkersState workers,
-            InputState input
+            InputState input,
+            GameConfig config
         )
         {
             if (input.ConstructionRequested != ResourceType.None)
             {
-                bool isPaid = ResourcePaymentProcessor.AttemptPayment(
-                    resourceCosts: construction.ResourceCosts,
-                    resources: resources
-                );
-                if (isPaid)
-                    construction.Queue.Add(input.ConstructionRequested);
+                if (resources[input.ConstructionRequested].WorkerSlots < config.MaxWorkersPerResource)
+                {
+                    bool isPaid = ResourcePaymentProcessor.AttemptPayment(
+                        resourceCosts: construction.ResourceCosts,
+                        resources: resources
+                    );
+                    if (isPaid)
+                        construction.Queue.Add(input.ConstructionRequested);
+                }
 
                 input.ConstructionRequested = ResourceType.None;
             }
