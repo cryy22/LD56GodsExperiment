@@ -10,7 +10,11 @@ namespace GodsExperiment
         private void Update()
         {
             _progress += GameState.I.Time.DeltaTime * GameState.I.Workers.Productivity / _duration;
-            if (_progress > 1) _progress--;
+            if (_progress > 1)
+            {
+                _progress--;
+                SFXPlayer.I.PlaySqueak();
+            }
 
             float stretch = Mathf.Sin(2 * Mathf.PI * _progress) * 0.125f;
             float squash = -stretch;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DefaultGameConfig
   m_EditorClassIdentifier: 
   TotalBoosTarget: 300
-  TotalDays: 1
+  TotalDays: 30
   <TimePerDay>k__BackingField: 15
   <InitialWorkers>k__BackingField: 4
   <MaxWorkers>k__BackingField: 32
