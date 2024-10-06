@@ -30,7 +30,7 @@ namespace GodsExperiment
             while (_slots.Count > count)
             {
                 WorkerSlot slot = _slots[^1];
-                Destroy(slot);
+                Destroy(slot.gameObject);
                 _slots.Remove(slot);
             }
         }
