@@ -16,6 +16,8 @@ namespace GodsExperiment
         [field: SerializeField] public ResourceRequirementSet[] ResourceRequirementSets { get; private set; }
         [field: SerializeField] public ResourceWorkerSlotsSet[] InitialResourceWorkerSlotsSets { get; private set; }
 
+        [field: SerializeField] public ResourceRequirementSet NewWorkerSlotResourceRequirement { get; private set; }
+
         [field: Range(min: 0, max: 1)]
         [field: SerializeField] public float UnworkedResourceDecayRate { get; private set; }
 

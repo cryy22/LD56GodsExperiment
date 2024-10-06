@@ -35,7 +35,7 @@ namespace GodsExperiment
                 DailyWorkerFoodCost = Config.DailyWorkerFoodCost,
                 NewWorkerFoodCost = Config.NewWorkerFoodCost,
             };
-            Construction = new ConstructionState();
+            Construction = new ConstructionState(Config.NewWorkerSlotResourceRequirement);
         }
     }
 }

@@ -75,4 +75,10 @@ MonoBehaviour:
     <WorkerSlots>k__BackingField: 1
   - <ResourceType>k__BackingField: 9
     <WorkerSlots>k__BackingField: 1
+  <NewWorkerSlotResourceRequirement>k__BackingField:
+    <ResourceType>k__BackingField: 0
+    <WorkUnits>k__BackingField: 0
+    <RequiredResources>k__BackingField:
+    - <Resource>k__BackingField: 3
+      <Quantity>k__BackingField: 1
   <UnworkedResourceDecayRate>k__BackingField: 0.332
