@@ -34,6 +34,8 @@ namespace GodsExperiment
             );
 
             uiState.ConversionTable.SetResourceCosts(resources: state.Resources, config: state.Config);
+            uiState.TotalDaysCount.text = $"of {state.Config.TotalDays}";
+            uiState.TotalBoosCount.text = $"of {state.Config.TotalBoosTarget}";
         }
 
         public void Update(GameState state, UIState uiState)

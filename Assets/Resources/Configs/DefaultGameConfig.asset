@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9631456923cc4e9dbaabfa38f0ce8a7c, type: 3}
   m_Name: DefaultGameConfig
   m_EditorClassIdentifier: 
+  TotalBoosTarget: 300
+  TotalDays: 30
   <TimePerDay>k__BackingField: 15
   <InitialWorkers>k__BackingField: 4
   <MaxWorkers>k__BackingField: 32

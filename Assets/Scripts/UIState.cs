@@ -25,6 +25,9 @@ namespace GodsExperiment
 
         [field: SerializeField] public ProgressBar DayProgressBar { get; private set; }
         [field: SerializeField] public TMP_Text CurrentDayCount { get; private set; }
+        [field: SerializeField] public TMP_Text TotalDaysCount { get; private set; }
+        [field: SerializeField] public TMP_Text CurrentBoosCount { get; private set; }
+        [field: SerializeField] public TMP_Text TotalBoosCount { get; private set; }
 
         public IReadOnlyDictionary<ResourceType, List<ResourceControl>> ResourcesResourceControls =>
             _resourcesResourceControls;

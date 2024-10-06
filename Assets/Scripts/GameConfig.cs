@@ -6,6 +6,9 @@ namespace GodsExperiment
     [CreateAssetMenu(fileName = "New GameConfig", menuName = "Custom/Game Config")]
     public class GameConfig : ScriptableObject
     {
+        [field: SerializeField] public int TotalBoosTarget;
+        [field: SerializeField] public int TotalDays;
+
         [field: SerializeField] public float TimePerDay { get; private set; }
         [field: SerializeField] public int InitialWorkers { get; private set; }
         [field: SerializeField] public int MaxWorkers { get; private set; }
