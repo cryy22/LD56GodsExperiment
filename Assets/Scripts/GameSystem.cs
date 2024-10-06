@@ -15,6 +15,7 @@ namespace GodsExperiment
         private WorkerAssignmentSystem _workerAssignmentSystem;
         private FoodSystem _foodSystem;
         private ConstructionSystem _constructionSystem;
+        private GameResultSystem _gameResultSystem;
 
         private void Start() { Initialize(); }
 
@@ -35,6 +36,8 @@ namespace GodsExperiment
                 config: State.Config
             );
             _foodSystem.Update(time: State.Time, food: State.Resources[ResourceType.Food], workers: State.Workers);
+            _gameResultSystem.Update(State);
+
             _uiSystem.Update(state: State, uiState: UIState);
         }
 
@@ -50,6 +53,7 @@ namespace GodsExperiment
             _workerAssignmentSystem = new WorkerAssignmentSystem();
             _foodSystem = new FoodSystem();
             _constructionSystem = new ConstructionSystem();
+            _gameResultSystem = new GameResultSystem();
         }
     }
 }

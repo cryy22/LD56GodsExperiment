@@ -1,0 +1,13 @@
+namespace GodsExperiment
+{
+    public class GameResultSystem
+    {
+        public void Update(GameState state)
+        {
+            if (state.Resources[ResourceType.Boos].Count >= state.Config.TotalBoosTarget)
+                state.GameResult = GameResult.Win;
+            else if (state.Time.Day >= state.Config.TotalDays)
+                state.GameResult = GameResult.Loss;
+        }
+    }
+}

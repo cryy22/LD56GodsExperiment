@@ -16,8 +16,12 @@ namespace GodsExperiment
         public WorkersState Workers { get; private set; }
         public ConstructionState Construction { get; private set; }
 
+        public GameResult GameResult { get; set; }
+
         public void ResetAll()
         {
+            GameResult = GameResult.None;
+
             Time = new TimeState
             {
                 TimePerDay = Config.TimePerDay,
