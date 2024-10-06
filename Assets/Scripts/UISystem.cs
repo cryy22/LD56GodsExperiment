@@ -41,6 +41,10 @@ namespace GodsExperiment
             uiState.NewWorkerRequirementCount.text =
                 state.Workers.NewWorkerFoodCost.ToString(CultureInfo.InvariantCulture);
 
+            uiState.ConstructionQueueGauge.SetConstructionQueue(
+                queuedResourceTypes: state.Construction.Queue,
+                config: state.Config
+            );
 
             uiState.DayProgressBar.SetProgress(state.Time.DayProgress);
 
