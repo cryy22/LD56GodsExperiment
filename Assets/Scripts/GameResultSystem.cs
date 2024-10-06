@@ -1,3 +1,5 @@
+using UnityEngine.SceneManagement;
+
 namespace GodsExperiment
 {
     public class GameResultSystem
@@ -8,6 +10,9 @@ namespace GodsExperiment
                 state.GameResult = GameResult.Win;
             else if (state.Time.Day >= state.Config.TotalDays)
                 state.GameResult = GameResult.Loss;
+
+            if (state.GameResult != GameResult.None)
+                SceneManager.LoadScene("ResultScene");
         }
     }
 }
