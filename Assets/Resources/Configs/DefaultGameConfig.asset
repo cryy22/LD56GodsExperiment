@@ -60,7 +60,7 @@ MonoBehaviour:
     - <Resource>k__BackingField: 2
       <Quantity>k__BackingField: 2
   - <ResourceType>k__BackingField: 8
-    <WorkUnits>k__BackingField: 1.95
+    <WorkUnits>k__BackingField: 1.75
     <RequiredResources>k__BackingField:
     - <Resource>k__BackingField: 2
       <Quantity>k__BackingField: 1
