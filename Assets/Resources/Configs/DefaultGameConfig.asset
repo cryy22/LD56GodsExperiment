@@ -16,8 +16,8 @@ MonoBehaviour:
   TotalDays: 30
   <TimePerDay>k__BackingField: 15
   <InitialWorkers>k__BackingField: 4
-  <MaxWorkers>k__BackingField: 32
-  <MaxWorkersPerResource>k__BackingField: 8
+  <MaxWorkers>k__BackingField: 99
+  <MaxWorkersPerResource>k__BackingField: 99
   <DailyWorkerFoodCost>k__BackingField: 1
   <NewWorkerFoodCost>k__BackingField: 2
   <ResourceDefinitions>k__BackingField:
@@ -69,7 +69,7 @@ MonoBehaviour:
     <RequiredResources>k__BackingField: []
   <InitialResourceWorkerSlotsSets>k__BackingField:
   - <ResourceType>k__BackingField: 1
-    <WorkerSlots>k__BackingField: 2
+    <WorkerSlots>k__BackingField: 21
   - <ResourceType>k__BackingField: 2
     <WorkerSlots>k__BackingField: 1
   - <ResourceType>k__BackingField: 3
