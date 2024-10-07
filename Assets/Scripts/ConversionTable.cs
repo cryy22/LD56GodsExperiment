@@ -14,14 +14,8 @@ namespace GodsExperiment
 
             foreach (ResourceType resourceType in resources.ResourceTypes)
             {
-                if (resources[resourceType].ResourceCosts.Count == 0) continue;
-
                 ConversionTableRow row = Instantiate(original: RowPrefab, parent: RowParent);
-                row.SetResourceCosts(
-                    resourceType: resourceType,
-                    resourceCosts: resources[resourceType].ResourceCosts,
-                    config: config
-                );
+                row.SetResourceCosts(resourceType: resourceType, resources: resources, config: config);
             }
         }
     }

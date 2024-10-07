@@ -20,6 +20,10 @@ namespace GodsExperiment
             I = this;
         }
 
-        public void PlaySqueak() { AudioSource.PlayOneShot(SqueakClip); }
+        public void PlaySqueak()
+        {
+            AudioSource.pitch = Random.Range(minInclusive: 0.925f, maxInclusive: 1.075f);
+            AudioSource.PlayOneShot(SqueakClip);
+        }
     }
 }

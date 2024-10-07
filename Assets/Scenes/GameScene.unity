@@ -2624,8 +2624,8 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: -4
+  m_ChildAlignment: 4
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -2702,7 +2702,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
@@ -6777,17 +6777,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Conversion Table
+  m_text: 'NB: conversion table:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e7a65a20f75a43eaa192159c9603ffa, type: 2}
-  m_sharedMaterial: {fileID: -2401237705246147962, guid: 2e7a65a20f75a43eaa192159c9603ffa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5fc7e61a849e646f2bd4db7af0082dd9, type: 2}
+  m_sharedMaterial: {fileID: -1356635833336886281, guid: 5fc7e61a849e646f2bd4db7af0082dd9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278717704
-  m_fontColor: {r: 0.03137255, g: 0.050980393, b: 0.03137255, a: 1}
+    rgba: 4280033308
+  m_fontColor: {r: 0.10980392, g: 0.1254902, b: 0.10980392, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6804,14 +6804,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 32
+  m_fontStyle: 3
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8617,6 +8617,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1786050728}
     m_Modifications:
+    - target: {fileID: 148887234106644911, guid: 689d36cc952da4baeb3411c03fa62a2a, type: 3}
+      propertyPath: m_text
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 273702254905315327, guid: 689d36cc952da4baeb3411c03fa62a2a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
