@@ -5,7 +5,7 @@ namespace GodsExperiment
 {
     public class SFXPlayer : MonoBehaviour
     {
-        private const int _maxVoices = 32;
+        private const int _maxVoices = 63;
         public static SFXPlayer I { get; private set; }
 
         [SerializeField] private AudioClip SqueakClip;
