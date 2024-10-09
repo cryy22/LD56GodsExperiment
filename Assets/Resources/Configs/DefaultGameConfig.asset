@@ -15,7 +15,7 @@ MonoBehaviour:
   TotalBoosTarget: 300
   TotalDays: 30
   <TimePerDay>k__BackingField: 15
-  <InitialWorkers>k__BackingField: 10
+  <InitialWorkers>k__BackingField: 100
   <MaxWorkers>k__BackingField: 600
   <MaxWorkersPerResource>k__BackingField: 100
   <DailyWorkerFoodCost>k__BackingField: 1

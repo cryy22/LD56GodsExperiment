@@ -307,7 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7069914043016442836}
   - component: {fileID: 5224037635225936320}
-  - component: {fileID: 1086815287845614455}
+  - component: {fileID: 6394793402029124885}
   m_Layer: 0
   m_Name: ResourceControl
   m_TagString: Untagged
@@ -351,7 +351,7 @@ MonoBehaviour:
   <WorkerControl>k__BackingField: {fileID: 1502760791361194656}
   <WorkerCountText>k__BackingField: {fileID: 2094206212268401041}
   <RateOfProductionText>k__BackingField: {fileID: 4917827871998123720}
---- !u!114 &1086815287845614455
+--- !u!114 &6394793402029124885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,17 +360,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1467635948024102521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: 36
-  m_PreferredWidth: -1
-  m_PreferredHeight: 36
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: 1
-  m_LayoutPriority: 1
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1615353164065808111
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +837,7 @@ GameObject:
   - component: {fileID: 1443158016112035315}
   - component: {fileID: 8485092451914714552}
   - component: {fileID: 4462746363531713959}
+  - component: {fileID: 4416005227987086151}
   m_Layer: 0
   m_Name: ResourceGauge
   m_TagString: Untagged
@@ -854,10 +861,10 @@ RectTransform:
   - {fileID: 3133702651912547270}
   m_Father: {fileID: 7069914043016442836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 36}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &8485092451914714552
 MonoBehaviour:
@@ -900,6 +907,26 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &4416005227987086151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4228704020613613929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: 36
+  m_PreferredWidth: -1
+  m_PreferredHeight: 36
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: 1
+  m_LayoutPriority: 1
 --- !u!1 &4278369824814244360
 GameObject:
   m_ObjectHideFlags: 0
