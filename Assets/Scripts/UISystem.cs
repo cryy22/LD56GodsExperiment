@@ -40,6 +40,19 @@ namespace GodsExperiment
 
         public void Update(GameState state, UIState uiState)
         {
+            foreach ((ResourceType resourceType, List<ResourceControl> controls) in uiState.ResourcesResourceControls)
+            foreach (ResourceControl control in controls)
+            {
+                ResourceState resourceState = state.Resources[resourceType];
+                control.WorkerCountText.text = state.Workers[resourceType].ToString();
+                float rateOfProduction = RateOfProductionCalculator.CalculatePerDay(
+                    workers: state.Workers,
+                    resource: state.Resources[resourceType],
+                    time: state.Time
+                );
+                control.RateOfProductionText.text = $"({rateOfProduction:F1}/day)";
+            }
+
             foreach ((ResourceType resourceType, List<ResourceGauge> resourceGauges) in uiState.ResourcesResourceGauges)
             foreach (ResourceGauge resourceGauge in resourceGauges)
             {
