@@ -10,7 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2615329618082675317, guid: 190d085a1ed92416c872498bce3234a6, type: 3}
       propertyPath: m_Name
-      value: WorkerSlotNoAnimation
+      value: WorkerSlotUnemployed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186192128621185389, guid: 190d085a1ed92416c872498bce3234a6, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186192128621185389, guid: 190d085a1ed92416c872498bce3234a6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.79607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186192128621185389, guid: 190d085a1ed92416c872498bce3234a6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99607843
       objectReference: {fileID: 0}
     - target: {fileID: 8764824160843926969, guid: 190d085a1ed92416c872498bce3234a6, type: 3}
       propertyPath: m_Pivot.x
