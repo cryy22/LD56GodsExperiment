@@ -14,7 +14,6 @@ namespace GodsExperiment
             _progress += GameState.I.Time.DeltaTime * GameState.I.Workers.Productivity / _duration;
             if (_progress > 1)
             {
-                Debug.Log("whoa");
                 SFXPlayer.I.PlaySqueak();
                 _progress--;
             }

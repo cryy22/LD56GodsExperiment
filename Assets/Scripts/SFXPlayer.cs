@@ -40,7 +40,7 @@ namespace GodsExperiment
 
             AudioSource.pitch = Random.Range(minInclusive: 0.8f, maxInclusive: 1.2f);
             AudioSource.PlayOneShot(SqueakClip);
-            _activeVoices.Add(SqueakClip.length);
+            _activeVoices.Add(SqueakClip.length * AudioSource.pitch);
         }
     }
 }
