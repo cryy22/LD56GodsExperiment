@@ -75,7 +75,23 @@ namespace GodsExperiment
             uiState.UnemploymentGauge.SetWorkers(state.Workers[ResourceType.None]);
 
             uiState.WorkerFoodRequirementCount.text = $"{(int) state.Workers.TotalDailyFoodCost}";
+            if (state.Workers.TotalDailyFoodCost <= state.Resources[ResourceType.Food].Count)
+            {
+                uiState.WorkerFoodRequirementCount.color = Constants.Green;
+            }
+            else
+            {
+                bool willMeetFoodDemand = FoodForecaster.WillMeetDemand(
+                    workers: state.Workers,
+                    resources: state.Resources,
+                    time: state.Time
+                );
+                uiState.WorkerFoodRequirementCount.color = willMeetFoodDemand ? Constants.Black : Constants.Red;
+            }
+
             uiState.UnderfedProductivityPenaltyCount.text = $"{state.Workers.Productivity * 100:F1}%";
+            uiState.UnderfedProductivityPenaltyCount.color =
+                state.Workers.Productivity < 1 ? Constants.Red : Constants.Black;
 
             uiState.ConstructionQueueGauge.SetConstructionQueue(
                 queuedResourceTypes: state.Construction.Queue,
