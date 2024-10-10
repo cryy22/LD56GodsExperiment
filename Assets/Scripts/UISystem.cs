@@ -26,8 +26,6 @@ namespace GodsExperiment
             foreach (WorkerControl control in controls)
                 control.ResourceType = resourceType;
 
-            uiState.UnderfedProductivityPenaltyCountLabel.SetActive(false);
-
             uiState.ConstructionQueueControl.SetAvailableResources(
                 resourceTypes: state.Config.ResourcesAvailableForConstruction,
                 config: state.Config
@@ -36,6 +34,9 @@ namespace GodsExperiment
             uiState.ConversionTable.SetResourceCosts(resources: state.Resources, config: state.Config);
             uiState.TotalDaysCount.text = $"of {state.Config.TotalDays}";
             uiState.TotalBoosCount.text = $"of {state.Config.TotalBoosTarget}";
+
+            uiState.NewWorkerRequirementCount.text =
+                state.Workers.NewWorkerFoodCost.ToString(CultureInfo.InvariantCulture);
         }
 
         public void Update(GameState state, UIState uiState)
@@ -73,10 +74,8 @@ namespace GodsExperiment
             uiState.UnemploymentGauge.SetSlots(state.Workers.GetTotalWorkers());
             uiState.UnemploymentGauge.SetWorkers(state.Workers[ResourceType.None]);
 
-            uiState.WorkerFoodRequirementCount.text =
-                $"{(int) state.Workers.TotalDailyFoodCost}/day";
-            uiState.NewWorkerRequirementCount.text =
-                state.Workers.NewWorkerFoodCost.ToString(CultureInfo.InvariantCulture);
+            uiState.WorkerFoodRequirementCount.text = $"{(int) state.Workers.TotalDailyFoodCost}";
+            uiState.UnderfedProductivityPenaltyCount.text = $"{state.Workers.Productivity * 100:F1}%";
 
             uiState.ConstructionQueueGauge.SetConstructionQueue(
                 queuedResourceTypes: state.Construction.Queue,
@@ -88,17 +87,6 @@ namespace GodsExperiment
             );
 
             uiState.DayProgressBar.SetProgress(state.Time.DayProgress);
-
-            if (state.Workers.IsUnderfed)
-            {
-                uiState.UnderfedProductivityPenaltyCountLabel.SetActive(true);
-                uiState.UnderfedProductivityPenaltyCount.text =
-                    $"{(int) (state.Workers.UnderfedProductivityPenalty * 100)}%";
-            }
-            else
-            {
-                uiState.UnderfedProductivityPenaltyCountLabel.SetActive(false);
-            }
 
             uiState.CurrentDayCount.text = $"day {(state.Time.Day + 1).ToString()}";
             uiState.CurrentBoosCount.text = $"{((int) state.Resources[ResourceType.Boos].Count).ToString()}";
