@@ -31,7 +31,6 @@ namespace GodsExperiment
             _constructionSystem.Update(
                 construction: State.Construction,
                 resources: State.Resources,
-                workers: State.Workers,
                 input: State.Input,
                 config: State.Config
             );

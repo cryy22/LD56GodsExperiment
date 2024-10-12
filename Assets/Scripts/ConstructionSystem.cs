@@ -5,7 +5,6 @@ namespace GodsExperiment
         public void Update(
             ConstructionState construction,
             ResourcesState resources,
-            WorkersState workers,
             InputState input,
             GameConfig config
         )
