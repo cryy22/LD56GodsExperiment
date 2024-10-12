@@ -69,7 +69,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 5c2f885101c114117808fd015f45f262, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 6
 --- !u!114 &247877872599720717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1732,7 +1732,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 5c2f885101c114117808fd015f45f262, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1740,7 +1740,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 6
 --- !u!114 &859538945025425130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1994,6 +1994,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3133702651912547270}
     m_Modifications:
+    - target: {fileID: 2689758030769315982, guid: 1674878030a3e4dfba8e6632da406bee, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689758030769315982, guid: 1674878030a3e4dfba8e6632da406bee, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6979481158901801402, guid: 1674878030a3e4dfba8e6632da406bee, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
