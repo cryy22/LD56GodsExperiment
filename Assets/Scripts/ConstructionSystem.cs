@@ -34,11 +34,6 @@ namespace GodsExperiment
                 }
                 else
                 {
-                    WorkerAssigner.UnassignAllWorkers(
-                        workers: workers,
-                        resources: resources,
-                        resourceType: ResourceType.Construction
-                    );
                     resources[ResourceType.Construction].Count = 0;
                     resources[ResourceType.Construction].WorkUnitsAdded = 0;
                 }
