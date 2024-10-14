@@ -9,5 +9,7 @@ namespace GodsExperiment
         public ResourceType WorkerAddPressed;
         public ResourceType WorkerRemovePressed;
         public ResourceType ConstructionRequested;
+
+        public string TooltipContent = string.Empty;
     }
 }

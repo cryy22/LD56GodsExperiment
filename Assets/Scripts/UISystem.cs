@@ -41,6 +41,8 @@ namespace GodsExperiment
 
             uiState.NewWorkerRequirementCount.text =
                 state.Workers.NewWorkerFoodCost.ToString(CultureInfo.InvariantCulture);
+
+            uiState.Tooltip.SetContent(string.Empty);
         }
 
         public void Update(GameState state, UIState uiState)
@@ -116,6 +118,8 @@ namespace GodsExperiment
 
             uiState.CurrentDayCount.text = $"day {(state.Time.Day + 1).ToString()}";
             uiState.CurrentBoosCount.text = $"{((int) state.Resources[ResourceType.Boos].Count).ToString()}";
+
+            uiState.Tooltip.SetContent(GameState.I.Input.TooltipContent);
         }
     }
 }

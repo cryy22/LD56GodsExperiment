@@ -28,6 +28,8 @@ namespace GodsExperiment
         [field: SerializeField] public TMP_Text CurrentBoosCount { get; private set; }
         [field: SerializeField] public TMP_Text TotalBoosCount { get; private set; }
 
+        [field: SerializeField] public Tooltip Tooltip { get; private set; }
+
         public IReadOnlyDictionary<ResourceType, List<ResourceControl>> ResourcesResourceControls =>
             _resourcesResourceControls;
         public IReadOnlyDictionary<ResourceType, List<ResourceGauge>> ResourcesResourceGauges =>
