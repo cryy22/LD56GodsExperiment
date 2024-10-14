@@ -27,7 +27,7 @@ namespace GodsExperiment
             Proxy,
         }
 
-        private interface IPopulator
+        public interface IPopulator
         {
             public string GetTooltipText(GameState state);
         }

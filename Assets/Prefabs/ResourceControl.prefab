@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8496210340430757749}
   - component: {fileID: 306555313972160559}
+  - component: {fileID: 4879754608645645549}
   - component: {fileID: 2331275284662080108}
   - component: {fileID: 247877872599720717}
   - component: {fileID: 7890460500532711147}
@@ -48,6 +49,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870536123267305343}
   m_CullTransparentMesh: 1
+--- !u!114 &4879754608645645549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870536123267305343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: 'Use deez buttons to add or remove mice to dis job.
+
+
+    Psst...
+    if ya hold [shift], you can add or remove 5 mice a pop.'
 --- !u!114 &2331275284662080108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,6 +542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3337581975666531892}
+  - component: {fileID: 1111056119883871064}
   - component: {fileID: 7367499040429468234}
   - component: {fileID: 3243953356641204132}
   - component: {fileID: 2861174909608160663}
@@ -551,6 +572,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1111056119883871064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2148939209905844087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: dis shows at a glance how many workers ya got on da job (da filled
+    in mice), and how many mice ya got space for in dis job (da ghost-mice).
 --- !u!114 &7367499040429468234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1426,7 +1463,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 2
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
@@ -1814,6 +1851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3775994456808799018}
   - component: {fileID: 8336473716747905531}
+  - component: {fileID: 7376967662137285904}
   - component: {fileID: 5404160477732448972}
   - component: {fileID: 859538945025425130}
   - component: {fileID: 7020793355914128503}
@@ -1852,6 +1890,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7960766694743788090}
   m_CullTransparentMesh: 1
+--- !u!114 &7376967662137285904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7960766694743788090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: 'Use deez buttons to add or remove mice to dis job.
+
+
+    Psst...
+    if ya hold [shift], you can add or remove 5 mice a pop.'
 --- !u!114 &5404160477732448972
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,17 +11,20 @@ namespace GodsExperiment
         {
             if (input.ConstructionRequested != ResourceType.None)
             {
-                if (resources[input.ConstructionRequested].WorkerSlots < config.MaxWorkersPerResource)
-                {
-                    bool isPaid = ResourcePaymentProcessor.AttemptPayment(
-                        resourceCosts: construction.ResourceCosts,
-                        resources: resources
-                    );
-                    if (isPaid)
-                        construction.Queue.Add(input.ConstructionRequested);
-                }
+                int constructionsCount = input.ConstructionChangeMassModifier ? 5 : 1;
+                for (var i = 0; i < constructionsCount; i++)
+                    if (resources[input.ConstructionRequested].WorkerSlots < config.MaxWorkersPerResource)
+                    {
+                        bool isPaid = ResourcePaymentProcessor.AttemptPayment(
+                            resourceCosts: construction.ResourceCosts,
+                            resources: resources
+                        );
+                        if (isPaid)
+                            construction.Queue.Add(input.ConstructionRequested);
+                    }
 
                 input.ConstructionRequested = ResourceType.None;
+                input.ConstructionChangeMassModifier = false;
             }
 
             if (construction.InProgress == ResourceType.None)

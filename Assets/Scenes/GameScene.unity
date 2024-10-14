@@ -3365,6 +3365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 764249041}
   - component: {fileID: 764249045}
+  - component: {fileID: 764249046}
   - component: {fileID: 764249044}
   - component: {fileID: 764249043}
   - component: {fileID: 764249042}
@@ -3480,6 +3481,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764249040}
   m_CullTransparentMesh: 1
+--- !u!114 &764249046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764249040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: At da end of da day, after all ya mice are fed, extra food goes to
+    new recruits. Da more extra food ya got, da more new mice ya get tomorra. Just
+    don't ehhhh... bite off more den you can chew, capeesh?
 --- !u!1 &777080563
 GameObject:
   m_ObjectHideFlags: 0
@@ -3856,8 +3874,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PopulationMode: 0
   Populator: {fileID: 0}
-  TooltipText: Yo, bossman! Foreman 'ere. Just point to whatever you're interested
-    in, and i'll tell ya what I know.
+  TooltipText: '''Ey, boss! I''m da foremouse ''ere. Just roll dat arrow ova whateva
+    you wanna know about, and i''ll give ya the dirt.'
 --- !u!1 &864976458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4045,6 +4063,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 913760334}
+  - component: {fileID: 913760338}
+  - component: {fileID: 913760337}
   - component: {fileID: 913760335}
   - component: {fileID: 913760336}
   m_Layer: 0
@@ -4111,6 +4131,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WorkerParent: {fileID: 913760334}
   WorkerPrefab: {fileID: 6139844967357775727, guid: e56e4805157c04111981c798fccc4659, type: 3}
+--- !u!114 &913760337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913760333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 1
+  Populator: {fileID: 913760338}
+  TooltipText: 
+--- !u!114 &913760338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913760333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b816a32e5634b4fa3081b7ff1448bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FullEmploymentText: Everybody doin' deir bit. It's a beautiful thing ta see.
+  SomeUnemploymentText: Some of deez layabouts ain't got a job. Let's put a pick
+    or a hoe in deir hands or somethin'.
+  TotalUnemploymentText: '...It''s da unwashed masses, boss. Fulfillin'' deir basic
+    murine needs widout contributin'' to da bottom line.
+
+
+    It''s a tragedy is
+    what it is. Please boss, I''m beggin'' ya. Find some menial labor for deez lowlifes.'
 --- !u!1 &917163029
 GameObject:
   m_ObjectHideFlags: 0
@@ -5154,7 +5210,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 18, y: 56.00003}
-  m_SizeDelta: {x: 508, y: 32}
+  m_SizeDelta: {x: 508, y: 40}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1163954107
 MonoBehaviour:
@@ -6537,6 +6593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379076527}
   - component: {fileID: 1379076529}
+  - component: {fileID: 1379076530}
   - component: {fileID: 1379076528}
   m_Layer: 0
   m_Name: FeedingLabel
@@ -6661,6 +6718,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379076526}
   m_CullTransparentMesh: 1
+--- !u!114 &1379076530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379076526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: 'Dis sector is all about feedin'' yer workers. Mice gotta eat, boss!
+
+
+    If
+    ya need more mice, overfeed ya workers, and you''ll recruit new ones.'
 --- !u!1 &1408486826
 GameObject:
   m_ObjectHideFlags: 0
@@ -6671,6 +6747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1408486827}
   - component: {fileID: 1408486830}
+  - component: {fileID: 1408486832}
   - component: {fileID: 1408486829}
   - component: {fileID: 1408486828}
   - component: {fileID: 1408486831}
@@ -6786,6 +6863,26 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1408486832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408486826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: 'Dis is how much food ya need before the day ticks ova.
+
+
+    If ya
+    can''t feed ''em all, dey won''t work as hard, and if it happens again, some
+    of ''em might walk off da job.'
 --- !u!1 &1428099166
 GameObject:
   m_ObjectHideFlags: 0
@@ -6871,6 +6968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1428526077}
   - component: {fileID: 1428526079}
+  - component: {fileID: 1428526080}
   - component: {fileID: 1428526078}
   m_Layer: 0
   m_Name: IndustryLabel
@@ -6997,6 +7095,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428526076}
   m_CullTransparentMesh: 1
+--- !u!114 &1428526080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428526076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: 'Dis is it, the reason we''re all here! Dis is da moneymaker baby!
+
+
+    Ya
+    need da stuff from here ta satisfy da terms of da kid''s experiment. You''ll
+    also need some of deez for food and construction. Makin'' dis go faster and faster
+    is da name of da game.'
 --- !u!1 &1448310050
 GameObject:
   m_ObjectHideFlags: 0
@@ -8676,6 +8795,7 @@ GameObject:
   - component: {fileID: 1703595123}
   - component: {fileID: 1703595124}
   - component: {fileID: 1703595125}
+  - component: {fileID: 1703595126}
   m_Layer: 0
   m_Name: ConstructionQueueControlItemList
   m_TagString: Untagged
@@ -8746,6 +8866,29 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1703595126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703595122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: 'Click deez ta put some construction on da queue.
+
+
+    Ya gotta pay
+    da cost up front. And don''t forget ta assign workers to the construction job.
+
+
+    You
+    can hold shift to add 5 to da queue in one go.'
 --- !u!1 &1707179926
 GameObject:
   m_ObjectHideFlags: 0
@@ -10625,6 +10768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1858965275}
   - component: {fileID: 1858965277}
+  - component: {fileID: 1858965278}
   - component: {fileID: 1858965276}
   m_Layer: 0
   m_Name: ConstructionLabel
@@ -10751,6 +10895,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858965274}
   m_CullTransparentMesh: 1
+--- !u!114 &1858965278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858965274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: 'Construction makes da big numbers bigger baby!! Each new construction
+    adds a worker slot to da target resource.
+
+
+    If ya got a lotta mice and nuthin
+    to do wit em, dis is da sector for you.'
 --- !u!1 &1897961525
 GameObject:
   m_ObjectHideFlags: 0
@@ -10808,8 +10972,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yo, bossman! Foreman 'ere. Just point to whatever you're interested in,
-    and i'll tell ya what I know.
+  m_text: '''Ey, boss! I''m da foremouse ''ere. Just roll dat arrow ova whateva you
+    wanna know about, and i''ll give ya the dirt.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fc7e61a849e646f2bd4db7af0082dd9, type: 2}
   m_sharedMaterial: {fileID: -1356635833336886281, guid: 5fc7e61a849e646f2bd4db7af0082dd9, type: 2}
@@ -11046,6 +11210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1947073610}
   - component: {fileID: 1947073614}
+  - component: {fileID: 1947073615}
   - component: {fileID: 1947073613}
   - component: {fileID: 1947073612}
   - component: {fileID: 1947073611}
@@ -11161,6 +11326,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947073609}
   m_CullTransparentMesh: 1
+--- !u!114 &1947073615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947073609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: If ya don't feed all yer workers what dey need, productivity will
+    take a hit, and dey'll work slower. but if ya get enough food for da next day,
+    dey'll get right back ta work.
 --- !u!1 &1955919840
 GameObject:
   m_ObjectHideFlags: 0
@@ -11476,7 +11658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -48, y: 18}
+  m_AnchoredPosition: {x: -48, y: 24}
   m_SizeDelta: {x: 206, y: 0}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &2082318198

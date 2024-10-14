@@ -6,6 +6,7 @@ namespace GodsExperiment
 {
     public class ConstructionQueueControlItem : MonoBehaviour
     {
+        private static InputState Input => GameState.I.Input;
         [SerializeField] private HoverButton HoverButton;
         [SerializeField] private Image ResourceIconImage;
 
@@ -28,7 +29,13 @@ namespace GodsExperiment
         public void SetIcon(Sprite icon) { ResourceIconImage.sprite = icon; }
         public void SetInteractable(bool interactable) { HoverButton.interactable = interactable; }
 
-        private void OnClicked() { GameState.I.Input.ConstructionRequested = ResourceType; }
+        private void OnClicked()
+        {
+            Input.ConstructionRequested = ResourceType;
+            Input.ConstructionChangeMassModifier =
+                UnityEngine.Input.GetKey(KeyCode.LeftShift) || UnityEngine.Input.GetKey(KeyCode.RightShift);
+        }
+
         private void OnHovered(object sender, EventArgs e) { }
         private void OnUnhovered(object sender, EventArgs e) { }
     }
