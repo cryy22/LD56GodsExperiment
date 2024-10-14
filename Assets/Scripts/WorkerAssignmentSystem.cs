@@ -6,22 +6,30 @@ namespace GodsExperiment
         {
             if (input.WorkerAddPressed != ResourceType.None)
             {
-                WorkerAssigner.AssignWorker(
-                    workers: workers,
-                    resources: resources,
-                    resourceType: input.WorkerAddPressed
-                );
+                int workerCount = input.WorkerChangeMassModifier ? 5 : 1;
+                for (var i = 0; i < workerCount; i++)
+                    WorkerAssigner.AssignWorker(
+                        workers: workers,
+                        resources: resources,
+                        resourceType: input.WorkerAddPressed
+                    );
+
                 input.WorkerAddPressed = ResourceType.None;
+                input.WorkerChangeMassModifier = false;
             }
 
             if (input.WorkerRemovePressed != ResourceType.None)
             {
-                WorkerAssigner.UnassignWorker(
-                    workers: workers,
-                    resources: resources,
-                    resourceType: input.WorkerRemovePressed
-                );
+                int workerCount = input.WorkerChangeMassModifier ? 5 : 1;
+                for (var i = 0; i < workerCount; i++)
+                    WorkerAssigner.UnassignWorker(
+                        workers: workers,
+                        resources: resources,
+                        resourceType: input.WorkerRemovePressed
+                    );
+
                 input.WorkerRemovePressed = ResourceType.None;
+                input.WorkerChangeMassModifier = false;
             }
         }
     }

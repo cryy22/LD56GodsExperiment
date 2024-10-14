@@ -6,10 +6,11 @@ namespace GodsExperiment
         public bool PauseDown { get; set; }
         public bool ResetRequested { get; set; }
 
-        public ResourceType WorkerAddPressed;
-        public ResourceType WorkerRemovePressed;
-        public ResourceType ConstructionRequested;
+        public ResourceType WorkerAddPressed { get; set; }
+        public ResourceType WorkerRemovePressed { get; set; }
+        public bool WorkerChangeMassModifier { get; set; }
+        public ResourceType ConstructionRequested { get; set; }
 
-        public string TooltipContent = string.Empty;
+        public string TooltipContent { get; set; } = string.Empty;
     }
 }

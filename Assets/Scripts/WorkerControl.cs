@@ -5,6 +5,8 @@ namespace GodsExperiment
 {
     public class WorkerControl : MonoBehaviour
     {
+        private static InputState Input => GameState.I.Input;
+
         [SerializeField] private Button WorkerAddButton;
         [SerializeField] private Button WorkerRemoveButton;
 
@@ -24,7 +26,18 @@ namespace GodsExperiment
             WorkerRemoveButton.onClick.RemoveAllListeners();
         }
 
-        private void OnAdded() { GameState.I.Input.WorkerAddPressed = ResourceType; }
-        private void OnRemoved() { GameState.I.Input.WorkerRemovePressed = ResourceType; }
+        private void OnAdded()
+        {
+            Input.WorkerAddPressed = ResourceType;
+            Input.WorkerChangeMassModifier =
+                UnityEngine.Input.GetKey(KeyCode.LeftShift) || UnityEngine.Input.GetKey(KeyCode.RightShift);
+        }
+
+        private void OnRemoved()
+        {
+            Input.WorkerRemovePressed = ResourceType;
+            Input.WorkerChangeMassModifier =
+                UnityEngine.Input.GetKey(KeyCode.LeftShift) || UnityEngine.Input.GetKey(KeyCode.RightShift);
+        }
     }
 }
