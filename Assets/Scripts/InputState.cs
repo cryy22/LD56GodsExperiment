@@ -18,5 +18,6 @@ namespace GodsExperiment
         public bool ConstructionChangeMassModifier { get; set; }
 
         public string TooltipContent { get; set; } = string.Empty;
+        public bool IsTooltipEnabled { get; set; } = true;
     }
 }

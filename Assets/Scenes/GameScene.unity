@@ -4197,6 +4197,7 @@ GameObject:
   - component: {fileID: 844092886}
   - component: {fileID: 844092885}
   - component: {fileID: 844092887}
+  - component: {fileID: 844092888}
   m_Layer: 0
   m_Name: MouseSprite
   m_TagString: Untagged
@@ -4276,7 +4277,55 @@ MonoBehaviour:
   PopulationMode: 0
   Populator: {fileID: 0}
   TooltipText: '''Ey, boss! I''m da foremouse ''ere. Just roll dat arrow ova whateva
-    you wanna know about, and i''ll give ya the dirt.'
+    you wanna know about, and i''ll give ya the dirt.
+
+
+    You can click on me ta
+    turn deez here "tool-tips" on or off.'
+--- !u!114 &844092888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844092883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 844092885}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &864976458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4567,8 +4616,8 @@ MonoBehaviour:
     murine needs widout contributin'' to da bottom line.
 
 
-    It''s a tragedy is
-    what it is. Please boss, I''m beggin'' ya. Find some menial labor for deez lowlifes.'
+    Izza tragedy, is what
+    it is. Please boss, I''m beggin'' ya. Find some menial labor for deez lowlifes.'
 --- !u!1 &917163029
 GameObject:
   m_ObjectHideFlags: 0
@@ -5333,7 +5382,7 @@ MonoBehaviour:
   <TotalDaysCount>k__BackingField: {fileID: 1815812216}
   <CurrentBoosCount>k__BackingField: {fileID: 22483053}
   <TotalBoosCount>k__BackingField: {fileID: 572005704}
-  <Tooltip>k__BackingField: {fileID: 2082318202}
+  <Tooltip>k__BackingField: {fileID: 1946377385}
 --- !u!1001 &1149656867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7134,11 +7183,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PopulationMode: 0
   Populator: {fileID: 0}
-  TooltipText: 'Dis sector is all about feedin'' yer workers. Mice gotta eat, boss!
+  TooltipText: 'Dis sector is all about feedin'' ya workers. Mice gotta eat, boss!
 
 
     If
-    ya need more mice, overfeed ya workers, and you''ll recruit new ones.'
+    ya need more mice, overfeed the ones ya got, and you''ll recruit new ones.'
 --- !u!1 &1384511640
 GameObject:
   m_ObjectHideFlags: 0
@@ -11818,8 +11867,9 @@ GameObject:
   - component: {fileID: 1946377382}
   - component: {fileID: 1946377384}
   - component: {fileID: 1946377383}
+  - component: {fileID: 1946377385}
   m_Layer: 0
-  m_Name: MouseAdvisor
+  m_Name: MouseAdvisorTooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11884,6 +11934,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946377381}
   m_CullTransparentMesh: 1
+--- !u!114 &1946377385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946377381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313cee5eb9b648039e629d76aa51c3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TooltipBubble: {fileID: 2082318196}
+  TooltipText: {fileID: 1897961527}
+  TooltipToggle: {fileID: 844092888}
 --- !u!1 &1947073609
 GameObject:
   m_ObjectHideFlags: 0
@@ -12314,7 +12379,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2082318197}
   - component: {fileID: 2082318201}
-  - component: {fileID: 2082318202}
   - component: {fileID: 2082318200}
   - component: {fileID: 2082318199}
   - component: {fileID: 2082318198}
@@ -12423,19 +12487,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082318196}
   m_CullTransparentMesh: 1
---- !u!114 &2082318202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082318196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 313cee5eb9b648039e629d76aa51c3bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TooltipText: {fileID: 1897961527}
 --- !u!1 &2141379790
 GameObject:
   m_ObjectHideFlags: 0

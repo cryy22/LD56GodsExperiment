@@ -119,7 +119,7 @@ namespace GodsExperiment
             uiState.CurrentDayCount.text = $"day {(state.Time.Day + 1).ToString()}";
             uiState.CurrentBoosCount.text = $"{((int) state.Resources[ResourceType.Boos].Count).ToString()}";
 
-            uiState.Tooltip.SetContent(GameState.I.Input.TooltipContent);
+            uiState.Tooltip.SetContent(state.Input.IsTooltipEnabled ? state.Input.TooltipContent : string.Empty);
         }
     }
 }

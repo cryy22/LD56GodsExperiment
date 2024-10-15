@@ -586,8 +586,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PopulationMode: 0
   Populator: {fileID: 0}
-  TooltipText: dis shows at a glance how many workers ya got on da job (da filled
-    in mice), and how many mice ya got space for in dis job (da ghost-mice).
+  TooltipText: 'Dis shows at a glance how many workers ya got on da job (da filled
+    in mice).
+
+
+    It also shows how many more mice ya got space for in dis job
+    (da ghost-mice).'
 --- !u!114 &7367499040429468234
 MonoBehaviour:
   m_ObjectHideFlags: 0
