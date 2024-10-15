@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 54044818}
   - component: {fileID: 54044817}
   - component: {fileID: 54044819}
+  - component: {fileID: 54044820}
   m_Layer: 0
   m_Name: TimeControl
   m_TagString: Untagged
@@ -504,6 +505,26 @@ MonoBehaviour:
   PlayButton: {fileID: 1881889161}
   FastForwardButton: {fileID: 551738248}
   VeryFastForwardButton: {fileID: 754478845}
+--- !u!114 &54044820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54044815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: 'use deez to pause time, or make da game go faster or slower.
+
+
+    psst...
+    you can hit [spacebar] to swap between pause or play, and [1] [2] [3] above da
+    keyboard to switch speeds.'
 --- !u!1 &54222035
 GameObject:
   m_ObjectHideFlags: 0
