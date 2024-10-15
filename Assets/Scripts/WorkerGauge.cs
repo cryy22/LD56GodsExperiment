@@ -16,12 +16,14 @@ namespace GodsExperiment
                 Destroy(child.gameObject);
         }
 
-        public void SetSlots(int count)
+        public void SetSlots(int count, ResourceType resourceType)
         {
             while (_slots.Count < count)
             {
                 WorkerSlot slot = Instantiate(original: WorkerPrefab, parent: transform);
+                slot.Animator.ResourceType = resourceType;
                 slot.SetOccupied(false);
+
                 _slots.Add(slot);
             }
 

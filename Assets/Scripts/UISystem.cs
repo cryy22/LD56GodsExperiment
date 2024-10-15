@@ -79,11 +79,11 @@ namespace GodsExperiment
             foreach ((ResourceType resourceType, List<WorkerGauge> workerGauges) in uiState.ResourcesWorkerGauges)
             foreach (WorkerGauge workerGauge in workerGauges)
             {
-                workerGauge.SetSlots(state.Resources[resourceType].WorkerSlots);
+                workerGauge.SetSlots(count: state.Resources[resourceType].WorkerSlots, resourceType: resourceType);
                 workerGauge.SetWorkers(state.Workers[resourceType]);
             }
 
-            uiState.UnemploymentGauge.SetSlots(state.Workers.GetTotalWorkers());
+            uiState.UnemploymentGauge.SetSlots(count: state.Workers.GetTotalWorkers(), resourceType: ResourceType.None);
             uiState.UnemploymentGauge.SetWorkers(state.Workers[ResourceType.None]);
 
             uiState.WorkerFoodRequirementCount.text = $"{(int) state.Workers.TotalDailyFoodCost}";
