@@ -6,18 +6,14 @@ namespace GodsExperiment
     {
         public void Update(InputState input)
         {
-            bool wasPauseDown = input.PauseDown;
-
-            ResetInputs(input);
-
-            input.PauseDown = Input.GetKeyDown(KeyCode.Space);
-            input.PausePressed = input.PauseDown && !wasPauseDown;
-        }
-
-        private void ResetInputs(InputState state)
-        {
-            state.PauseDown = false;
-            state.PausePressed = false;
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Alpha0))
+                input.PausePressed = true;
+            else if (Input.GetKeyDown(KeyCode.Alpha1))
+                input.PlayPressed = true;
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+                input.FastForwardPressed = true;
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+                input.VeryFastForwardPressed = true;
         }
     }
 }

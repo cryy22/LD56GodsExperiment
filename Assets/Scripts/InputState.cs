@@ -3,7 +3,11 @@ namespace GodsExperiment
     public class InputState
     {
         public bool PausePressed { get; set; }
-        public bool PauseDown { get; set; }
+        public bool PlayPressed { get; set; }
+        public bool FastForwardPressed { get; set; }
+        public bool VeryFastForwardPressed { get; set; }
+        public bool AnyPlayButtonPressed => PlayPressed || FastForwardPressed || VeryFastForwardPressed;
+
         public bool ResetRequested { get; set; }
 
         public ResourceType WorkerAddPressed { get; set; }
