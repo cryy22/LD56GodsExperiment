@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace GodsExperiment
 {
@@ -13,6 +15,8 @@ namespace GodsExperiment
         private readonly List<TMP_Text> _inactiveParticles = new(128);
         private readonly HashSet<Schedule> _schedules = new(128);
         private readonly HashSet<Schedule> _toUnschedule = new(128);
+
+        private int _scheduleId;
 
         private void Update()
         {
@@ -50,6 +54,7 @@ namespace GodsExperiment
             _schedules.Add(
                 new Schedule
                 {
+                    Id = _scheduleId,
                     Particle = particle,
                     StartPos = startPos,
                     EndPos = startPos +
@@ -59,6 +64,7 @@ namespace GodsExperiment
                     StartTime = Time.time,
                 }
             );
+            _scheduleId++;
         }
 
         public TMP_Text GetParticle()
@@ -67,21 +73,34 @@ namespace GodsExperiment
             {
                 int lastIndex = _inactiveParticles.Count - 1;
                 TMP_Text particle = _inactiveParticles[lastIndex];
-                particle.gameObject.SetActive(true);
                 _inactiveParticles.RemoveAt(lastIndex);
+
+                particle.gameObject.SetActive(true);
                 return particle;
             }
 
             return Instantiate(original: NumberParticlePrefab, parent: transform);
         }
 
-        private struct Schedule
+        private struct Schedule : IEquatable<Schedule>
         {
+            public int Id;
             public TMP_Text Particle;
             public Vector3 StartPos;
             public Vector3 EndPos;
             public float StartTime;
+
             public float EndTime => StartTime + _duration;
+
+            #region IEquatable
+
+            public bool Equals(Schedule other) { return Id == other.Id; }
+            public override bool Equals(object obj) { return obj is Schedule other && Equals(other); }
+            public override int GetHashCode() { return Id; }
+            public static bool operator ==(Schedule left, Schedule right) { return left.Equals(right); }
+            public static bool operator !=(Schedule left, Schedule right) { return !left.Equals(right); }
+
+            #endregion
         }
     }
 }
