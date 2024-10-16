@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Globalization;
+using UnityEngine;
 
 namespace GodsExperiment
 {
@@ -14,14 +15,7 @@ namespace GodsExperiment
             foreach ((ResourceType resourceType, List<ResourceGauge> gauges) in uiState.ResourcesResourceGauges)
             foreach (ResourceGauge gauge in gauges)
             {
-                gauge.ShowCountText(
-                    resourceType switch
-                    {
-                        ResourceType.Construction => false,
-                        _                         => true,
-                    }
-                );
-
+                gauge.ShowCountText(resourceType != ResourceType.Construction);
                 gauge.SetIcon(state.Config.GetSpriteForResource(resourceType));
                 gauge.SetColor(state.Config.GetColorForResource(resourceType));
             }
@@ -61,7 +55,9 @@ namespace GodsExperiment
                     );
                     control.RateOfProductionText.text = $"({rateOfProduction:F1}/day)";
                     control.ResourceRequirementsSign.SetActive(
-                        !resourceState.IsPaid && (state.Workers[resourceType] > 0)
+                        !resourceState.IsPaid
+                        && Mathf.Approximately(a: resourceState.JustIncreasedBy, b: 0)
+                        && (state.Workers[resourceType] > 0)
                     );
                 }
             }
