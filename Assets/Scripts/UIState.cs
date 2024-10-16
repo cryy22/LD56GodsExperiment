@@ -30,6 +30,8 @@ namespace GodsExperiment
 
         [field: SerializeField] public Tooltip Tooltip { get; private set; }
 
+        [field: SerializeField] public NumberParticlePool NumberParticlePool { get; private set; }
+
         public IReadOnlyDictionary<ResourceType, List<ResourceControl>> ResourcesResourceControls =>
             _resourcesResourceControls;
         public IReadOnlyDictionary<ResourceType, List<ResourceGauge>> ResourcesResourceGauges =>

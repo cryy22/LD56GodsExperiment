@@ -16,6 +16,7 @@ namespace GodsExperiment
         private FoodSystem _foodSystem;
         private ConstructionSystem _constructionSystem;
         private GameResultSystem _gameResultSystem;
+        private NumberParticleSystem _numberParticleSystem;
 
         private void Start() { Initialize(); }
 
@@ -36,7 +37,7 @@ namespace GodsExperiment
             );
             _foodSystem.Update(time: State.Time, food: State.Resources[ResourceType.Food], workers: State.Workers);
             _gameResultSystem.Update(State);
-
+            _numberParticleSystem.Update(resources: State.Resources, uiState: UIState);
             _uiSystem.Update(state: State, uiState: UIState);
         }
 
@@ -53,6 +54,7 @@ namespace GodsExperiment
             _foodSystem = new FoodSystem();
             _constructionSystem = new ConstructionSystem();
             _gameResultSystem = new GameResultSystem();
+            _numberParticleSystem = new NumberParticleSystem();
         }
     }
 }
