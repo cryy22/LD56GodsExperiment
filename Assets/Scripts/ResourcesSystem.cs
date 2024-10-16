@@ -6,6 +6,8 @@ namespace GodsExperiment
     {
         public void Update(ResourcesState resources, WorkersState workers, TimeState time)
         {
+            if (time.IsTimePaused)
+                return;
             foreach (ResourceType resourceType in resources.ResourceTypes)
                 UpdateResource(
                     resourceType: resourceType,

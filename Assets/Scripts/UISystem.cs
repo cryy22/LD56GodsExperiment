@@ -56,6 +56,7 @@ namespace GodsExperiment
                     control.RateOfProductionText.text = $"({rateOfProduction:F1}/day)";
                     control.ResourceRequirementsSign.SetActive(
                         !resourceState.IsPaid
+                        && (resourceState.ResourceCosts.Count > 0)
                         && Mathf.Approximately(a: resourceState.JustIncreasedBy, b: 0)
                         && (state.Workers[resourceType] > 0)
                     );
