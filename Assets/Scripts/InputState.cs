@@ -2,7 +2,20 @@ namespace GodsExperiment
 {
     public class InputState
     {
-        public bool PausePressed { get; set; }
+        public bool PausePressed
+        {
+            get => _pausePressed;
+            set
+            {
+                if (value)
+                    TotalPauses++;
+
+                _pausePressed = value;
+            }
+        }
+
+        public int TotalPauses { get; private set; }
+
         public bool PlayPressed { get; set; }
         public bool FastForwardPressed { get; set; }
         public bool VeryFastForwardPressed { get; set; }
@@ -19,5 +32,7 @@ namespace GodsExperiment
 
         public string TooltipContent { get; set; } = string.Empty;
         public bool IsTooltipEnabled { get; set; } = true;
+
+        private bool _pausePressed;
     }
 }

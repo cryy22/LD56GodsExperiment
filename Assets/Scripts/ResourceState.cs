@@ -8,7 +8,19 @@ namespace GodsExperiment
 
         public ResourceType Type { get; private set; }
         public int WorkerSlots { get; set; } = 1;
-        public float WorkUnitsAdded { get; set; }
+
+        public float WorkUnitsAdded
+        {
+            get => _workUnitsAdded;
+            set
+            {
+                if (value > _workUnitsAdded)
+                    TotalWorkUnits += value - _workUnitsAdded;
+
+                _workUnitsAdded = value;
+            }
+        }
+
         public float WorkUnitsPerUnit { get; set; }
         public bool IsPaid { get; set; }
 
@@ -18,9 +30,14 @@ namespace GodsExperiment
             set
             {
                 if (value > _count)
+                {
                     JustIncreasedBy += value - _count;
+                    TotalCreated += value - _count;
+                }
                 else
+                {
                     JustDecreasedBy += _count - value;
+                }
 
                 _count = value;
             }
@@ -28,10 +45,14 @@ namespace GodsExperiment
 
         public float JustIncreasedBy { get; private set; }
         public float JustDecreasedBy { get; private set; }
+        public float TotalCreated { get; private set; }
+
+        public float TotalWorkUnits { get; private set; }
 
         public float Progress => WorkUnitsAdded / WorkUnitsPerUnit;
 
         private float _count;
+        private float _workUnitsAdded;
 
         public ResourceState(ResourceRequirementSet resourceRequirementSet)
         {
