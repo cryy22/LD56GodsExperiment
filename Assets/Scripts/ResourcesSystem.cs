@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace GodsExperiment
 {
-    public class ResourceProgressSystem
+    public class ResourcesSystem
     {
         public void Update(ResourcesState resources, WorkersState workers, TimeState time)
         {

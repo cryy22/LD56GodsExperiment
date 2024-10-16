@@ -9,7 +9,7 @@ namespace GodsExperiment
         [SerializeField] private UIState UIState;
 
         private GameTimeSystem _gameTimeSystem;
-        private ResourceProgressSystem _resourceProgressSystem;
+        private ResourcesSystem _resourcesSystem;
         private InputSystem _inputSystem;
         private UISystem _uiSystem;
         private WorkerAssignmentSystem _workerAssignmentSystem;
@@ -28,7 +28,7 @@ namespace GodsExperiment
             _inputSystem.Update(input: State.Input);
             _gameTimeSystem.Update(time: State.Time, input: State.Input);
             _workerAssignmentSystem.Update(workers: State.Workers, resources: State.Resources, input: State.Input);
-            _resourceProgressSystem.Update(resources: State.Resources, workers: State.Workers, time: State.Time);
+            _resourcesSystem.Update(resources: State.Resources, workers: State.Workers, time: State.Time);
             _constructionSystem.Update(
                 construction: State.Construction,
                 resources: State.Resources,
@@ -47,7 +47,7 @@ namespace GodsExperiment
             UIState.ResetAll();
 
             _gameTimeSystem = new GameTimeSystem();
-            _resourceProgressSystem = new ResourceProgressSystem();
+            _resourcesSystem = new ResourcesSystem();
             _inputSystem = new InputSystem();
             _uiSystem = new UISystem(state: State, uiState: UIState);
             _workerAssignmentSystem = new WorkerAssignmentSystem();
