@@ -22,9 +22,6 @@ namespace GodsExperiment
                         if (isPaid)
                             construction.Queue.Add(input.ConstructionRequested);
                     }
-
-                input.ConstructionRequested = ResourceType.None;
-                input.ConstructionChangeMassModifier = false;
             }
 
             if (construction.InProgress == ResourceType.None)

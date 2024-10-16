@@ -2,12 +2,10 @@ using UnityEngine;
 
 namespace GodsExperiment
 {
-    public class GameTimeSystem
+    public class TimeSystem
     {
         public void Update(TimeState time, InputState input)
         {
-            time.DayChanged = false;
-
             if (time.IsTimePaused && input.AnyPlayButtonPressed)
                 time.IsTimePaused = false;
             else if (input.PausePressed)
@@ -19,11 +17,6 @@ namespace GodsExperiment
                 time.TimeSpeed = Constants.FastForwardSpeed;
             if (input.VeryFastForwardPressed)
                 time.TimeSpeed = Constants.VeryFastForwardSpeed;
-
-            input.PausePressed = false;
-            input.PlayPressed = false;
-            input.FastForwardPressed = false;
-            input.VeryFastForwardPressed = false;
 
             time.DeltaTime = !time.IsTimePaused
                 ? Time.deltaTime * time.TimeSpeed

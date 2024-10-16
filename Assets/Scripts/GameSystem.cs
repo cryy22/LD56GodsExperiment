@@ -8,7 +8,7 @@ namespace GodsExperiment
         private static GameState State => GameState.I;
         [SerializeField] private UIState UIState;
 
-        private GameTimeSystem _gameTimeSystem;
+        private TimeSystem _timeSystem;
         private ResourcesSystem _resourcesSystem;
         private InputSystem _inputSystem;
         private UISystem _uiSystem;
@@ -17,6 +17,7 @@ namespace GodsExperiment
         private ConstructionSystem _constructionSystem;
         private GameResultSystem _gameResultSystem;
         private NumberParticleSystem _numberParticleSystem;
+        private TransientStateResetSystem _transientStateResetSystem;
 
         private void Start() { Initialize(); }
 
@@ -26,7 +27,7 @@ namespace GodsExperiment
                 Initialize();
 
             _inputSystem.Update(input: State.Input);
-            _gameTimeSystem.Update(time: State.Time, input: State.Input);
+            _timeSystem.Update(time: State.Time, input: State.Input);
             _workerAssignmentSystem.Update(workers: State.Workers, resources: State.Resources, input: State.Input);
             _resourcesSystem.Update(resources: State.Resources, workers: State.Workers, time: State.Time);
             _constructionSystem.Update(
@@ -39,6 +40,8 @@ namespace GodsExperiment
             _gameResultSystem.Update(State);
             _numberParticleSystem.Update(resources: State.Resources, uiState: UIState);
             _uiSystem.Update(state: State, uiState: UIState);
+
+            _transientStateResetSystem.Update(State);
         }
 
         private void Initialize()
@@ -46,7 +49,7 @@ namespace GodsExperiment
             State.ResetAll();
             UIState.ResetAll();
 
-            _gameTimeSystem = new GameTimeSystem();
+            _timeSystem = new TimeSystem();
             _resourcesSystem = new ResourcesSystem();
             _inputSystem = new InputSystem();
             _uiSystem = new UISystem(state: State, uiState: UIState);
@@ -55,6 +58,7 @@ namespace GodsExperiment
             _constructionSystem = new ConstructionSystem();
             _gameResultSystem = new GameResultSystem();
             _numberParticleSystem = new NumberParticleSystem();
+            _transientStateResetSystem = new TransientStateResetSystem();
         }
     }
 }

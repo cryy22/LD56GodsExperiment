@@ -42,6 +42,7 @@ namespace GodsExperiment
             PauseButton.onClick.AddListener(OnPauseSelected);
             PlayButton.onClick.AddListener(OnPlaySelected);
             FastForwardButton.onClick.AddListener(OnFastForwardSelected);
+            VeryFastForwardButton.onClick.AddListener(OnVeryFastForwardSelected);
         }
 
         private void OnDisable()
@@ -49,6 +50,7 @@ namespace GodsExperiment
             PauseButton.onClick.RemoveListener(OnPauseSelected);
             PlayButton.onClick.RemoveListener(OnPlaySelected);
             FastForwardButton.onClick.RemoveListener(OnFastForwardSelected);
+            VeryFastForwardButton.onClick.RemoveListener(OnVeryFastForwardSelected);
         }
 
         private void OnPauseSelected() { Input.PausePressed = true; }

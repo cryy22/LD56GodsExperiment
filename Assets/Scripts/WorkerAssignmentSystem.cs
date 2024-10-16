@@ -13,9 +13,6 @@ namespace GodsExperiment
                         resources: resources,
                         resourceType: input.WorkerAddPressed
                     );
-
-                input.WorkerAddPressed = ResourceType.None;
-                input.WorkerChangeMassModifier = false;
             }
 
             if (input.WorkerRemovePressed != ResourceType.None)
@@ -27,9 +24,6 @@ namespace GodsExperiment
                         resources: resources,
                         resourceType: input.WorkerRemovePressed
                     );
-
-                input.WorkerRemovePressed = ResourceType.None;
-                input.WorkerChangeMassModifier = false;
             }
         }
     }

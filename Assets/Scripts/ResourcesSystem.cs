@@ -23,6 +23,7 @@ namespace GodsExperiment
         )
         {
             ResourceState resource = resources[resourceType];
+
             if (!resource.IsPaid)
             {
                 if (workers[resourceType] <= 0) return;
