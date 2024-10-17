@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ namespace GodsExperiment
 {
     public class ResultSceneController : MonoBehaviour
     {
+        [SerializeField] private TMP_Text ResultDescriptionText;
         [SerializeField] private Image ResultImage;
         [SerializeField] private Sprite WinSprite;
         [SerializeField] private Sprite LoseSprite;
@@ -16,7 +18,18 @@ namespace GodsExperiment
         [SerializeField] private Transform OverCardDestination;
         [SerializeField] private float OverCardDuration;
 
-        private void Start() { ResultImage.sprite = GameState.I.GameResult == GameResult.Win ? WinSprite : LoseSprite; }
+        private void Start()
+        {
+            ResultDescriptionText.text = GameState.I.GameResult == GameResult.Win
+                ? "EXPERIMENT: SUCCESS!"
+                : "EXPERIMENT: FAIL";
+            ResultDescriptionText.color = GameState.I.GameResult == GameResult.Win
+                ? Constants.Green
+                : Constants.Red;
+            ResultImage.sprite = GameState.I.GameResult == GameResult.Win
+                ? WinSprite
+                : LoseSprite;
+        }
 
         private void OnEnable() { RetryButton.onClick.AddListener(OnRetryClicked); }
         private void OnDisable() { RetryButton.onClick.RemoveAllListeners(); }
