@@ -6,12 +6,13 @@ namespace GodsExperiment
     {
         private static GameState State => GameState.I;
 
+        [SerializeField] private Transform RowParent;
         [SerializeField] private StatsTableRow RowPrefab;
         [SerializeField] private Sprite WorkerSprite;
 
         private void Start()
         {
-            StatsTableRow row = Instantiate(original: RowPrefab, parent: transform);
+            StatsTableRow row = Instantiate(original: RowPrefab, parent: RowParent);
             row.StatImage.sprite = WorkerSprite;
             row.StatNameText.text = "total";
             row.StatValueText.text = State.Workers.GetTotalWorkers().ToString();
@@ -21,12 +22,12 @@ namespace GodsExperiment
                 ResourceState resource = State.Resources[resourceType];
                 Sprite resourceSprite = State.Config.GetSpriteForResource(resourceType);
 
-                row = Instantiate(original: RowPrefab, parent: transform);
+                row = Instantiate(original: RowPrefab, parent: RowParent);
                 row.StatImage.sprite = resourceSprite;
                 row.StatNameText.text = "created";
                 row.StatValueText.text = $"{resource.TotalCreated:F1}";
 
-                row = Instantiate(original: RowPrefab, parent: transform);
+                row = Instantiate(original: RowPrefab, parent: RowParent);
                 row.StatImage.sprite = resourceSprite;
                 row.StatNameText.text = "mouse-days";
                 row.StatValueText.text = $"{resource.TotalWorkUnits / State.Time.TimePerDay:F1}";
