@@ -11,6 +11,9 @@ namespace GodsExperiment
         [SerializeField] private GameObject TooltipBubble;
         [SerializeField] private TMP_Text TooltipText;
         [SerializeField] private Button TooltipToggle;
+        [SerializeField] private TooltipSpeakerAnimator Animator;
+
+        private string _currentContent;
 
         private void Update()
         {
@@ -22,8 +25,21 @@ namespace GodsExperiment
 
         public void SetContent(string content)
         {
-            TooltipBubble.SetActive(content.Length > 0);
+            if (content == _currentContent)
+                return;
+            _currentContent = content;
+
             TooltipText.text = content;
+            if (content.Length > 0)
+            {
+                TooltipBubble.SetActive(true);
+                Animator.Run();
+            }
+            else
+            {
+                TooltipBubble.SetActive(false);
+                Animator.Stop();
+            }
         }
 
         private void OnTooltipToggled() { Input.IsTooltipEnabled = !Input.IsTooltipEnabled; }

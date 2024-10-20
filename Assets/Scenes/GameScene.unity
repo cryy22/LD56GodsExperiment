@@ -4198,6 +4198,7 @@ GameObject:
   - component: {fileID: 844092885}
   - component: {fileID: 844092887}
   - component: {fileID: 844092888}
+  - component: {fileID: 844092889}
   m_Layer: 0
   m_Name: MouseSprite
   m_TagString: Untagged
@@ -4326,6 +4327,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &844092889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844092883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28896028962d4ec6a0807bfa811d024d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprites:
+  - {fileID: 21300000, guid: 94e2c5328369f41b7b2556404bd51342, type: 3}
+  - {fileID: 21300000, guid: c25de2e4dc32e4fdcbd78d7b593bacc3, type: 3}
+  - {fileID: 21300000, guid: 94e2c5328369f41b7b2556404bd51342, type: 3}
+  - {fileID: 21300000, guid: d2457b5f781aa498e90faa40ed0140a8, type: 3}
+  Image: {fileID: 844092885}
+  FrameSpeed: 0.333
 --- !u!1 &864976458
 GameObject:
   m_ObjectHideFlags: 0
@@ -12000,6 +12020,7 @@ MonoBehaviour:
   TooltipBubble: {fileID: 2082318196}
   TooltipText: {fileID: 1897961527}
   TooltipToggle: {fileID: 844092888}
+  Animator: {fileID: 844092889}
 --- !u!1 &1947073609
 GameObject:
   m_ObjectHideFlags: 0
