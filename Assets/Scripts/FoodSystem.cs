@@ -10,14 +10,16 @@ namespace GodsExperiment
             if (!time.DayChanged)
                 return;
 
-            food.Count -= workers.TotalDailyFoodCost;
+            float foodPayable = Mathf.Min(a: workers.TotalDailyFoodCost, b: food.Count);
+            food.Count -= foodPayable;
+
             if (food.Count >= workers.NewWorkerFoodCost)
             {
                 int newWorkers = Mathf.FloorToInt(food.Count / workers.NewWorkerFoodCost);
                 workers[ResourceType.None] += newWorkers;
                 food.Count -= workers.NewWorkerFoodCost * newWorkers;
             }
-            else if (food.Count > -Mathf.Epsilon)
+            else if (foodPayable >= workers.TotalDailyFoodCost - Mathf.Epsilon)
             {
                 workers.IsUnderfed = false;
                 workers.UnderfedProductivityPenalty = 0;
@@ -28,7 +30,7 @@ namespace GodsExperiment
                 workers.UnderfedProductivityPenalty = -food.Count / workers.TotalDailyFoodCost;
                 food.Count = 0;
             }
-            else // doubly underfed workers leave
+            else // consecutively underfed workers leave
             {
                 workers.IsUnderfed = false;
                 workers.UnderfedProductivityPenalty = 0;
