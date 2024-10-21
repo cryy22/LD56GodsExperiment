@@ -6,7 +6,15 @@ namespace GodsExperiment
     {
         public void Update(GameState state)
         {
-            if (state.Resources[ResourceType.Boos].Count >= state.Config.TotalBoosTarget)
+            var hasWon = true;
+            foreach (ResourceTarget resourceTarget in state.Config.ResourceTargets)
+                if (state.Resources[resourceTarget.ResourceType].Count < resourceTarget.TargetAmount)
+                {
+                    hasWon = false;
+                    break;
+                }
+
+            if (hasWon)
                 state.GameResult = GameResult.Win;
             else if (state.Time.Day >= state.Config.TotalDays)
                 state.GameResult = GameResult.Loss;

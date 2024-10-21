@@ -28,7 +28,8 @@ namespace GodsExperiment
 
             uiState.ConversionTable.SetResourceCosts(resources: state.Resources, config: state.Config);
             uiState.TotalDaysCount.text = $"of {state.Config.TotalDays}";
-            uiState.TotalBoosCount.text = $"of {state.Config.TotalBoosTarget}";
+            // TODO: replace this with multiple labels showing all resource targets
+            uiState.TotalBoosCount.text = $"of {state.Config.ResourceTargets[0].TargetAmount}";
 
             uiState.NewWorkerRequirementCount.text =
                 state.Workers.NewWorkerFoodCost.ToString(CultureInfo.InvariantCulture);
