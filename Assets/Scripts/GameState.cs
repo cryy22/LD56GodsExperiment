@@ -6,9 +6,11 @@ namespace GodsExperiment
     public class GameState : ScriptableObject
     {
         private static GameState _instance;
-        public static GameState I => _instance ??= UnityEngine.Resources.Load<GameState>("State/GameState");
+        public static GameState I =>
+            _instance = _instance ? _instance : UnityEngine.Resources.Load<GameState>("State/GameState");
 
-        [field: SerializeField] public GameConfig Config { get; private set; }
+        [field: SerializeField] public GameConfig DefaultConfig { get; private set; }
+        public GameConfig Config { get; set; }
 
         public TimeState Time { get; private set; }
         public ResourcesState Resources { get; private set; }
@@ -20,6 +22,7 @@ namespace GodsExperiment
 
         public void ResetAll()
         {
+            if (!Config) Config = DefaultConfig;
             GameResult = GameResult.None;
 
             Time = new TimeState

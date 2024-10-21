@@ -7,7 +7,7 @@ namespace GodsExperiment
     {
         [SerializeField] private Sprite[] Sprites;
         [SerializeField] private Image Image;
-        [SerializeField] private float FrameSpeed = 0.5f;
+        [SerializeField] private float FrameSpeed = 0.333f;
 
         private bool _isRunning;
         private int _spriteIndex;
