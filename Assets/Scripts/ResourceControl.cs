@@ -13,8 +13,7 @@ namespace GodsExperiment
         [field: SerializeField] public GameObject ResourceRequirementsSign;
 
         [SerializeField] private ResourceCountLabel ResourceCountLabelPrefab;
-
-        public readonly Dictionary<ResourceType, ResourceCountLabel> ResourcesCountLabels = new();
+        private readonly Dictionary<ResourceType, ResourceCountLabel> _resourcesCountLabels = new();
 
         private void Awake() { ResourceRequirementsSign.SetActive(false); }
 
@@ -30,10 +29,10 @@ namespace GodsExperiment
                     parent: ResourceRequirementsSign.transform
                 );
 
-                countLabel.SetIcon(GameState.I.Config.GetSpriteForResource(resourceType));
+                countLabel.SetIcon(ResourceDefinitionIndex.I.GetSpriteForResource(resourceType));
                 countLabel.SetCount(cost);
 
-                ResourcesCountLabels[resourceType] = countLabel;
+                _resourcesCountLabels[resourceType] = countLabel;
             }
         }
     }

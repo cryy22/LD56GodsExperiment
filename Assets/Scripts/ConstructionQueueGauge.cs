@@ -18,7 +18,7 @@ namespace GodsExperiment
                 Destroy(child.gameObject);
         }
 
-        public void SetConstructionQueue(IEnumerable<ResourceType> queuedResourceTypes, GameConfig config)
+        public void SetConstructionQueue(IEnumerable<ResourceType> queuedResourceTypes)
         {
             var i = 0;
             foreach (ResourceType resourceType in queuedResourceTypes)
@@ -28,7 +28,7 @@ namespace GodsExperiment
                         Instantiate(original: ConstructionIconPrefab, parent: ConstructionIconParent)
                     );
 
-                _constructionIcons[i].SetResourceIcon(config.GetSpriteForResource(resourceType));
+                _constructionIcons[i].SetResourceIcon(ResourceDefinitionIndex.I.GetSpriteForResource(resourceType));
 
                 i++;
             }

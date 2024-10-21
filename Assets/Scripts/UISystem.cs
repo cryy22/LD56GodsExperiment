@@ -16,18 +16,15 @@ namespace GodsExperiment
             foreach (ResourceGauge gauge in gauges)
             {
                 gauge.ShowCountText(resourceType != ResourceType.Construction);
-                gauge.SetIcon(state.Config.GetSpriteForResource(resourceType));
-                gauge.SetColor(state.Config.GetColorForResource(resourceType));
+                gauge.SetIcon(ResourceDefinitionIndex.I.GetSpriteForResource(resourceType));
+                gauge.SetColor(ResourceDefinitionIndex.I.GetColorForResource(resourceType));
             }
 
             foreach ((ResourceType resourceType, List<WorkerControl> controls) in uiState.ResourcesWorkerControls)
             foreach (WorkerControl control in controls)
                 control.ResourceType = resourceType;
 
-            uiState.ConstructionQueueControl.SetAvailableResources(
-                resourceTypes: state.Config.ResourcesAvailableForConstruction,
-                config: state.Config
-            );
+            uiState.ConstructionQueueControl.SetAvailableResources(state.Config.ResourcesAvailableForConstruction);
 
             uiState.ConversionTable.SetResourceCosts(resources: state.Resources, config: state.Config);
             uiState.TotalDaysCount.text = $"of {state.Config.TotalDays}";
@@ -70,7 +67,9 @@ namespace GodsExperiment
                 resourceGauge.SetValues(count: resourceState.Count, progress: resourceState.Progress);
 
                 if (resourceType == ResourceType.Construction)
-                    resourceGauge.SetIcon(state.Config.GetSpriteForResource(state.Construction.InProgress));
+                    resourceGauge.SetIcon(
+                        ResourceDefinitionIndex.I.GetSpriteForResource(state.Construction.InProgress)
+                    );
             }
 
             foreach ((ResourceType resourceType, List<WorkerGauge> workerGauges) in uiState.ResourcesWorkerGauges)
@@ -102,10 +101,7 @@ namespace GodsExperiment
             uiState.UnderfedProductivityPenaltyCount.color =
                 state.Workers.Productivity < 1 ? Constants.Red : Constants.Black;
 
-            uiState.ConstructionQueueGauge.SetConstructionQueue(
-                queuedResourceTypes: state.Construction.Queue,
-                config: state.Config
-            );
+            uiState.ConstructionQueueGauge.SetConstructionQueue(state.Construction.Queue);
             uiState.ConstructionQueueControl.SetControlsInteractabilities(
                 resources: state.Resources,
                 config: state.Config

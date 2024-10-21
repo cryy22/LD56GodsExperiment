@@ -10,7 +10,7 @@ namespace GodsExperiment
 
         private readonly List<ConstructionQueueControlItem> _items = new();
 
-        public void SetAvailableResources(ResourceType[] resourceTypes, GameConfig config)
+        public void SetAvailableResources(ResourceType[] resourceTypes)
         {
             foreach (ConstructionQueueControlItem item in _items)
                 Destroy(item.gameObject);
@@ -24,7 +24,7 @@ namespace GodsExperiment
             {
                 ConstructionQueueControlItem item = Instantiate(original: ItemPrefab, parent: ItemParent);
                 item.ResourceType = resourceType;
-                item.SetIcon(config.GetSpriteForResource(resourceType));
+                item.SetIcon(ResourceDefinitionIndex.I.GetSpriteForResource(resourceType));
 
                 _items.Add(item);
             }

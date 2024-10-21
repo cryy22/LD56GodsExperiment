@@ -7,7 +7,9 @@ namespace GodsExperiment
     {
         private static GameState _instance;
         public static GameState I =>
-            _instance = _instance ? _instance : UnityEngine.Resources.Load<GameState>("State/GameState");
+            _instance
+                ? _instance
+                : _instance = UnityEngine.Resources.Load<GameState>("State/GameState");
 
         [field: SerializeField] public GameConfig DefaultConfig { get; private set; }
         public GameConfig Config { get; set; }

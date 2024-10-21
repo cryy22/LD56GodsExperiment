@@ -20,7 +20,7 @@ namespace GodsExperiment
             foreach (ResourceType resourceType in State.Resources.ResourceTypes)
             {
                 ResourceState resource = State.Resources[resourceType];
-                Sprite resourceSprite = State.Config.GetSpriteForResource(resourceType);
+                Sprite resourceSprite = ResourceDefinitionIndex.I.GetSpriteForResource(resourceType);
 
                 row = Instantiate(original: RowPrefab, parent: RowParent);
                 row.StatImage.sprite = resourceSprite;

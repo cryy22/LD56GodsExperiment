@@ -17,7 +17,6 @@ namespace GodsExperiment
         [field: SerializeField] public float DailyWorkerFoodCost { get; private set; }
         [field: SerializeField] public float NewWorkerFoodCost { get; private set; }
 
-        [field: SerializeField] public ResourceDefinition[] ResourceDefinitions { get; private set; }
         [field: SerializeField] public ResourceRequirementSet[] ResourceRequirementSets { get; private set; }
         [field: SerializeField] public ResourceWorkerSlotsSet[] InitialResourceWorkerSlotsSets { get; private set; }
 
@@ -26,33 +25,6 @@ namespace GodsExperiment
 
         [field: Range(min: 0, max: 1)]
         [field: SerializeField] public float UnworkedResourceDecayRate { get; private set; }
-
-        public Sprite GetSpriteForResource(ResourceType resourceType)
-        {
-            foreach (ResourceDefinition definition in ResourceDefinitions)
-                if (definition.ResourceType == resourceType)
-                    return definition.Icon;
-
-            return null;
-        }
-
-        public string GetNameForResource(ResourceType resourceType)
-        {
-            foreach (ResourceDefinition definition in ResourceDefinitions)
-                if (definition.ResourceType == resourceType)
-                    return definition.Name;
-
-            return "resource";
-        }
-
-        public Color GetColorForResource(ResourceType resourceType)
-        {
-            foreach (ResourceDefinition definition in ResourceDefinitions)
-                if (definition.ResourceType == resourceType)
-                    return definition.Color;
-
-            return Color.white;
-        }
 
         [Serializable]
         public class ResourceWorkerSlotsSet

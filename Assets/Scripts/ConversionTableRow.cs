@@ -17,13 +17,13 @@ namespace GodsExperiment
             GameConfig config
         )
         {
-            TargetResourceIcon.sprite = config.GetSpriteForResource(resourceType);
+            TargetResourceIcon.sprite = ResourceDefinitionIndex.I.GetSpriteForResource(resourceType);
 
             if (resources[resourceType].ResourceCosts.Count > 0)
             {
                 foreach ((ResourceType sourceResourceType, float cost) in resources[resourceType].ResourceCosts)
                 {
-                    SourceResourceIcon.sprite = config.GetSpriteForResource(sourceResourceType);
+                    SourceResourceIcon.sprite = ResourceDefinitionIndex.I.GetSpriteForResource(sourceResourceType);
                     SourceResourceCountText.text = $"{(int) cost}";
                 }
             }
