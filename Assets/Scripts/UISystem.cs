@@ -27,9 +27,11 @@ namespace GodsExperiment
             uiState.ConstructionQueueControl.SetAvailableResources(state.Config.ResourcesAvailableForConstruction);
 
             uiState.ConversionTable.SetResourceCosts(resources: state.Resources, config: state.Config);
-            uiState.TotalDaysCount.text = $"of {state.Config.TotalDays}";
-            // TODO: replace this with multiple labels showing all resource targets
-            uiState.TotalBoosCount.text = $"of {state.Config.ResourceTargets[0].TargetAmount}";
+            uiState.GoalsLine.Initialize(
+                state: state,
+                targets: state.Config.ResourceTargets,
+                totalDays: state.Config.TotalDays
+            );
 
             uiState.NewWorkerRequirementCount.text =
                 state.Workers.NewWorkerFoodCost.ToString(CultureInfo.InvariantCulture);
@@ -109,10 +111,6 @@ namespace GodsExperiment
             );
 
             uiState.DayProgressBar.SetProgress(state.Time.DayProgress);
-
-            uiState.CurrentDayCount.text = $"day {(state.Time.Day + 1).ToString()}";
-            uiState.CurrentBoosCount.text = $"{((int) state.Resources[ResourceType.Boos].Count).ToString()}";
-
             uiState.Tooltip.SetContent(state.Input.IsTooltipEnabled ? state.Input.TooltipContent : string.Empty);
         }
     }
