@@ -7386,6 +7386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NotesCard: {fileID: 1495962758}
   ShowHideButton: {fileID: 214141800}
+  ShowHideButtonText: {fileID: 1702280706}
+  ShowHideDuration: 0.06125
   OffscreenPoint: {x: 366, y: -45}
   OnscreenPoint: {x: 125, y: -110}
 --- !u!1 &1091098818
@@ -11793,7 +11795,7 @@ GameObject:
   - component: {fileID: 1702280707}
   - component: {fileID: 1702280706}
   m_Layer: 0
-  m_Name: Parameters
+  m_Name: ShowNotesButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
