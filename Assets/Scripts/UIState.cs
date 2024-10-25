@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace GodsExperiment
 {
+    [DefaultExecutionOrder(-1)]
     public class UIState : MonoBehaviour
     {
         [field: SerializeField] private ResourceToResourceControlMap[] ResourceControls { get; set; }

@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 17187159}
   - component: {fileID: 17187160}
   m_Layer: 0
-  m_Name: TimeInfo
+  m_Name: GoalsLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
