@@ -26,6 +26,8 @@ namespace GodsExperiment
         [field: SerializeField] public ProgressBar DayProgressBar { get; private set; }
         [field: SerializeField] public GoalsLine GoalsLine { get; private set; }
 
+        [field: SerializeField] public HypothesisStatementIndicator HypothesisStatementIndicator { get; private set; }
+
         [field: SerializeField] public Tooltip Tooltip { get; private set; }
 
         [field: SerializeField] public NumberParticlePool NumberParticlePool { get; private set; }

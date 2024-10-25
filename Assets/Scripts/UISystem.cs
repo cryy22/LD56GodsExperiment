@@ -36,6 +36,8 @@ namespace GodsExperiment
             uiState.NewWorkerRequirementCount.text =
                 state.Workers.NewWorkerFoodCost.ToString(CultureInfo.InvariantCulture);
 
+            uiState.HypothesisStatementIndicator.Initialize(state);
+
             uiState.Tooltip.SetContent(string.Empty);
         }
 
