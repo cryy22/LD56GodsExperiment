@@ -5915,7 +5915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 37, y: -107}
+  m_AnchoredPosition: {x: 37, y: -80}
   m_SizeDelta: {x: 230, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &889399151
@@ -6889,7 +6889,7 @@ MonoBehaviour:
   ShowHideButtonText: {fileID: 1702280706}
   ShowHideDuration: 0.06125
   OffscreenPoint: {x: 366, y: -45}
-  OnscreenPoint: {x: 125, y: -110}
+  OnscreenPoint: {x: 125, y: -140}
 --- !u!1 &1091098818
 GameObject:
   m_ObjectHideFlags: 0
@@ -9415,7 +9415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 366, y: -45}
+  m_AnchoredPosition: {x: 125, y: -140}
   m_SizeDelta: {x: 784, y: 434}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1495962759
