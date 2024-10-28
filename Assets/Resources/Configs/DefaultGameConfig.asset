@@ -23,6 +23,14 @@ MonoBehaviour:
   <DailyWorkerFoodCost>k__BackingField: 1
   <NewWorkerFoodCost>k__BackingField: 2
   <ResourceRequirementSets>k__BackingField:
+  - <ResourceType>k__BackingField: 8
+    <WorkUnits>k__BackingField: 1.75
+    <RequiredResources>k__BackingField:
+    - <Resource>k__BackingField: 2
+      <Quantity>k__BackingField: 1
+  - <ResourceType>k__BackingField: 9
+    <WorkUnits>k__BackingField: 10
+    <RequiredResources>k__BackingField: []
   - <ResourceType>k__BackingField: 1
     <WorkUnits>k__BackingField: 1
     <RequiredResources>k__BackingField: []
@@ -36,17 +44,12 @@ MonoBehaviour:
     <RequiredResources>k__BackingField:
     - <Resource>k__BackingField: 2
       <Quantity>k__BackingField: 2
-  - <ResourceType>k__BackingField: 8
-    <WorkUnits>k__BackingField: 1.75
-    <RequiredResources>k__BackingField:
-    - <Resource>k__BackingField: 2
-      <Quantity>k__BackingField: 1
-  - <ResourceType>k__BackingField: 9
-    <WorkUnits>k__BackingField: 10
+  - <ResourceType>k__BackingField: 4
+    <WorkUnits>k__BackingField: 3.5
     <RequiredResources>k__BackingField: []
   <InitialResourceWorkerSlotsSets>k__BackingField:
   - <ResourceType>k__BackingField: 1
-    <WorkerSlots>k__BackingField: 20
+    <WorkerSlots>k__BackingField: 50
   - <ResourceType>k__BackingField: 2
     <WorkerSlots>k__BackingField: 20
   - <ResourceType>k__BackingField: 3

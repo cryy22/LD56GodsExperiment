@@ -8,6 +8,53 @@ namespace GodsExperiment
     {
         public UISystem(GameState state, UIState uiState)
         {
+            foreach (Transform child in uiState.LeftIndustryResourceControlParent)
+                Object.Destroy(child.gameObject);
+            foreach (Transform child in uiState.CenterIndustryResourceControlParent)
+                Object.Destroy(child.gameObject);
+
+            List<ResourceType> industryResources = new();
+            foreach (ResourceRequirementSet requirementSet in state.Config.ResourceRequirementSets)
+            {
+                if (requirementSet.ResourceType == ResourceType.None) continue;
+                if (requirementSet.ResourceType == ResourceType.Food) continue;
+                if (requirementSet.ResourceType == ResourceType.Construction) continue;
+
+                industryResources.Add(requirementSet.ResourceType);
+            }
+
+            if (industryResources.Count <= 3)
+            {
+                uiState.CenterColumn.gameObject.SetActive(false);
+                uiState.LeftColumn.SetSizeWithCurrentAnchors(
+                    axis: RectTransform.Axis.Horizontal,
+                    size: uiState.ColumnWidthLarge
+                );
+            }
+            else
+            {
+                uiState.CenterColumn.gameObject.SetActive(true);
+                uiState.LeftColumn.SetSizeWithCurrentAnchors(
+                    axis: RectTransform.Axis.Horizontal,
+                    size: uiState.ColumnWidthSmall
+                );
+            }
+
+            for (var i = 0; i < industryResources.Count; i++)
+            {
+                ResourceType resourceType = industryResources[i];
+                ResourceControl control = Object.Instantiate(
+                    original: uiState.ResourceControlPrefab,
+                    parent: i < 3
+                        ? uiState.LeftIndustryResourceControlParent
+                        : uiState.CenterIndustryResourceControlParent
+                );
+
+                uiState.AddResourceControl(resourceType: resourceType, resourceControl: control);
+            }
+
+            uiState.ResetAll();
+
             foreach ((ResourceType resourceType, List<ResourceControl> controls) in uiState.ResourcesResourceControls)
             foreach (ResourceControl control in controls)
                 control.SetResourceCosts(state.Resources[resourceType].ResourceCosts);

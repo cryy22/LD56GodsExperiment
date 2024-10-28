@@ -8,6 +8,16 @@ namespace GodsExperiment
     [DefaultExecutionOrder(-1)]
     public class UIState : MonoBehaviour
     {
+        // LAYOUT CONFIGURATION
+        [field: SerializeField] public RectTransform LeftColumn { get; private set; }
+        [field: SerializeField] public RectTransform CenterColumn { get; private set; }
+        [field: SerializeField] public float ColumnWidthLarge { get; private set; }
+        [field: SerializeField] public float ColumnWidthSmall { get; private set; }
+        [field: SerializeField] public Transform LeftIndustryResourceControlParent { get; private set; }
+        [field: SerializeField] public Transform CenterIndustryResourceControlParent { get; private set; }
+        [field: SerializeField] public ResourceControl ResourceControlPrefab { get; private set; }
+
+        // GAUGES AND CONTROLS
         [field: SerializeField] private ResourceToResourceControlMap[] ResourceControls { get; set; }
         [field: SerializeField] private ResourceToResourceGaugeMap[] ResourceGauges { get; set; }
         [field: SerializeField] private ResourceToWorkerControlMap[] WorkerControls { get; set; }
@@ -23,13 +33,13 @@ namespace GodsExperiment
         [field: SerializeField] public ConstructionQueueControl ConstructionQueueControl { get; private set; }
         [field: SerializeField] public ConversionTable ConversionTable { get; private set; }
 
-        [field: SerializeField] public ProgressBar DayProgressBar { get; private set; }
-        [field: SerializeField] public GoalsLine GoalsLine { get; private set; }
-
         [field: SerializeField] public HypothesisStatementIndicator HypothesisStatementIndicator { get; private set; }
 
-        [field: SerializeField] public Tooltip Tooltip { get; private set; }
+        // UNCATEGORIZED
 
+        [field: SerializeField] public ProgressBar DayProgressBar { get; private set; }
+        [field: SerializeField] public GoalsLine GoalsLine { get; private set; }
+        [field: SerializeField] public Tooltip Tooltip { get; private set; }
         [field: SerializeField] public NumberParticlePool NumberParticlePool { get; private set; }
 
         public IReadOnlyDictionary<ResourceType, List<ResourceControl>> ResourcesResourceControls =>
@@ -41,6 +51,7 @@ namespace GodsExperiment
         public IReadOnlyDictionary<ResourceType, List<WorkerGauge>> ResourcesWorkerGauges =>
             _resourcesWorkerGauges;
 
+        private readonly List<ResourceToResourceControlMap> _runtimeResourcesResourceControls = new();
         private readonly Dictionary<ResourceType, List<ResourceControl>> _resourcesResourceControls = new();
         private readonly Dictionary<ResourceType, List<ResourceGauge>> _resourcesResourceGauges = new();
         private readonly Dictionary<ResourceType, List<WorkerControl>> _resourcesWorkerControls = new();
@@ -65,6 +76,8 @@ namespace GodsExperiment
 
             foreach (ResourceToResourceControlMap map in ResourceControls)
                 _resourcesResourceControls[map.ResourceType].Add(map.ResourceControl);
+            foreach (ResourceToResourceControlMap map in _runtimeResourcesResourceControls)
+                _resourcesResourceControls[map.ResourceType].Add(map.ResourceControl);
             foreach (ResourceToResourceGaugeMap map in ResourceGauges)
                 _resourcesResourceGauges[map.ResourceType].Add(map.ResourceGauge);
             foreach (ResourceToWorkerControlMap map in WorkerControls)
@@ -82,6 +95,17 @@ namespace GodsExperiment
             foreach ((ResourceType resourceType, List<WorkerControl> workerControls) in _resourcesWorkerControls)
             foreach (WorkerControl control in workerControls)
                 _resourcesWorkerGauges[resourceType].Add(control.Gauge);
+        }
+
+        public void AddResourceControl(ResourceType resourceType, ResourceControl resourceControl)
+        {
+            _runtimeResourcesResourceControls.Add(
+                new ResourceToResourceControlMap
+                {
+                    ResourceType = resourceType,
+                    ResourceControl = resourceControl,
+                }
+            );
         }
 
         [Serializable]
