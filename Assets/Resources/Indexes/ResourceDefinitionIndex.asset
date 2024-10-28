@@ -17,6 +17,14 @@ MonoBehaviour:
     <Name>k__BackingField: Nothing
     <Icon>k__BackingField: {fileID: 0}
     <Color>k__BackingField: {r: 1, g: 1, b: 1, a: 0}
+  - <ResourceType>k__BackingField: 8
+    <Name>k__BackingField: Food
+    <Icon>k__BackingField: {fileID: 21300000, guid: a20a37a751d5d4f2897321bb4f37b288, type: 3}
+    <Color>k__BackingField: {r: 0, g: 0.79607844, b: 0, a: 1}
+  - <ResourceType>k__BackingField: 9
+    <Name>k__BackingField: Construction
+    <Icon>k__BackingField: {fileID: 21300000, guid: 14109016d652b4dc68742d9259bb0407, type: 3}
+    <Color>k__BackingField: {r: 0.8980392, g: 0.29803923, b: 0, a: 1}
   - <ResourceType>k__BackingField: 1
     <Name>k__BackingField: Booite
     <Icon>k__BackingField: {fileID: 21300000, guid: 25afd4abaa27148eba14f1437dbcdcee, type: 3}
@@ -29,11 +37,19 @@ MonoBehaviour:
     <Name>k__BackingField: Boos
     <Icon>k__BackingField: {fileID: 21300000, guid: 24d86e90891d5437c956cd75fad93f18, type: 3}
     <Color>k__BackingField: {r: 0.09019608, g: 0.23921569, b: 1, a: 1}
-  - <ResourceType>k__BackingField: 8
-    <Name>k__BackingField: Food
-    <Icon>k__BackingField: {fileID: 21300000, guid: a20a37a751d5d4f2897321bb4f37b288, type: 3}
-    <Color>k__BackingField: {r: 0, g: 0.79607844, b: 0, a: 1}
-  - <ResourceType>k__BackingField: 9
-    <Name>k__BackingField: Construction
-    <Icon>k__BackingField: {fileID: 21300000, guid: 14109016d652b4dc68742d9259bb0407, type: 3}
-    <Color>k__BackingField: {r: 0.8980392, g: 0.29803923, b: 0, a: 1}
+  - <ResourceType>k__BackingField: 4
+    <Name>k__BackingField: Keeite
+    <Icon>k__BackingField: {fileID: 21300000, guid: c0f8304f759ab40588327649a4609328, type: 3}
+    <Color>k__BackingField: {r: 0.99607843, g: 0.9179546, b: 0.5976471, a: 1}
+  - <ResourceType>k__BackingField: 5
+    <Name>k__BackingField: Keekium
+    <Icon>k__BackingField: {fileID: 21300000, guid: 8500c160483af4c209eb808d74e44036, type: 3}
+    <Color>k__BackingField: {r: 1, g: 0.87952757, b: 0.39999998, a: 1}
+  - <ResourceType>k__BackingField: 6
+    <Name>k__BackingField: Kees
+    <Icon>k__BackingField: {fileID: 21300000, guid: 816534b346bdf49efa7aaeb84e0e148a, type: 3}
+    <Color>k__BackingField: {r: 0.99607843, g: 0.79607844, b: 0, a: 1}
+  - <ResourceType>k__BackingField: 7
+    <Name>k__BackingField: Bukis
+    <Icon>k__BackingField: {fileID: 21300000, guid: 3e6e57f8c688b4645bbe405f00556c22, type: 3}
+    <Color>k__BackingField: {r: 0.10980392, g: 0.1254902, b: 0.10980392, a: 1}
