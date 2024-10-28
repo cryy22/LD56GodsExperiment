@@ -10,9 +10,12 @@ namespace GodsExperiment
     {
         // LAYOUT CONFIGURATION
         [field: SerializeField] public RectTransform LeftColumn { get; private set; }
+        [field: SerializeField] public Transform LeftColumnContent { get; private set; }
         [field: SerializeField] public RectTransform CenterColumn { get; private set; }
+        [field: SerializeField] public Transform CenterColumnContent { get; private set; }
         [field: SerializeField] public float ColumnWidthLarge { get; private set; }
         [field: SerializeField] public float ColumnWidthSmall { get; private set; }
+        [field: SerializeField] public Transform FeedingSector { get; private set; }
         [field: SerializeField] public Transform LeftIndustryResourceControlParent { get; private set; }
         [field: SerializeField] public Transform CenterIndustryResourceControlParent { get; private set; }
         [field: SerializeField] public ResourceControl ResourceControlPrefab { get; private set; }

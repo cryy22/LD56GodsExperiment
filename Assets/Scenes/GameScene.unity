@@ -7045,9 +7045,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <LeftColumn>k__BackingField: {fileID: 1907180661}
+  <LeftColumnContent>k__BackingField: {fileID: 790243593}
   <CenterColumn>k__BackingField: {fileID: 1817439092}
+  <CenterColumnContent>k__BackingField: {fileID: 1317133924}
   <ColumnWidthLarge>k__BackingField: 425
   <ColumnWidthSmall>k__BackingField: 230
+  <FeedingSector>k__BackingField: {fileID: 1290391848}
   <LeftIndustryResourceControlParent>k__BackingField: {fileID: 1786050728}
   <CenterIndustryResourceControlParent>k__BackingField: {fileID: 2028660993}
   <ResourceControlPrefab>k__BackingField: {fileID: 5224037635225936320, guid: 689d36cc952da4baeb3411c03fa62a2a, type: 3}

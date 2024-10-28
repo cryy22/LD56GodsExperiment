@@ -30,6 +30,7 @@ namespace GodsExperiment
                     axis: RectTransform.Axis.Horizontal,
                     size: uiState.ColumnWidthLarge
                 );
+                uiState.FeedingSector.SetParent(uiState.LeftColumnContent);
             }
             else
             {
@@ -38,14 +39,16 @@ namespace GodsExperiment
                     axis: RectTransform.Axis.Horizontal,
                     size: uiState.ColumnWidthSmall
                 );
+                uiState.FeedingSector.SetParent(uiState.CenterColumnContent);
             }
 
+            uiState.FeedingSector.SetAsLastSibling();
             for (var i = 0; i < industryResources.Count; i++)
             {
                 ResourceType resourceType = industryResources[i];
                 ResourceControl control = Object.Instantiate(
                     original: uiState.ResourceControlPrefab,
-                    parent: i < 3
+                    parent: i < 4
                         ? uiState.LeftIndustryResourceControlParent
                         : uiState.CenterIndustryResourceControlParent
                 );
