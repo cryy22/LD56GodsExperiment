@@ -2329,6 +2329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 214141799}
+  - component: {fileID: 214141805}
   - component: {fileID: 214141802}
   - component: {fileID: 214141801}
   - component: {fileID: 214141800}
@@ -2483,6 +2484,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &214141805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214141798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71304134a8784c139e50271243f4da36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationMode: 0
+  Populator: {fileID: 0}
+  TooltipText: Click dis ta show or hide some details, like da overall goal of dis
+    experiment, or da ratio of industry inputs and outputs.
 --- !u!1 &246717603
 GameObject:
   m_ObjectHideFlags: 0
@@ -6339,10 +6356,10 @@ RectTransform:
   - {fileID: 1167985153}
   - {fileID: 256220471}
   - {fileID: 1163954106}
-  - {fileID: 1946377382}
   - {fileID: 886251289}
   - {fileID: 1641073073}
   - {fileID: 1068054933}
+  - {fileID: 1946377382}
   m_Father: {fileID: 80288351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
