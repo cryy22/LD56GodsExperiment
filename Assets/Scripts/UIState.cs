@@ -40,6 +40,7 @@ namespace GodsExperiment
 
         // UNCATEGORIZED
 
+        [field: SerializeField] public BGMPlayer BGMPlayer { get; private set; }
         [field: SerializeField] public ProgressBar DayProgressBar { get; private set; }
         [field: SerializeField] public GoalsLine GoalsLine { get; private set; }
         [field: SerializeField] public Tooltip Tooltip { get; private set; }

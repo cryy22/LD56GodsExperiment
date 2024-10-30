@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ResourceTargets>k__BackingField:
   - <ResourceType>k__BackingField: 1
-    <TargetAmount>k__BackingField: 30
+    <TargetAmount>k__BackingField: 30000
   TotalDays: 1
   <TimePerDay>k__BackingField: 15
   <InitialWorkers>k__BackingField: 100

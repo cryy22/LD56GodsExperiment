@@ -89,6 +89,8 @@ namespace GodsExperiment
             uiState.HypothesisStatementIndicator.Initialize(state);
 
             uiState.Tooltip.SetContent(string.Empty);
+
+            uiState.BGMPlayer.Play();
         }
 
         public void Update(GameState state, UIState uiState)
@@ -164,6 +166,12 @@ namespace GodsExperiment
 
             uiState.DayProgressBar.SetProgress(state.Time.DayProgress);
             uiState.Tooltip.SetContent(state.Input.IsTooltipEnabled ? state.Input.TooltipContent : string.Empty);
+
+            uiState.BGMPlayer.SetFilterMode(
+                state.Time.IsTimePaused
+                    ? BGMPlayer.AudioFilterMode.LowPassed
+                    : BGMPlayer.AudioFilterMode.Unfiltered
+            );
         }
     }
 }
