@@ -55,7 +55,6 @@ namespace GodsExperiment
         public IReadOnlyDictionary<ResourceType, List<WorkerGauge>> ResourcesWorkerGauges =>
             _resourcesWorkerGauges;
 
-        private readonly List<ResourceToResourceControlMap> _runtimeResourcesResourceControls = new();
         private readonly Dictionary<ResourceType, List<ResourceControl>> _resourcesResourceControls = new();
         private readonly Dictionary<ResourceType, List<ResourceGauge>> _resourcesResourceGauges = new();
         private readonly Dictionary<ResourceType, List<WorkerControl>> _resourcesWorkerControls = new();
@@ -79,38 +78,34 @@ namespace GodsExperiment
             }
 
             foreach (ResourceToResourceControlMap map in ResourceControls)
-                _resourcesResourceControls[map.ResourceType].Add(map.ResourceControl);
-            foreach (ResourceToResourceControlMap map in _runtimeResourcesResourceControls)
-                _resourcesResourceControls[map.ResourceType].Add(map.ResourceControl);
+                AddResourceControl(type: map.ResourceType, control: map.ResourceControl);
             foreach (ResourceToResourceGaugeMap map in ResourceGauges)
-                _resourcesResourceGauges[map.ResourceType].Add(map.ResourceGauge);
+                AddResourceGauge(type: map.ResourceType, gauge: map.ResourceGauge);
             foreach (ResourceToWorkerControlMap map in WorkerControls)
-                _resourcesWorkerControls[map.ResourceType].Add(map.WorkerControl);
+                AddWorkerControl(type: map.ResourceType, control: map.WorkerControl);
             foreach (ResourceToWorkerGaugeMap map in WorkerGauges)
-                _resourcesWorkerGauges[map.ResourceType].Add(map.WorkerGauge);
-
-            foreach ((ResourceType resourceType, List<ResourceControl> resourceControls) in _resourcesResourceControls)
-            foreach (ResourceControl control in resourceControls)
-            {
-                _resourcesResourceGauges[resourceType].Add(control.ResourceGauge);
-                _resourcesWorkerControls[resourceType].Add(control.WorkerControl);
-            }
-
-            foreach ((ResourceType resourceType, List<WorkerControl> workerControls) in _resourcesWorkerControls)
-            foreach (WorkerControl control in workerControls)
-                _resourcesWorkerGauges[resourceType].Add(control.Gauge);
+                AddWorkerGauge(type: map.ResourceType, gauge: map.WorkerGauge);
         }
 
-        public void AddResourceControl(ResourceType resourceType, ResourceControl resourceControl)
+        public void AddResourceControl(ResourceType type, ResourceControl control)
         {
-            _runtimeResourcesResourceControls.Add(
-                new ResourceToResourceControlMap
-                {
-                    ResourceType = resourceType,
-                    ResourceControl = resourceControl,
-                }
-            );
+            _resourcesResourceControls[type].Add(control);
+            AddResourceGauge(type: type, gauge: control.ResourceGauge);
+            AddWorkerControl(type: type, control: control.WorkerControl);
         }
+
+        public void AddResourceGauge(ResourceType type, ResourceGauge gauge)
+        {
+            _resourcesResourceGauges[type].Add(gauge);
+        }
+
+        public void AddWorkerControl(ResourceType type, WorkerControl control)
+        {
+            _resourcesWorkerControls[type].Add(control);
+            AddWorkerGauge(type: type, gauge: control.Gauge);
+        }
+
+        public void AddWorkerGauge(ResourceType type, WorkerGauge gauge) { _resourcesWorkerGauges[type].Add(gauge); }
 
         [Serializable]
         public class ResourceToResourceGaugeMap

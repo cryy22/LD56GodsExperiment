@@ -53,10 +53,8 @@ namespace GodsExperiment
                         : uiState.CenterIndustryResourceControlParent
                 );
 
-                uiState.AddResourceControl(resourceType: resourceType, resourceControl: control);
+                uiState.AddResourceControl(type: resourceType, control: control);
             }
-
-            uiState.ResetAll();
 
             foreach ((ResourceType resourceType, List<ResourceControl> controls) in uiState.ResourcesResourceControls)
             foreach (ResourceControl control in controls)
@@ -108,6 +106,8 @@ namespace GodsExperiment
                         time: state.Time
                     );
                     control.RateOfProductionText.text = $"({rateOfProduction:F1}/day)";
+                    if (control.ResourceRequirementsSign == null)
+                        Debug.Log("here!!");
                     control.ResourceRequirementsSign.SetActive(
                         !resourceState.IsPaid
                         && (resourceState.ResourceCosts.Count > 0)

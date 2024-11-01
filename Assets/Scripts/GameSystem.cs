@@ -46,6 +46,7 @@ namespace GodsExperiment
 
         private void Initialize()
         {
+            Debug.Log("initialize");
             State.ResetAll();
             UIState.ResetAll();
 
