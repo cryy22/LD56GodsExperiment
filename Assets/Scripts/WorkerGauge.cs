@@ -10,7 +10,7 @@ namespace GodsExperiment
 
         private readonly List<WorkerSlot> _slots = new();
 
-        private void Start()
+        private void Awake()
         {
             foreach (Transform child in WorkerParent)
                 Destroy(child.gameObject);
