@@ -10,53 +10,53 @@ namespace GodsExperiment
             if (!time.DayChanged)
                 return;
 
-            float foodPayable = Mathf.Min(a: workers.TotalDailyFoodCost, b: food.Count);
-            food.Count -= foodPayable;
-
-            if (food.Count >= workers.NewWorkerFoodCost)
+            if (food.Count >= workers.TotalDailyFoodCost)
             {
+                food.Count -= workers.TotalDailyFoodCost;
+                workers.IsUnderfed = false;
+                workers.UnderfedProductivityPenalty = 0;
+
                 int newWorkers = Mathf.FloorToInt(food.Count / workers.NewWorkerFoodCost);
-                workers[ResourceType.None] += newWorkers;
                 food.Count -= workers.NewWorkerFoodCost * newWorkers;
+                workers[ResourceType.None] += newWorkers;
             }
-            else if (foodPayable >= workers.TotalDailyFoodCost - Mathf.Epsilon)
+            else
             {
-                workers.IsUnderfed = false;
-                workers.UnderfedProductivityPenalty = 0;
-            }
-            else if (workers.IsUnderfed == false) // weren't underfed yesterday
-            {
-                workers.IsUnderfed = true;
-                workers.UnderfedProductivityPenalty = -food.Count / workers.TotalDailyFoodCost;
-                food.Count = 0;
-            }
-            else // consecutively underfed workers leave
-            {
-                workers.IsUnderfed = false;
-                workers.UnderfedProductivityPenalty = 0;
-
-                int unfedWorkers = Mathf.CeilToInt(-food.Count / workers.DailyWorkerFoodCost);
+                float foodDeficit = workers.TotalDailyFoodCost - food.Count;
                 food.Count = 0;
 
-                if (unfedWorkers >= workers.GetTotalWorkers())
-                    unfedWorkers = workers.GetTotalWorkers() - 1;
-
-                unfedWorkers = DismissUnfedWorkers(
-                    unfedWorkers: unfedWorkers,
-                    workers: workers,
-                    resourceType: ResourceType.None
-                );
-
-                foreach (ResourceType resourceType in (ResourceType[]) Enum.GetValues(typeof(ResourceType)))
+                // workers were not underfed yesterday
+                if (workers.IsUnderfed == false)
                 {
-                    if (resourceType == ResourceType.None) continue;
+                    workers.IsUnderfed = true;
+                    workers.UnderfedProductivityPenalty = foodDeficit / workers.TotalDailyFoodCost * 0.5f;
+                }
+                // workers were consecutively underfed; attrition
+                else
+                {
+                    workers.IsUnderfed = false;
+                    workers.UnderfedProductivityPenalty = 0;
+
+                    int unfedWorkers = Mathf.CeilToInt(foodDeficit / workers.DailyWorkerFoodCost);
+                    unfedWorkers = Mathf.Min(a: unfedWorkers, b: workers.GetTotalWorkers() - 1);
+
                     unfedWorkers = DismissUnfedWorkers(
                         unfedWorkers: unfedWorkers,
                         workers: workers,
-                        resourceType: resourceType
+                        resourceType: ResourceType.None
                     );
 
-                    if (unfedWorkers == 0) break;
+                    foreach (ResourceType resourceType in (ResourceType[]) Enum.GetValues(typeof(ResourceType)))
+                    {
+                        if (resourceType == ResourceType.None) continue;
+                        unfedWorkers = DismissUnfedWorkers(
+                            unfedWorkers: unfedWorkers,
+                            workers: workers,
+                            resourceType: resourceType
+                        );
+
+                        if (unfedWorkers == 0) break;
+                    }
                 }
             }
         }
