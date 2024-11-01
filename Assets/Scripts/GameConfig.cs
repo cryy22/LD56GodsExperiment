@@ -6,12 +6,13 @@ namespace GodsExperiment
     [CreateAssetMenu(fileName = "New GameConfig", menuName = "Custom/Game Config")]
     public class GameConfig : ScriptableObject
     {
+        [field: SerializeField] public string Name { get; private set; }
         [field: SerializeField] public ResourceTarget[] ResourceTargets { get; private set; }
-        [field: SerializeField] public int TotalDays;
+        [field: SerializeField] public int TotalDays { get; private set; }
 
         [field: SerializeField] public float TimePerDay { get; private set; }
         [field: SerializeField] public int InitialWorkers { get; private set; }
-        [field: SerializeField] public int MaxWorkers { get; private set; }
+        [field: SerializeField] public int MaxWorkers { get; private set; } // TODO: use this
         [field: SerializeField] public int MaxWorkersPerResource { get; private set; }
 
         [field: SerializeField] public float DailyWorkerFoodCost { get; private set; }

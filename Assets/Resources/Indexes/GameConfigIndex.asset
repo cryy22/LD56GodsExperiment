@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d213d54214430eb9acab6ba86113af, type: 3}
   m_Name: GameConfigIndex
   m_EditorClassIdentifier: 
+  <GameConfigs>k__BackingField:
+  - {fileID: 11400000, guid: 717bd9ee56eb3443ca6f234666b2040d, type: 2}

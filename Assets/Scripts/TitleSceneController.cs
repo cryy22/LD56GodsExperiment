@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,15 +13,24 @@ namespace GodsExperiment
         [SerializeField] private Transform OverCardDestination;
         [SerializeField] private float OverCardDuration;
 
-        private void OnEnable() { StartGameButton.onClick.AddListener(OnStartGameClicked); }
+        [SerializeField] private Transform GameStartOptionsParent;
 
-        private void OnDisable() { StartGameButton.onClick.RemoveAllListeners(); }
+        [SerializeField] private GameStartButton GameStartButtonPrefab;
 
-        private void OnStartGameClicked()
+        private void Start()
         {
-            StartGameButton.onClick.RemoveAllListeners();
-            StartCoroutine(RunLoadScene());
+            foreach (Transform child in GameStartOptionsParent)
+                Destroy(child.gameObject);
+
+            foreach (GameConfig config in GameConfigIndex.I.GameConfigs)
+            {
+                GameStartButton button = Instantiate(original: GameStartButtonPrefab, parent: GameStartOptionsParent);
+                button.Initialize(config);
+                button.Pressed += OnStartGameClicked;
+            }
         }
+
+        private void OnStartGameClicked(object sender, EventArgs e) { StartCoroutine(RunLoadScene()); }
 
         private IEnumerator RunLoadScene()
         {

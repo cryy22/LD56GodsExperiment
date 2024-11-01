@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9631456923cc4e9dbaabfa38f0ce8a7c, type: 3}
   m_Name: DefaultGameConfig
   m_EditorClassIdentifier: 
+  <Name>k__BackingField: default
   <ResourceTargets>k__BackingField:
   - <ResourceType>k__BackingField: 1
     <TargetAmount>k__BackingField: 30000
-  TotalDays: 1
+  <TotalDays>k__BackingField: 999
   <TimePerDay>k__BackingField: 15
   <InitialWorkers>k__BackingField: 100
   <MaxWorkers>k__BackingField: 600
