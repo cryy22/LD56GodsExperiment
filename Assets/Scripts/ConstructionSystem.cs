@@ -9,6 +9,9 @@ namespace GodsExperiment
             GameConfig config
         )
         {
+            if (!construction.IsEnabled)
+                return;
+
             if (input.ConstructionRequested != ResourceType.None)
             {
                 int constructionsCount = input.ConstructionChangeMassModifier ? 5 : 1;

@@ -5,6 +5,7 @@ namespace GodsExperiment
 {
     public class WorkersState
     {
+        public bool IsFoodEnabled { get; set; }
         public float DailyWorkerFoodCost { get; set; }
         public float NewWorkerFoodCost { get; set; }
         public float TotalDailyFoodCost => DailyWorkerFoodCost * GetTotalWorkers();
@@ -14,8 +15,9 @@ namespace GodsExperiment
 
         private readonly Dictionary<ResourceType, int> _workerAllocations = new();
 
-        public WorkersState(int initialWorkers)
+        public WorkersState(int initialWorkers, bool isFoodEnabled)
         {
+            IsFoodEnabled = isFoodEnabled;
             foreach (ResourceType resourceType in (ResourceType[]) Enum.GetValues(typeof(ResourceType)))
                 _workerAllocations.Add(
                     key: resourceType,

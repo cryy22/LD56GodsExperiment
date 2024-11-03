@@ -11,7 +11,6 @@ namespace GodsExperiment
                 ? _instance
                 : _instance = UnityEngine.Resources.Load<GameState>("State/GameState");
 
-        [field: SerializeField] public GameConfig DefaultConfig { get; private set; }
         public GameConfig Config { get; set; }
 
         public TimeState Time { get; private set; }
@@ -25,7 +24,7 @@ namespace GodsExperiment
 
         public void ResetAll()
         {
-            if (!Config) Config = DefaultConfig;
+            if (!Config) Config = GameConfigIndex.I.DefaultGameConfig;
             GameResult = GameResult.None;
             JustBegun = true;
 
@@ -41,12 +40,25 @@ namespace GodsExperiment
                 UnworkedResourcesDecayRate = Config.UnworkedResourceDecayRate,
             };
             Input = new InputState();
-            Workers = new WorkersState(Config.InitialWorkers)
+
+            var isFoodEnabled = false;
+            foreach (ResourceRequirementSet set in Config.ResourceRequirementSets)
+                if (set.ResourceType == ResourceType.Food)
+                {
+                    isFoodEnabled = true;
+                    break;
+                }
+
+            Workers = new WorkersState(initialWorkers: Config.InitialWorkers, isFoodEnabled: isFoodEnabled)
             {
                 DailyWorkerFoodCost = Config.DailyWorkerFoodCost,
                 NewWorkerFoodCost = Config.NewWorkerFoodCost,
             };
-            Construction = new ConstructionState(Config.NewWorkerSlotResourceRequirement);
+
+            Construction = new ConstructionState(
+                isEnabled: Config.ResourcesAvailableForConstruction.Length > 0,
+                resourceRequirementSet: Config.NewWorkerSlotResourceRequirement
+            );
         }
     }
 }

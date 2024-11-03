@@ -20,6 +20,7 @@ namespace GodsExperiment
         [field: SerializeField] public float ColumnWidthLarge { get; private set; }
         [field: SerializeField] public float ColumnWidthSmall { get; private set; }
         [field: SerializeField] public Transform FeedingSector { get; private set; }
+        [field: SerializeField] public Transform ConstructionSector { get; private set; }
         [field: SerializeField] public Transform LeftIndustryResourceControlParent { get; private set; }
         [field: SerializeField] public Transform CenterIndustryResourceControlParent { get; private set; }
         [field: SerializeField] public ResourceControl ResourceControlPrefab { get; private set; }

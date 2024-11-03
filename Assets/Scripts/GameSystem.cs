@@ -38,7 +38,7 @@ namespace GodsExperiment
                 input: State.Input,
                 config: State.Config
             );
-            _foodSystem.Update(time: State.Time, food: State.Resources[ResourceType.Food], workers: State.Workers);
+            _foodSystem.Update(time: State.Time, resources: State.Resources, workers: State.Workers);
             _gameResultSystem.Update(State);
             _numberParticleSystem.Update(resources: State.Resources, uiState: UIState);
             _uiSystem.Update(state: State, uiState: UIState);
@@ -60,8 +60,8 @@ namespace GodsExperiment
             _constructionSystem = new ConstructionSystem();
             _gameResultSystem = new GameResultSystem();
             _numberParticleSystem = new NumberParticleSystem();
-            _transientStateResetSystem = new TransientStateResetSystem();
             _cardMovementSystem = new CardMovementSystem();
+            _transientStateResetSystem = new TransientStateResetSystem();
         }
     }
 }

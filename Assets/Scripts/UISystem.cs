@@ -13,6 +13,9 @@ namespace GodsExperiment
             foreach (Transform child in uiState.CenterIndustryResourceControlParent)
                 Object.Destroy(child.gameObject);
 
+            uiState.FeedingSector.gameObject.SetActive(state.Workers.IsFoodEnabled);
+            uiState.ConstructionSector.gameObject.SetActive(state.Construction.IsEnabled);
+
             List<ResourceType> industryResources = new();
             foreach (ResourceRequirementSet requirementSet in state.Config.ResourceRequirementSets)
             {
@@ -57,8 +60,15 @@ namespace GodsExperiment
             }
 
             foreach ((ResourceType resourceType, List<ResourceControl> controls) in uiState.ResourcesResourceControls)
-            foreach (ResourceControl control in controls)
-                control.SetResourceCosts(state.Resources[resourceType].ResourceCosts);
+            {
+                if (!state.Workers.IsFoodEnabled && (resourceType == ResourceType.Food))
+                    continue;
+                if (!state.Construction.IsEnabled && (resourceType == ResourceType.Construction))
+                    continue;
+
+                foreach (ResourceControl control in controls)
+                    control.SetResourceCosts(state.Resources[resourceType].ResourceCosts);
+            }
 
             foreach ((ResourceType resourceType, List<ResourceGauge> gauges) in uiState.ResourcesResourceGauges)
             foreach (ResourceGauge gauge in gauges)
@@ -95,7 +105,13 @@ namespace GodsExperiment
         {
             foreach ((ResourceType resourceType, List<ResourceControl> controls) in uiState.ResourcesResourceControls)
             {
-                if (controls.Count == 0) continue;
+                if (!state.Workers.IsFoodEnabled && (resourceType == ResourceType.Food))
+                    continue;
+                if (!state.Construction.IsEnabled && (resourceType == ResourceType.Construction))
+                    continue;
+                if (controls.Count == 0)
+                    continue;
+
                 ResourceState resourceState = state.Resources[resourceType];
                 foreach (ResourceControl control in controls)
                 {
@@ -120,6 +136,11 @@ namespace GodsExperiment
             foreach ((ResourceType resourceType, List<ResourceGauge> resourceGauges) in uiState.ResourcesResourceGauges)
             foreach (ResourceGauge resourceGauge in resourceGauges)
             {
+                if (!state.Workers.IsFoodEnabled && (resourceType == ResourceType.Food))
+                    continue;
+                if (!state.Construction.IsEnabled && (resourceType == ResourceType.Construction))
+                    continue;
+
                 ResourceState resourceState = state.Resources[resourceType];
                 resourceGauge.SetValues(count: resourceState.Count, progress: resourceState.Progress);
 
@@ -132,6 +153,11 @@ namespace GodsExperiment
             foreach ((ResourceType resourceType, List<WorkerGauge> workerGauges) in uiState.ResourcesWorkerGauges)
             foreach (WorkerGauge workerGauge in workerGauges)
             {
+                if (!state.Workers.IsFoodEnabled && (resourceType == ResourceType.Food))
+                    continue;
+                if (!state.Construction.IsEnabled && (resourceType == ResourceType.Construction))
+                    continue;
+
                 workerGauge.SetSlots(count: state.Resources[resourceType].WorkerSlots, resourceType: resourceType);
                 workerGauge.SetWorkers(state.Workers[resourceType]);
             }
@@ -139,30 +165,36 @@ namespace GodsExperiment
             uiState.UnemploymentGauge.SetSlots(count: state.Workers.GetTotalWorkers(), resourceType: ResourceType.None);
             uiState.UnemploymentGauge.SetWorkers(state.Workers[ResourceType.None]);
 
-            uiState.WorkerFoodRequirementCount.text = $"{(int) state.Workers.TotalDailyFoodCost}";
-            if (state.Workers.TotalDailyFoodCost <= state.Resources[ResourceType.Food].Count)
+            if (state.Workers.IsFoodEnabled)
             {
-                uiState.WorkerFoodRequirementCount.color = Constants.Green;
+                uiState.WorkerFoodRequirementCount.text = $"{(int) state.Workers.TotalDailyFoodCost}";
+                if (state.Workers.TotalDailyFoodCost <= state.Resources[ResourceType.Food].Count)
+                {
+                    uiState.WorkerFoodRequirementCount.color = Constants.Green;
+                }
+                else
+                {
+                    bool willMeetFoodDemand = FoodForecaster.WillMeetDemand(
+                        workers: state.Workers,
+                        resources: state.Resources,
+                        time: state.Time
+                    );
+                    uiState.WorkerFoodRequirementCount.color = willMeetFoodDemand ? Constants.Black : Constants.Red;
+                }
+
+                uiState.UnderfedProductivityPenaltyCount.text = $"{state.Workers.Productivity * 100:F1}%";
+                uiState.UnderfedProductivityPenaltyCount.color =
+                    state.Workers.Productivity < 1 ? Constants.Red : Constants.Black;
             }
-            else
+
+            if (state.Construction.IsEnabled)
             {
-                bool willMeetFoodDemand = FoodForecaster.WillMeetDemand(
-                    workers: state.Workers,
+                uiState.ConstructionQueueGauge.SetConstructionQueue(state.Construction.Queue);
+                uiState.ConstructionQueueControl.SetControlsInteractabilities(
                     resources: state.Resources,
-                    time: state.Time
+                    config: state.Config
                 );
-                uiState.WorkerFoodRequirementCount.color = willMeetFoodDemand ? Constants.Black : Constants.Red;
             }
-
-            uiState.UnderfedProductivityPenaltyCount.text = $"{state.Workers.Productivity * 100:F1}%";
-            uiState.UnderfedProductivityPenaltyCount.color =
-                state.Workers.Productivity < 1 ? Constants.Red : Constants.Black;
-
-            uiState.ConstructionQueueGauge.SetConstructionQueue(state.Construction.Queue);
-            uiState.ConstructionQueueControl.SetControlsInteractabilities(
-                resources: state.Resources,
-                config: state.Config
-            );
 
             uiState.DayProgressBar.SetProgress(state.Time.DayProgress);
             uiState.Tooltip.SetContent(state.Input.IsTooltipEnabled ? state.Input.TooltipContent : string.Empty);

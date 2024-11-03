@@ -5,11 +5,15 @@ namespace GodsExperiment
 {
     public class FoodSystem
     {
-        public void Update(TimeState time, ResourceState food, WorkersState workers)
+        public void Update(TimeState time, ResourcesState resources, WorkersState workers)
         {
+            if (!workers.IsFoodEnabled)
+                return;
+
             if (!time.DayChanged)
                 return;
 
+            ResourceState food = resources[ResourceType.Food];
             if (food.Count >= workers.TotalDailyFoodCost)
             {
                 food.Count -= workers.TotalDailyFoodCost;

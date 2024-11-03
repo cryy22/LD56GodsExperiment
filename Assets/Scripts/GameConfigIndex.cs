@@ -11,6 +11,7 @@ namespace GodsExperiment
                 ? _instance
                 : _instance = Resources.Load<GameConfigIndex>("Indexes/GameConfigIndex");
 
+        [field: SerializeField] public GameConfig DefaultGameConfig { get; private set; }
         [field: SerializeField] public GameConfig[] GameConfigs { get; private set; }
     }
 }
