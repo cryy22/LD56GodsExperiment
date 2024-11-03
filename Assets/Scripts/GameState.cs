@@ -20,12 +20,14 @@ namespace GodsExperiment
         public WorkersState Workers { get; private set; }
         public ConstructionState Construction { get; private set; }
 
+        public bool JustBegun { get; set; }
         public GameResult GameResult { get; set; }
 
         public void ResetAll()
         {
             if (!Config) Config = DefaultConfig;
             GameResult = GameResult.None;
+            JustBegun = true;
 
             Time = new TimeState
             {

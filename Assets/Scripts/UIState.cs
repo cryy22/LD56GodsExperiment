@@ -9,6 +9,10 @@ namespace GodsExperiment
     public class UIState : MonoBehaviour
     {
         // LAYOUT CONFIGURATION
+        [field: SerializeField] public Transform CoveringCardTransform { get; private set; }
+        [field: SerializeField] public Vector3 CoveringCardOnscreenPosition { get; private set; }
+        [field: SerializeField] public Vector3 CoveringCardOffscreenPosition { get; private set; }
+        [field: SerializeField] public float CoveringCardMoveDuration { get; private set; }
         [field: SerializeField] public RectTransform LeftColumn { get; private set; }
         [field: SerializeField] public Transform LeftColumnContent { get; private set; }
         [field: SerializeField] public RectTransform CenterColumn { get; private set; }

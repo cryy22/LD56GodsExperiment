@@ -4,6 +4,8 @@ namespace GodsExperiment
     {
         public void Update(GameState state)
         {
+            state.JustBegun = false;
+
             state.Input.PausePressed = false;
             state.Input.PlayPressed = false;
             state.Input.FastForwardPressed = false;
