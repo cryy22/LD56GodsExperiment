@@ -21,6 +21,7 @@ namespace GodsExperiment
         public bool VeryFastForwardPressed { get; set; }
         public bool AnyPlayButtonPressed => PlayPressed || FastForwardPressed || VeryFastForwardPressed;
 
+        public bool OpeningCardDismissRequested { get; set; }
         public bool ResetRequested { get; set; }
 
         public ResourceType WorkerAddPressed { get; set; }

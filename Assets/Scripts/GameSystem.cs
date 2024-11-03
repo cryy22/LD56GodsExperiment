@@ -18,7 +18,7 @@ namespace GodsExperiment
         private GameResultSystem _gameResultSystem;
         private NumberParticleSystem _numberParticleSystem;
         private TransientStateResetSystem _transientStateResetSystem;
-        private CardMovementSystem _cardMovementSystem;
+        private OpeningCardSystem _openingCardSystem;
 
         private void Start() { Initialize(); }
 
@@ -28,7 +28,7 @@ namespace GodsExperiment
                 Initialize();
 
             _inputSystem.Update(input: State.Input);
-            _cardMovementSystem.Update(state: State, uiState: UIState);
+            _openingCardSystem.Update(state: State, uiState: UIState);
             _timeSystem.Update(time: State.Time, input: State.Input);
             _workerAssignmentSystem.Update(workers: State.Workers, resources: State.Resources, input: State.Input);
             _resourcesSystem.Update(resources: State.Resources, workers: State.Workers, time: State.Time);
@@ -62,7 +62,7 @@ namespace GodsExperiment
             _constructionSystem = new ConstructionSystem();
             _gameResultSystem = new GameResultSystem();
             _numberParticleSystem = new NumberParticleSystem();
-            _cardMovementSystem = new CardMovementSystem();
+            _openingCardSystem = new OpeningCardSystem();
             _transientStateResetSystem = new TransientStateResetSystem();
         }
     }

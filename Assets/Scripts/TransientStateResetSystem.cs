@@ -6,6 +6,8 @@ namespace GodsExperiment
         {
             state.JustBegun = false;
 
+            state.Input.OpeningCardDismissRequested = false;
+
             state.Input.PausePressed = false;
             state.Input.PlayPressed = false;
             state.Input.FastForwardPressed = false;
