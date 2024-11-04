@@ -13,10 +13,21 @@ MonoBehaviour:
   m_Name: 01TutorialJustMining
   m_EditorClassIdentifier: 
   <Name>k__BackingField: mining
+  <OpeningMessage>k__BackingField: '''Eyyyy, welcome to your first experimental trial!
+    Dis''ll be an easy one boss, even for a newbie such as yaself.
+
+
+    Assign ya
+    one and only worker to da task of minin'' blue stuff, and den unpause da game.
+
+
+    Spacebar
+    lets ya pause and unpause. As for the matter of assignin'' a worker... eh, you''ll
+    figure it out.'
   <ResourceTargets>k__BackingField:
   - <ResourceType>k__BackingField: 1
     <TargetAmount>k__BackingField: 10
-  <TotalDays>k__BackingField: 3
+  <TotalDays>k__BackingField: 1
   <TimePerDay>k__BackingField: 15
   <InitialWorkers>k__BackingField: 1
   <MaxWorkers>k__BackingField: 1
