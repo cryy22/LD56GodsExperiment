@@ -14,9 +14,15 @@ namespace GodsExperiment
         [SerializeField] private Sprite LoseSprite;
 
         [SerializeField] private Button RetryButton;
+        [SerializeField] private GameObject NextTrialLabel;
+        [SerializeField] private Button NextTrialButton;
+        [SerializeField] private TMP_Text NextTrialButtonText;
+
         [SerializeField] private Transform OverCard;
         [SerializeField] private Transform OverCardDestination;
         [SerializeField] private float OverCardDuration;
+
+        private GameConfig _nextTrialConfig;
 
         private void Start()
         {
@@ -29,14 +35,40 @@ namespace GodsExperiment
             ResultImage.sprite = GameState.I.GameResult == GameResult.Win
                 ? WinSprite
                 : LoseSprite;
+
+            _nextTrialConfig = NextConfigFinder.Find();
+            NextTrialLabel.SetActive(_nextTrialConfig);
+            NextTrialButton.gameObject.SetActive(_nextTrialConfig);
+            if (_nextTrialConfig)
+                NextTrialButtonText.text = _nextTrialConfig.Name;
         }
 
-        private void OnEnable() { RetryButton.onClick.AddListener(OnRetryClicked); }
-        private void OnDisable() { RetryButton.onClick.RemoveAllListeners(); }
+        private void OnEnable()
+        {
+            RetryButton.onClick.AddListener(OnRetryClicked);
+            NextTrialButton.onClick.AddListener(OnNextTrialClicked);
+        }
+
+        private void OnDisable()
+        {
+            RetryButton.onClick.RemoveAllListeners();
+            NextTrialButton.onClick.RemoveAllListeners();
+        }
 
         private void OnRetryClicked()
         {
             RetryButton.onClick.RemoveAllListeners();
+            NextTrialButton.onClick.RemoveAllListeners();
+            StartCoroutine(RunLoadScene());
+        }
+
+        private void OnNextTrialClicked()
+        {
+            RetryButton.onClick.RemoveAllListeners();
+            NextTrialButton.onClick.RemoveAllListeners();
+
+            GameState.I.Config = _nextTrialConfig;
+
             StartCoroutine(RunLoadScene());
         }
 

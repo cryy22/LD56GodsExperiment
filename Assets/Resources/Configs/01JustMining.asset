@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9631456923cc4e9dbaabfa38f0ce8a7c, type: 3}
-  m_Name: 01TutorialJustMining
+  m_Name: 01JustMining
   m_EditorClassIdentifier: 
   <Name>k__BackingField: mining
   <OpeningMessage>k__BackingField: '''Eyyyy, welcome to your first experimental trial!

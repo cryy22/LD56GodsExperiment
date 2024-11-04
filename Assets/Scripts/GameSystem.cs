@@ -46,8 +46,6 @@ namespace GodsExperiment
             _transientStateResetSystem.Update(State);
         }
 
-        private void OnDestroy() { GameState.I.Config = null; }
-
         private void Initialize()
         {
             State.ResetAll();

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace GodsExperiment
@@ -11,8 +12,7 @@ namespace GodsExperiment
                 ? _instance
                 : _instance = UnityEngine.Resources.Load<GameState>("State/GameState");
 
-        public GameConfig Config { get; set; }
-
+        [field: NonSerialized] public GameConfig Config { get; set; }
         public TimeState Time { get; private set; }
         public ResourcesState Resources { get; private set; }
         public InputState Input { get; private set; }
