@@ -36,10 +36,17 @@ namespace GodsExperiment
                 ? WinSprite
                 : LoseSprite;
 
-            _nextTrialConfig = NextConfigFinder.Find();
-            NextTrialLabel.SetActive(_nextTrialConfig);
-            NextTrialButton.gameObject.SetActive(_nextTrialConfig);
-            if (_nextTrialConfig)
+            var shouldShowNextTrial = false;
+            if (GameState.I.GameResult == GameResult.Win)
+            {
+                _nextTrialConfig = NextConfigFinder.Find();
+                if (_nextTrialConfig)
+                    shouldShowNextTrial = true;
+            }
+
+            NextTrialLabel.SetActive(shouldShowNextTrial);
+            NextTrialButton.gameObject.SetActive(shouldShowNextTrial);
+            if (shouldShowNextTrial)
                 NextTrialButtonText.text = _nextTrialConfig.Name;
         }
 
