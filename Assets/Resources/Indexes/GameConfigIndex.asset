@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d213d54214430eb9acab6ba86113af, type: 3}
   m_Name: GameConfigIndex
   m_EditorClassIdentifier: 
-  <DefaultGameConfig>k__BackingField: {fileID: 11400000, guid: 9954630b5445e49a4a5e30aa50db80b6, type: 2}
+  <DefaultGameConfig>k__BackingField: {fileID: 11400000, guid: 7b17382d26393495ba698b3e4d130969, type: 2}
   <GameConfigs>k__BackingField:
   - {fileID: 11400000, guid: c6e13fc388d0a4f76972120211cdd308, type: 2}
   - {fileID: 11400000, guid: dd5c695f1a533454d8715b19779769ad, type: 2}
+  - {fileID: 11400000, guid: 9954630b5445e49a4a5e30aa50db80b6, type: 2}
+  - {fileID: 11400000, guid: 7b17382d26393495ba698b3e4d130969, type: 2}
