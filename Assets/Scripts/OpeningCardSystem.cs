@@ -20,6 +20,7 @@ namespace GodsExperiment
             {
                 _mode = OpeningCardMode.Displayed;
                 uiState.CoveringCardTransform.position = uiState.CoveringCardOnscreenPosition;
+                uiState.CoveringCardText.text = state.Config.OpeningMessage;
             }
 
             if (state.Input.OpeningCardDismissRequested)

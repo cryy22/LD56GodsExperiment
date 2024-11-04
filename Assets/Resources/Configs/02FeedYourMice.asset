@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: 02FeedYourMice
   m_EditorClassIdentifier: 
   <Name>k__BackingField: feeding
+  <OpeningMessage>k__BackingField: 'Dis trial''s all about feedin'' your workers.
+    Dese lowlifes need you to provide sustenance for ''em.
+
+
+    To achieve a positive
+    result on dis one, make sure you produce enough food so dat everyone eats, but
+    don''t overdo it or you won''t hit da target.'
   <ResourceTargets>k__BackingField:
   - <ResourceType>k__BackingField: 1
     <TargetAmount>k__BackingField: 66

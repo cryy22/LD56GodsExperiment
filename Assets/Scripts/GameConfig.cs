@@ -7,6 +7,9 @@ namespace GodsExperiment
     public class GameConfig : ScriptableObject
     {
         [field: SerializeField] public string Name { get; private set; }
+        [field: TextArea(minLines: 3, maxLines: 10)]
+        [field: SerializeField] public string OpeningMessage { get; private set; }
+
         [field: SerializeField] public ResourceTarget[] ResourceTargets { get; private set; }
         [field: SerializeField] public int TotalDays { get; private set; }
 
