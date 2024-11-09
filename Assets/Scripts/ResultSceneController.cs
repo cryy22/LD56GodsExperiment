@@ -14,6 +14,7 @@ namespace GodsExperiment
         [SerializeField] private Sprite LoseSprite;
 
         [SerializeField] private Button RetryButton;
+        [SerializeField] private Button TitleButton;
         [SerializeField] private GameObject NextTrialLabel;
         [SerializeField] private Button NextTrialButton;
         [SerializeField] private TMP_Text NextTrialButtonText;
@@ -50,36 +51,43 @@ namespace GodsExperiment
                 NextTrialButtonText.text = _nextTrialConfig.Name;
         }
 
-        private void OnEnable()
+        private void OnEnable() { AddListeners(); }
+        private void OnDisable() { RemoveListeners(); }
+
+        private void AddListeners()
         {
             RetryButton.onClick.AddListener(OnRetryClicked);
+            TitleButton.onClick.AddListener(OnTitleClicked);
             NextTrialButton.onClick.AddListener(OnNextTrialClicked);
         }
 
-        private void OnDisable()
+        private void RemoveListeners()
         {
             RetryButton.onClick.RemoveAllListeners();
+            TitleButton.onClick.RemoveAllListeners();
             NextTrialButton.onClick.RemoveAllListeners();
         }
 
         private void OnRetryClicked()
         {
-            RetryButton.onClick.RemoveAllListeners();
-            NextTrialButton.onClick.RemoveAllListeners();
-            StartCoroutine(RunLoadScene());
+            RemoveListeners();
+            StartCoroutine(RunLoadScene("GameScene"));
+        }
+
+        private void OnTitleClicked()
+        {
+            RemoveListeners();
+            StartCoroutine(RunLoadScene("TitleScene"));
         }
 
         private void OnNextTrialClicked()
         {
-            RetryButton.onClick.RemoveAllListeners();
-            NextTrialButton.onClick.RemoveAllListeners();
-
+            RemoveListeners();
             GameState.I.Config = _nextTrialConfig;
-
-            StartCoroutine(RunLoadScene());
+            StartCoroutine(RunLoadScene("GameScene"));
         }
 
-        private IEnumerator RunLoadScene()
+        private IEnumerator RunLoadScene(string sceneName)
         {
             float t = 0;
             Vector3 startPos = OverCard.position;
@@ -91,7 +99,7 @@ namespace GodsExperiment
                 yield return null;
             }
 
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
