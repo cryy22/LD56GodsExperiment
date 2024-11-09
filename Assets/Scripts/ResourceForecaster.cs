@@ -26,6 +26,7 @@ namespace GodsExperiment
 
             float count = resource.Count;
             float workUnitsRemaining =
+                resource.WorkUnitsAdded +
                 (time.TimePerDay - time.Time) * workers[resourceType] * workers.Productivity;
 
             float maxWorkable = Mathf.Floor(workUnitsRemaining / resource.WorkUnitsPerUnit);

@@ -44,7 +44,7 @@ MonoBehaviour:
     <WorkUnits>k__BackingField: 1
     <RequiredResources>k__BackingField: []
   - <ResourceType>k__BackingField: 2
-    <WorkUnits>k__BackingField: 1
+    <WorkUnits>k__BackingField: 1.5
     <RequiredResources>k__BackingField:
     - <Resource>k__BackingField: 1
       <Quantity>k__BackingField: 4
@@ -57,7 +57,7 @@ MonoBehaviour:
   - <ResourceType>k__BackingField: 1
     <WorkerSlots>k__BackingField: 2
   - <ResourceType>k__BackingField: 2
-    <WorkerSlots>k__BackingField: 1
+    <WorkerSlots>k__BackingField: 2
   <NewWorkerSlotResourceRequirement>k__BackingField:
     <ResourceType>k__BackingField: 0
     <WorkUnits>k__BackingField: 0

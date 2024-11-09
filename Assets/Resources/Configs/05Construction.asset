@@ -26,7 +26,7 @@ MonoBehaviour:
     got dis.'
   <ResourceTargets>k__BackingField:
   - <ResourceType>k__BackingField: 2
-    <TargetAmount>k__BackingField: 15
+    <TargetAmount>k__BackingField: 12
   <TotalDays>k__BackingField: 3
   <TimePerDay>k__BackingField: 15
   <InitialWorkers>k__BackingField: 4

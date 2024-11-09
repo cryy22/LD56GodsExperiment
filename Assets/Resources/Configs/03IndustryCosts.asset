@@ -15,10 +15,10 @@ MonoBehaviour:
   <Name>k__BackingField: industry costs
   <OpeningMessage>k__BackingField: "All right, Henry Ford, it's about time ya learned
     about inputs and outputs.\n\nYou're gonna be workin' on making blue bars this
-    time around. Ya need:\n1. a worker to pull the blue stuff outta the ground,\n2.
-    a worker to turn it into blue bars, and \n3. a worker to feed the rest of 'em.
-    \n\nTrouble is, you only got two workers.\n\nI'm sure you'll figure it out. That's
-    why they're payin' you da big bucks."
+    time around. Here's what ya gotta do:\n1. pull the blue stuff outta the ground,\n2.
+    turn it into blue bars, and \n3. feed ya mice. \n\nTrouble is, you only got two
+    workers.\n\nI'm sure you'll figure it out. That's why they're payin' you da big
+    bucks."
   <ResourceTargets>k__BackingField:
   - <ResourceType>k__BackingField: 2
     <TargetAmount>k__BackingField: 12
@@ -37,7 +37,7 @@ MonoBehaviour:
     <WorkUnits>k__BackingField: 1
     <RequiredResources>k__BackingField: []
   - <ResourceType>k__BackingField: 2
-    <WorkUnits>k__BackingField: 1
+    <WorkUnits>k__BackingField: 1.5
     <RequiredResources>k__BackingField:
     - <Resource>k__BackingField: 1
       <Quantity>k__BackingField: 4
@@ -47,7 +47,7 @@ MonoBehaviour:
   - <ResourceType>k__BackingField: 1
     <WorkerSlots>k__BackingField: 2
   - <ResourceType>k__BackingField: 2
-    <WorkerSlots>k__BackingField: 1
+    <WorkerSlots>k__BackingField: 2
   <NewWorkerSlotResourceRequirement>k__BackingField:
     <ResourceType>k__BackingField: 0
     <WorkUnits>k__BackingField: 0
