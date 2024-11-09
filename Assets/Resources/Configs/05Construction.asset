@@ -10,57 +10,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9631456923cc4e9dbaabfa38f0ce8a7c, type: 3}
-  m_Name: 04FoodAintFree
+  m_Name: 05Construction
   m_EditorClassIdentifier: 
   <Name>k__BackingField: food ain't free
-  <OpeningMessage>k__BackingField: 'So hey boss, that whole thing wit da food growin''
-    on trees. It ain''t always like that on dis side of da Industrial Revolution.
-
-
-    Dat''s
-    right. For this test, workers are gonna hafta produce da raw materials dat feed
-    into food. You can check out da Experiment Notes to see exactly what da inputs
-    and outputs look like.
-
-
-    Good luck, boss.'
+  <OpeningMessage>k__BackingField: TBD
   <ResourceTargets>k__BackingField:
   - <ResourceType>k__BackingField: 2
     <TargetAmount>k__BackingField: 12
-  <TotalDays>k__BackingField: 3
+  <TotalDays>k__BackingField: 5
   <TimePerDay>k__BackingField: 15
-  <InitialWorkers>k__BackingField: 2
-  <MaxWorkers>k__BackingField: 2
-  <MaxWorkersPerResource>k__BackingField: 2
+  <InitialWorkers>k__BackingField: 4
+  <MaxWorkers>k__BackingField: 4
+  <MaxWorkersPerResource>k__BackingField: 4
   <DailyWorkerFoodCost>k__BackingField: 1
   <NewWorkerFoodCost>k__BackingField: -1
   <ResourceRequirementSets>k__BackingField:
   - <ResourceType>k__BackingField: 8
-    <WorkUnits>k__BackingField: 1.75
-    <RequiredResources>k__BackingField:
-    - <Resource>k__BackingField: 4
-      <Quantity>k__BackingField: 1
+    <WorkUnits>k__BackingField: 3.66
+    <RequiredResources>k__BackingField: []
   - <ResourceType>k__BackingField: 1
     <WorkUnits>k__BackingField: 1
     <RequiredResources>k__BackingField: []
   - <ResourceType>k__BackingField: 2
-    <WorkUnits>k__BackingField: 1
+    <WorkUnits>k__BackingField: 2
     <RequiredResources>k__BackingField:
     - <Resource>k__BackingField: 1
       <Quantity>k__BackingField: 4
-  - <ResourceType>k__BackingField: 4
-    <WorkUnits>k__BackingField: 1
+  - <ResourceType>k__BackingField: 9
+    <WorkUnits>k__BackingField: 10
     <RequiredResources>k__BackingField: []
   <InitialResourceWorkerSlotsSets>k__BackingField:
   - <ResourceType>k__BackingField: 8
     <WorkerSlots>k__BackingField: 1
   - <ResourceType>k__BackingField: 1
-    <WorkerSlots>k__BackingField: 2
+    <WorkerSlots>k__BackingField: 1
   - <ResourceType>k__BackingField: 2
     <WorkerSlots>k__BackingField: 1
   <NewWorkerSlotResourceRequirement>k__BackingField:
     <ResourceType>k__BackingField: 0
     <WorkUnits>k__BackingField: 0
-    <RequiredResources>k__BackingField: []
-  <ResourcesAvailableForConstruction>k__BackingField: 
+    <RequiredResources>k__BackingField:
+    - <Resource>k__BackingField: 2
+      <Quantity>k__BackingField: 1
+  <ResourcesAvailableForConstruction>k__BackingField: 01000000
   <UnworkedResourceDecayRate>k__BackingField: 0.332

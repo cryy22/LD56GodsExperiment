@@ -36,6 +36,7 @@ namespace GodsExperiment
 
         [field: SerializeField] public ConstructionQueueGauge ConstructionQueueGauge { get; private set; }
         [field: SerializeField] public ConstructionQueueControl ConstructionQueueControl { get; private set; }
+        [field: SerializeField] public ConstructionCostLabel ConstructionCostLabel { get; private set; }
         [field: SerializeField] public ConversionTable ConversionTable { get; private set; }
 
         [field: SerializeField] public HypothesisStatementIndicator HypothesisStatementIndicator { get; private set; }

@@ -60,6 +60,9 @@ namespace GodsExperiment
                 uiState.AddResourceControl(type: resourceType, control: control);
             }
 
+            if (state.Construction.IsEnabled)
+                uiState.ConstructionCostLabel.SetCost(state.Config.NewWorkerSlotResourceRequirement.RequiredResources);
+
             foreach ((ResourceType resourceType, List<ResourceControl> controls) in uiState.ResourcesResourceControls)
             {
                 if (!state.Workers.IsFoodEnabled && (resourceType == ResourceType.Food))
