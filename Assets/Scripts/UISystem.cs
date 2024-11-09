@@ -61,7 +61,7 @@ namespace GodsExperiment
             }
 
             if (state.Construction.IsEnabled)
-                uiState.ConstructionCostLabel.SetCost(state.Config.NewWorkerSlotResourceRequirement.RequiredResources);
+                uiState.ConstructionCostLabel.SetCost(state.Construction.ResourceCosts);
 
             foreach ((ResourceType resourceType, List<ResourceControl> controls) in uiState.ResourcesResourceControls)
             {
@@ -194,10 +194,7 @@ namespace GodsExperiment
             if (state.Construction.IsEnabled)
             {
                 uiState.ConstructionQueueGauge.SetConstructionQueue(state.Construction.Queue);
-                uiState.ConstructionQueueControl.SetControlsInteractabilities(
-                    resources: state.Resources,
-                    config: state.Config
-                );
+                uiState.ConstructionQueueControl.SetControlsInteractabilities(state);
             }
 
             uiState.DayProgressBar.SetProgress(state.Time.DayProgress);

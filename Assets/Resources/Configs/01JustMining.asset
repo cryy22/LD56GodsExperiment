@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9631456923cc4e9dbaabfa38f0ce8a7c, type: 3}
   m_Name: 01JustMining
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: mining
-  <OpeningMessage>k__BackingField: '''Eyyyy, welcome to your first experimental trial!
-    Dis''ll be an easy one boss, even for a newbie such as yaself.
+  <Name>k__BackingField: START HERE!!
+  <OpeningMessage>k__BackingField: '''Eyyyy, welcome to your first trial! Dis''ll
+    be an easy one, boss, even for a newbie such as yaself.
 
 
-    Assign ya
-    one and only worker to da task of minin'' blue stuff, and den unpause da game.
+    Assign ya one and
+    only worker to da task of minin'' blue stuff, and den unpause da game.
 
 
     Spacebar

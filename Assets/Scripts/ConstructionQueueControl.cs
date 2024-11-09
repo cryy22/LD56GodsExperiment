@@ -30,10 +30,18 @@ namespace GodsExperiment
             }
         }
 
-        public void SetControlsInteractabilities(ResourcesState resources, GameConfig config)
+        public void SetControlsInteractabilities(GameState state)
         {
+            bool payable = ResourcePaymentProcessor.CheckIfPayable(
+                resourceCosts: state.Construction.ResourceCosts,
+                resources: state.Resources
+            );
+
             foreach (ConstructionQueueControlItem item in _items)
-                item.SetInteractable(resources[item.ResourceType].WorkerSlots < config.MaxWorkersPerResource);
+                item.SetInteractable(
+                    payable &&
+                    (state.Resources[item.ResourceType].WorkerSlots < state.Config.MaxWorkersPerResource)
+                );
         }
     }
 }

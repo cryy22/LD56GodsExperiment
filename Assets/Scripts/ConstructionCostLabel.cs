@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,18 +12,20 @@ namespace GodsExperiment
         [SerializeField] private Image ResourceIcon;
         [SerializeField] private TMP_Text ResourceQuantityText;
 
-        public void SetCost(ResourceQuantity[] resourceQuantities)
+        public void SetCost(Dictionary<ResourceType, float> resourceCost)
         {
-            bool hasRequiredResource = resourceQuantities.Length > 0;
+            bool hasRequiredResource = resourceCost.Count > 0;
             CostLabel.SetActive(hasRequiredResource);
             ResourceIcon.gameObject.SetActive(hasRequiredResource);
             ResourceQuantityText.gameObject.SetActive(hasRequiredResource);
 
             if (hasRequiredResource)
-            {
-                ResourceIcon.sprite = ResourceDefinitionIndex.I.GetSpriteForResource(resourceQuantities[0].Resource);
-                ResourceQuantityText.text = resourceQuantities[0].Quantity.ToString();
-            }
+                foreach ((ResourceType resourceType, float cost) in resourceCost)
+                {
+                    ResourceIcon.sprite = ResourceDefinitionIndex.I.GetSpriteForResource(resourceType);
+                    ResourceQuantityText.text = cost.ToString(CultureInfo.InvariantCulture);
+                    return; // hack to just use the fist resource
+                }
         }
     }
 }

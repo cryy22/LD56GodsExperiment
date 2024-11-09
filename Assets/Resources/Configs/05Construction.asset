@@ -12,12 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9631456923cc4e9dbaabfa38f0ce8a7c, type: 3}
   m_Name: 05Construction
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: food ain't free
-  <OpeningMessage>k__BackingField: TBD
+  <Name>k__BackingField: more work slots
+  <OpeningMessage>k__BackingField: 'Ya got 4 mice and only 3 jobs for them ta do.
+    Not exactly da model of efficiency here.
+
+
+    Let''s fix dis up. Use da construction
+    queue to make anotha slot for a worker to mine da blue stuff. Queueing up construction
+    will cost ya a blue bar, and ya need to assign a mouse to the task of constructin''.
+
+
+    You
+    got dis.'
   <ResourceTargets>k__BackingField:
   - <ResourceType>k__BackingField: 2
-    <TargetAmount>k__BackingField: 12
-  <TotalDays>k__BackingField: 5
+    <TargetAmount>k__BackingField: 15
+  <TotalDays>k__BackingField: 3
   <TimePerDay>k__BackingField: 15
   <InitialWorkers>k__BackingField: 4
   <MaxWorkers>k__BackingField: 4
@@ -29,7 +39,7 @@ MonoBehaviour:
     <WorkUnits>k__BackingField: 3.66
     <RequiredResources>k__BackingField: []
   - <ResourceType>k__BackingField: 1
-    <WorkUnits>k__BackingField: 1
+    <WorkUnits>k__BackingField: 0.98
     <RequiredResources>k__BackingField: []
   - <ResourceType>k__BackingField: 2
     <WorkUnits>k__BackingField: 2

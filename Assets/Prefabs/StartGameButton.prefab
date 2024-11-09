@@ -67,15 +67,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e7a65a20f75a43eaa192159c9603ffa, type: 2}
-  m_sharedMaterial: {fileID: -2401237705246147962, guid: 2e7a65a20f75a43eaa192159c9603ffa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5fc7e61a849e646f2bd4db7af0082dd9, type: 2}
+  m_sharedMaterial: {fileID: -1356635833336886281, guid: 5fc7e61a849e646f2bd4db7af0082dd9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278209765
-  m_fontColor: {r: 0.8980392, g: 0.29803923, b: 0, a: 1}
+    rgba: 4280033308
+  m_fontColor: {r: 0.10980392, g: 0.1254902, b: 0.10980392, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -144,7 +144,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2512852241525409274, guid: 367e25dd7b68d4738b2237d67a843359, type: 3}
       propertyPath: m_Name
-      value: StartGameButton Variant
+      value: StartGameButton
       objectReference: {fileID: 0}
     - target: {fileID: 4004243247461791057, guid: 367e25dd7b68d4738b2237d67a843359, type: 3}
       propertyPath: m_Pivot.x
