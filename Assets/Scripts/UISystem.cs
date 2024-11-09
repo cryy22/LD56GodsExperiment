@@ -178,7 +178,7 @@ namespace GodsExperiment
                 }
                 else
                 {
-                    bool willMeetFoodDemand = FoodForecaster.WillMeetDemand(
+                    bool willMeetFoodDemand = ResourceForecaster.WillMeetFoodDemand(
                         workers: state.Workers,
                         resources: state.Resources,
                         time: state.Time
