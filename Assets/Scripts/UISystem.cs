@@ -14,6 +14,7 @@ namespace GodsExperiment
                 Object.Destroy(child.gameObject);
 
             uiState.FeedingSector.gameObject.SetActive(state.Workers.IsFoodEnabled);
+            uiState.FeedingSectorNewWorkerIndicator.SetActive(state.Workers.NewWorkerFoodCost > 0);
             uiState.ConstructionSector.gameObject.SetActive(state.Construction.IsEnabled);
 
             List<ResourceType> industryResources = new();
@@ -197,6 +198,7 @@ namespace GodsExperiment
             }
 
             uiState.DayProgressBar.SetProgress(state.Time.DayProgress);
+            uiState.PausedIndicator.SetActive(state.Time.IsTimePaused);
             uiState.Tooltip.SetContent(state.Input.IsTooltipEnabled ? state.Input.TooltipContent : string.Empty);
 
             uiState.BGMPlayer.SetFilterMode(

@@ -33,7 +33,7 @@ MonoBehaviour:
   <MaxWorkers>k__BackingField: 1
   <MaxWorkersPerResource>k__BackingField: 1
   <DailyWorkerFoodCost>k__BackingField: 0
-  <NewWorkerFoodCost>k__BackingField: 999
+  <NewWorkerFoodCost>k__BackingField: -1
   <ResourceRequirementSets>k__BackingField:
   - <ResourceType>k__BackingField: 1
     <WorkUnits>k__BackingField: 1

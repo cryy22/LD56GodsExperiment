@@ -13,18 +13,12 @@ MonoBehaviour:
   m_Name: 03IndustryCosts
   m_EditorClassIdentifier: 
   <Name>k__BackingField: industry costs
-  <OpeningMessage>k__BackingField: 'All right, Henry Ford, it''s about time ya learned
-    about inputs and outputs.
-
-
-    You''re gonna be workin'' on making blue bars
-    this time around. Ya need a worker to pull the blue stuff outta the ground, ya
-    need a to turn it into blue bars, and ya need a worker to feed the rest of ''em.
-    Trouble is, you only got two workers.
-
-
-    I''m sure you''ll figure it out.
-    That''s why they''re payin'' you da big bucks.'
+  <OpeningMessage>k__BackingField: "All right, Henry Ford, it's about time ya learned
+    about inputs and outputs.\n\nYou're gonna be workin' on making blue bars this
+    time around. Ya need:\n1. a worker to pull the blue stuff outta the ground,\n2.
+    a worker to turn it into blue bars, and \n3. a worker to feed the rest of 'em.
+    \n\nTrouble is, you only got two workers.\n\nI'm sure you'll figure it out. That's
+    why they're payin' you da big bucks."
   <ResourceTargets>k__BackingField:
   - <ResourceType>k__BackingField: 2
     <TargetAmount>k__BackingField: 12
@@ -34,7 +28,7 @@ MonoBehaviour:
   <MaxWorkers>k__BackingField: 2
   <MaxWorkersPerResource>k__BackingField: 2
   <DailyWorkerFoodCost>k__BackingField: 1
-  <NewWorkerFoodCost>k__BackingField: 25
+  <NewWorkerFoodCost>k__BackingField: -1
   <ResourceRequirementSets>k__BackingField:
   - <ResourceType>k__BackingField: 8
     <WorkUnits>k__BackingField: 1.75

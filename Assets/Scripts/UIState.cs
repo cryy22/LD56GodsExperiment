@@ -16,6 +16,7 @@ namespace GodsExperiment
         [field: SerializeField] public float ColumnWidthLarge { get; private set; }
         [field: SerializeField] public float ColumnWidthSmall { get; private set; }
         [field: SerializeField] public Transform FeedingSector { get; private set; }
+        [field: SerializeField] public GameObject FeedingSectorNewWorkerIndicator { get; private set; }
         [field: SerializeField] public Transform ConstructionSector { get; private set; }
         [field: SerializeField] public Transform LeftIndustryResourceControlParent { get; private set; }
         [field: SerializeField] public Transform CenterIndustryResourceControlParent { get; private set; }
@@ -49,6 +50,7 @@ namespace GodsExperiment
         // UNCATEGORIZED
         [field: SerializeField] public BGMPlayer BGMPlayer { get; private set; }
         [field: SerializeField] public ProgressBar DayProgressBar { get; private set; }
+        [field: SerializeField] public GameObject PausedIndicator { get; private set; }
         [field: SerializeField] public GoalsLine GoalsLine { get; private set; }
         [field: SerializeField] public Tooltip Tooltip { get; private set; }
         [field: SerializeField] public NumberParticlePool NumberParticlePool { get; private set; }

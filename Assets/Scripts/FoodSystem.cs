@@ -20,9 +20,13 @@ namespace GodsExperiment
                 workers.IsUnderfed = false;
                 workers.UnderfedProductivityPenalty = 0;
 
-                int newWorkers = Mathf.FloorToInt(food.Count / workers.NewWorkerFoodCost);
-                food.Count -= workers.NewWorkerFoodCost * newWorkers;
-                workers[ResourceType.None] += newWorkers;
+                // new worker food cost <= 0 -> new worker mechanism disabled
+                if (workers.NewWorkerFoodCost > 0)
+                {
+                    int newWorkers = Mathf.FloorToInt(food.Count / workers.NewWorkerFoodCost);
+                    food.Count -= workers.NewWorkerFoodCost * newWorkers;
+                    workers[ResourceType.None] += newWorkers;
+                }
             }
             else
             {

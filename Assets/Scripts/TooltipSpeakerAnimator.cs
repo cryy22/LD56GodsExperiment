@@ -8,10 +8,16 @@ namespace GodsExperiment
         [SerializeField] private Sprite[] Sprites;
         [SerializeField] private Image Image;
         [SerializeField] private float FrameSpeed = 0.333f;
+        [SerializeField] private bool AnimateOnStart;
 
         private bool _isRunning;
         private int _spriteIndex;
         private float _timeToSwap;
+
+        private void Start()
+        {
+            if (AnimateOnStart) Run();
+        }
 
         private void Update()
         {
