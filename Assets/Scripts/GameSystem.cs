@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GodsExperiment
 {
@@ -24,6 +25,12 @@ namespace GodsExperiment
 
         private void Update()
         {
+            if (State.Input.TitleRequested)
+            {
+                SceneManager.LoadScene("TitleScene");
+                return;
+            }
+
             if (State.Input.ResetRequested)
                 Initialize();
 

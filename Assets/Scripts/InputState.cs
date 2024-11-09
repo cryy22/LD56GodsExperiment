@@ -23,6 +23,7 @@ namespace GodsExperiment
 
         public bool OpeningCardDismissRequested { get; set; }
         public bool ResetRequested { get; set; }
+        public bool TitleRequested { get; set; }
 
         public ResourceType WorkerAddPressed { get; set; }
         public ResourceType WorkerRemovePressed { get; set; }

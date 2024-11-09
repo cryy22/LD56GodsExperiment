@@ -1,9 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
+using Button = UnityEngine.UI.Button;
 
 namespace GodsExperiment
 {
-    public class GameResetButton : MonoBehaviour
+    public class ReturnToTitleButton : MonoBehaviour
     {
         [SerializeField] private Button Button;
 
@@ -11,6 +11,6 @@ namespace GodsExperiment
 
         private void OnDisable() { Button.onClick.RemoveAllListeners(); }
 
-        private void OnButtonPressed() { GameState.I.Input.ResetRequested = true; }
+        private void OnButtonPressed() { GameState.I.Input.TitleRequested = true; }
     }
 }
