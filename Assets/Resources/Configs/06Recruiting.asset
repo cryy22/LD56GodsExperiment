@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9631456923cc4e9dbaabfa38f0ce8a7c, type: 3}
+  m_Name: 06Recruiting
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: recruiting
+  <OpeningMessage>k__BackingField: 'Uh-oh, a general strike! Time to lure dem lowlifes
+    back ta work with some food.
+
+
+    When you overproduce food, new workers will
+    show up ta claim dere piece of da pie. In dis trial, every extra 2 food will
+    go to hirin'' 1 new worker at da end of each day.
+
+
+    Let''s fill dis place
+    back up wit da beautiful squeaks and squeals of industry.'
+  <ResourceTargets>k__BackingField:
+  - <ResourceType>k__BackingField: 3
+    <TargetAmount>k__BackingField: 10
+  <TotalDays>k__BackingField: 8
+  <TimePerDay>k__BackingField: 15
+  <InitialWorkers>k__BackingField: 2
+  <MaxWorkers>k__BackingField: 999
+  <MaxWorkersPerResource>k__BackingField: 999
+  <DailyWorkerFoodCost>k__BackingField: 1
+  <NewWorkerFoodCost>k__BackingField: 2
+  <ResourceRequirementSets>k__BackingField:
+  - <ResourceType>k__BackingField: 8
+    <WorkUnits>k__BackingField: 4.5
+    <RequiredResources>k__BackingField: []
+  - <ResourceType>k__BackingField: 1
+    <WorkUnits>k__BackingField: 0.96
+    <RequiredResources>k__BackingField: []
+  - <ResourceType>k__BackingField: 2
+    <WorkUnits>k__BackingField: 1.98
+    <RequiredResources>k__BackingField:
+    - <Resource>k__BackingField: 1
+      <Quantity>k__BackingField: 4
+  - <ResourceType>k__BackingField: 3
+    <WorkUnits>k__BackingField: 4
+    <RequiredResources>k__BackingField:
+    - <Resource>k__BackingField: 2
+      <Quantity>k__BackingField: 4
+  <InitialResourceWorkerSlotsSets>k__BackingField:
+  - <ResourceType>k__BackingField: 8
+    <WorkerSlots>k__BackingField: 3
+  - <ResourceType>k__BackingField: 1
+    <WorkerSlots>k__BackingField: 4
+  - <ResourceType>k__BackingField: 2
+    <WorkerSlots>k__BackingField: 2
+  - <ResourceType>k__BackingField: 3
+    <WorkerSlots>k__BackingField: 1
+  <NewWorkerSlotResourceRequirement>k__BackingField:
+    <ResourceType>k__BackingField: 0
+    <WorkUnits>k__BackingField: 0
+    <RequiredResources>k__BackingField: []
+  <ResourcesAvailableForConstruction>k__BackingField: 
+  <UnworkedResourceDecayRate>k__BackingField: 0.332
