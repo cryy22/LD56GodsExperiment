@@ -22,5 +22,11 @@ namespace GodsExperiment
 
             return payable;
         }
+
+        public static void RefundPayment(Dictionary<ResourceType, float> resourceCosts, ResourcesState resources)
+        {
+            foreach ((ResourceType requiredResource, float cost) in resourceCosts)
+                resources[requiredResource].AdjustValue(cost);
+        }
     }
 }

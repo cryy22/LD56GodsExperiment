@@ -31,6 +31,7 @@ namespace GodsExperiment
 
         public ResourceType ConstructionRequested { get; set; }
         public bool ConstructionChangeMassModifier { get; set; }
+        public bool ConstructionQueueClearRequested { get; set; }
 
         public string TooltipContent { get; set; } = string.Empty;
         public bool IsTooltipEnabled { get; set; } = true;

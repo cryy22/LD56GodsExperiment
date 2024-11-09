@@ -19,6 +19,7 @@ namespace GodsExperiment
 
             state.Input.ConstructionRequested = ResourceType.None;
             state.Input.ConstructionChangeMassModifier = false;
+            state.Input.ConstructionQueueClearRequested = false;
 
             state.Time.DayChanged = false;
 

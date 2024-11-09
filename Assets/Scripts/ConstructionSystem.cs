@@ -12,6 +12,17 @@ namespace GodsExperiment
             if (!construction.IsEnabled)
                 return;
 
+            if (input.ConstructionQueueClearRequested)
+            {
+                for (var i = 0; i < construction.Queue.Count; i++)
+                    ResourcePaymentProcessor.RefundPayment(
+                        resourceCosts: construction.ResourceCosts,
+                        resources: resources
+                    );
+
+                construction.Queue.Clear();
+            }
+
             if (input.ConstructionRequested != ResourceType.None)
             {
                 int constructionsCount = input.ConstructionChangeMassModifier ? 5 : 1;

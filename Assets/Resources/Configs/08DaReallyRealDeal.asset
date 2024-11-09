@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: da really real deal
   <OpeningMessage>k__BackingField: 'hey it''s me, the game developer. this one is
-    real tough. good luck.
+    real tough. good luck!
 
 
     -cryy22'
   <ResourceTargets>k__BackingField:
   - <ResourceType>k__BackingField: 7
     <TargetAmount>k__BackingField: 250
-  <TotalDays>k__BackingField: 35
+  <TotalDays>k__BackingField: 30
   <TimePerDay>k__BackingField: 15
   <InitialWorkers>k__BackingField: 5
   <MaxWorkers>k__BackingField: 1000

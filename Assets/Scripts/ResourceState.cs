@@ -64,6 +64,8 @@ namespace GodsExperiment
                 ResourceCosts[resourceQuantity.Resource] = resourceQuantity.Quantity;
         }
 
+        public void AdjustValue(float amount) { _count += amount; }
+
         public void ResetJustChangedByValues()
         {
             JustIncreasedBy = 0;

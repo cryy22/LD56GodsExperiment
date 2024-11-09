@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace GodsExperiment
 {
@@ -8,7 +7,8 @@ namespace GodsExperiment
     {
         [SerializeField] private Transform ConstructionIconParent;
         [SerializeField] private ConstructionIcon ConstructionIconPrefab;
-        [FormerlySerializedAs("QueueEmptyText")] [SerializeField] private GameObject QueueEmptyPlaceholder;
+        [SerializeField] private GameObject ShowWithQueueContainer;
+        [SerializeField] private GameObject ShowWithNoQueueContainer;
 
         private readonly List<ConstructionIcon> _constructionIcons = new();
 
@@ -39,7 +39,8 @@ namespace GodsExperiment
                 _constructionIcons.RemoveAt(i);
             }
 
-            QueueEmptyPlaceholder.gameObject.SetActive(_constructionIcons.Count == 0);
+            ShowWithQueueContainer.SetActive(_constructionIcons.Count > 0);
+            ShowWithNoQueueContainer.SetActive(_constructionIcons.Count == 0);
         }
     }
 }
