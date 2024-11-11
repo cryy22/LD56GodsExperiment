@@ -19,7 +19,7 @@ namespace GodsExperiment
             if (state.JustBegun)
             {
                 _mode = OpeningCardMode.Displayed;
-                uiState.CoveringCardTransform.position = uiState.CoveringCardOnscreenPosition;
+                uiState.CoveringCardTransform.localPosition = uiState.CoveringCardOnscreenPosition;
                 uiState.CoveringCardText.text = state.Config.OpeningMessage;
             }
 
@@ -32,7 +32,7 @@ namespace GodsExperiment
             if (_mode == OpeningCardMode.Dismissing)
             {
                 _progress += Time.deltaTime / uiState.CoveringCardMoveDuration;
-                uiState.CoveringCardTransform.position = Vector3.Lerp(
+                uiState.CoveringCardTransform.localPosition = Vector3.Lerp(
                     a: uiState.CoveringCardOnscreenPosition,
                     b: uiState.CoveringCardOffscreenPosition,
                     t: _progress
