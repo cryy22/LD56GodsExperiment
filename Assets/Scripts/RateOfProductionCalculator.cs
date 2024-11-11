@@ -6,7 +6,7 @@ namespace GodsExperiment
         {
             return
                 workers[resource.Type] * workers.Productivity * time.TimePerDay // work units per day
-                * resource.WorkUnitsPerUnit;
+                / resource.WorkUnitsPerUnit;
         }
     }
 }
