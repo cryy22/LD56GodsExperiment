@@ -10,9 +10,13 @@ namespace GodsExperiment
         [SerializeField] private float MaxHeight;
         private readonly Vector3[] _corners = new Vector3[4];
 
+        private bool _maxFlat;
+
         private void Update()
         {
-            RectTransform.GetWorldCorners(_corners);
+            if (_maxFlat) return;
+
+            RectTransform.GetLocalCorners(_corners);
 
             float minY = Mathf.Infinity;
             float maxY = Mathf.NegativeInfinity;
@@ -24,10 +28,18 @@ namespace GodsExperiment
 
             if (maxY - minY > MaxHeight)
             {
-                Debug.Log($"height: {maxY - minY}");
                 Vector2 currentSpacing = Grid.spacing;
                 // if this ain't enough we'll do it again in the next frame
-                Grid.spacing = new Vector2(x: currentSpacing.x, y: currentSpacing.y - 0.1f);
+                float newYSpacing = currentSpacing.y - 0.1f;
+                if (newYSpacing <= -Grid.cellSize.y)
+                {
+                    newYSpacing = -Grid.cellSize.y;
+                    _maxFlat = true;
+                }
+
+                Grid.spacing = new Vector2(x: currentSpacing.x, y: newYSpacing);
+
+                LayoutRebuilder.MarkLayoutForRebuild(RectTransform);
             }
         }
     }

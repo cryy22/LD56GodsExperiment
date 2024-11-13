@@ -7176,7 +7176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RectTransform: {fileID: 913760334}
   Grid: {fileID: 913760335}
-  MaxHeight: 100
+  MaxHeight: 40
 --- !u!1 &917163029
 GameObject:
   m_ObjectHideFlags: 0

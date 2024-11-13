@@ -60,15 +60,21 @@ MonoBehaviour:
     <RequiredResources>k__BackingField: []
   <InitialResourceWorkerSlotsSets>k__BackingField:
   - <ResourceType>k__BackingField: 1
-    <WorkerSlots>k__BackingField: 50
+    <WorkerSlots>k__BackingField: 100
   - <ResourceType>k__BackingField: 2
-    <WorkerSlots>k__BackingField: 20
+    <WorkerSlots>k__BackingField: 100
   - <ResourceType>k__BackingField: 3
-    <WorkerSlots>k__BackingField: 20
+    <WorkerSlots>k__BackingField: 100
   - <ResourceType>k__BackingField: 8
-    <WorkerSlots>k__BackingField: 20
+    <WorkerSlots>k__BackingField: 100
   - <ResourceType>k__BackingField: 9
-    <WorkerSlots>k__BackingField: 20
+    <WorkerSlots>k__BackingField: 100
+  - <ResourceType>k__BackingField: 4
+    <WorkerSlots>k__BackingField: 100
+  - <ResourceType>k__BackingField: 5
+    <WorkerSlots>k__BackingField: 100
+  - <ResourceType>k__BackingField: 6
+    <WorkerSlots>k__BackingField: 100
   <NewWorkerSlotResourceRequirement>k__BackingField:
     <ResourceType>k__BackingField: 0
     <WorkUnits>k__BackingField: 0

@@ -545,6 +545,7 @@ GameObject:
   - component: {fileID: 1111056119883871064}
   - component: {fileID: 7367499040429468234}
   - component: {fileID: 3243953356641204132}
+  - component: {fileID: 6069692925305281061}
   - component: {fileID: 2861174909608160663}
   m_Layer: 0
   m_Name: WorkerGauge
@@ -630,6 +631,21 @@ MonoBehaviour:
   m_Spacing: {x: -8.5, y: -15}
   m_Constraint: 0
   m_ConstraintCount: 1
+--- !u!114 &6069692925305281061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2148939209905844087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e7c0cee51c43b2afa8dd908a6e77c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RectTransform: {fileID: 3337581975666531892}
+  Grid: {fileID: 3243953356641204132}
+  MaxHeight: 32
 --- !u!114 &2861174909608160663
 MonoBehaviour:
   m_ObjectHideFlags: 0
