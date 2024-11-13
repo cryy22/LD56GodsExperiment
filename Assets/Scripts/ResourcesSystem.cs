@@ -41,15 +41,20 @@ namespace GodsExperiment
                 resource.WorkUnitsAdded +=
                     workers[resourceType] * workers.Productivity * deltaTime;
             else
-                resource.WorkUnitsAdded -= deltaTime * resources.UnworkedResourcesDecayRate;
+                resource.WorkUnitsAdded -= resources.UnworkedResourcesDecayRate * deltaTime;
 
             resource.WorkUnitsAdded = Mathf.Max(a: resource.WorkUnitsAdded, b: 0);
 
-            if (resource.WorkUnitsAdded >= resource.WorkUnitsPerUnit)
+            while (resource.IsPaid && (resource.WorkUnitsAdded >= resource.WorkUnitsPerUnit))
             {
                 resource.Count += 1;
-                resource.WorkUnitsAdded = 0;
+                resource.WorkUnitsAdded -= resource.WorkUnitsPerUnit;
                 resource.IsPaid = false;
+
+                resource.IsPaid = ResourcePaymentProcessor.AttemptPayment(
+                    resourceCosts: resource.ResourceCosts,
+                    resources: resources
+                );
             }
         }
     }
