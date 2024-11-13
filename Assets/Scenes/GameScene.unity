@@ -7057,6 +7057,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 913760334}
+  - component: {fileID: 913760339}
   - component: {fileID: 913760338}
   - component: {fileID: 913760337}
   - component: {fileID: 913760335}
@@ -7161,6 +7162,21 @@ MonoBehaviour:
 
     Izza tragedy, is what
     it is. Please boss, I''m beggin'' ya. Find some menial labor for deez lowlifes.'
+--- !u!114 &913760339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913760333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e7c0cee51c43b2afa8dd908a6e77c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RectTransform: {fileID: 913760334}
+  Grid: {fileID: 913760335}
+  MaxHeight: 100
 --- !u!1 &917163029
 GameObject:
   m_ObjectHideFlags: 0
@@ -8571,7 +8587,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: 10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
