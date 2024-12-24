@@ -30,6 +30,8 @@ namespace GodsExperiment
         [field: Range(min: 0, max: 1)]
         [field: SerializeField] public float UnworkedResourceDecayRate { get; private set; }
 
+        [field: SerializeField] public string LeaderboardId { get; private set; }
+
         [Serializable]
         public class ResourceWorkerSlotsSet
         {

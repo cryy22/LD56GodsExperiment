@@ -64,3 +64,4 @@ MonoBehaviour:
       <Quantity>k__BackingField: 1
   <ResourcesAvailableForConstruction>k__BackingField: 0100000002000000030000000800000009000000
   <UnworkedResourceDecayRate>k__BackingField: 0.332
+  <LeaderboardId>k__BackingField: real_deal
