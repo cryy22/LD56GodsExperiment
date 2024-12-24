@@ -1462,7 +1462,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -22, y: 28.3}
-  m_SizeDelta: {x: 280, y: 280}
+  m_SizeDelta: {x: 280, y: 320}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1053818159
 MonoBehaviour:
@@ -1493,7 +1493,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2
 --- !u!222 &1053818160
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3213,7 +3213,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 861310204}
   m_HandleRect: {fileID: 861310203}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

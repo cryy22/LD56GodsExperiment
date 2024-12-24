@@ -12,25 +12,31 @@ namespace GodsExperiment
 
         private void Start()
         {
-            StatsTableRow row = Instantiate(original: RowPrefab, parent: RowParent);
-            row.StatImage.sprite = WorkerSprite;
-            row.StatNameText.text = "total";
-            row.StatValueText.text = State.Workers.GetTotalWorkers().ToString();
+            StatsTableRow timeRow = Instantiate(original: RowPrefab, parent: RowParent);
+            timeRow.StatImage.gameObject.SetActive(false);
+            timeRow.StatNameText.text = "days";
+            timeRow.StatValueText.text =
+                $"{string.Format(format: "{0:0.00}", arg0: State.Time.Day + State.Time.Time / State.Time.TimePerDay)}";
+
+            StatsTableRow workersRow = Instantiate(original: RowPrefab, parent: RowParent);
+            workersRow.StatImage.sprite = WorkerSprite;
+            workersRow.StatNameText.text = "total";
+            workersRow.StatValueText.text = State.Workers.GetTotalWorkers().ToString();
 
             foreach (ResourceType resourceType in State.Resources.ResourceTypes)
             {
                 ResourceState resource = State.Resources[resourceType];
                 Sprite resourceSprite = ResourceDefinitionIndex.I.GetSpriteForResource(resourceType);
 
-                row = Instantiate(original: RowPrefab, parent: RowParent);
-                row.StatImage.sprite = resourceSprite;
-                row.StatNameText.text = "created";
-                row.StatValueText.text = $"{resource.TotalCreated:F1}";
+                workersRow = Instantiate(original: RowPrefab, parent: RowParent);
+                workersRow.StatImage.sprite = resourceSprite;
+                workersRow.StatNameText.text = "created";
+                workersRow.StatValueText.text = $"{resource.TotalCreated:F1}";
 
-                row = Instantiate(original: RowPrefab, parent: RowParent);
-                row.StatImage.sprite = resourceSprite;
-                row.StatNameText.text = "mouse-days";
-                row.StatValueText.text = $"{resource.TotalWorkUnits / State.Time.TimePerDay:F1}";
+                workersRow = Instantiate(original: RowPrefab, parent: RowParent);
+                workersRow.StatImage.sprite = resourceSprite;
+                workersRow.StatNameText.text = "mouse-days";
+                workersRow.StatValueText.text = $"{resource.TotalWorkUnits / State.Time.TimePerDay:F1}";
             }
         }
     }
